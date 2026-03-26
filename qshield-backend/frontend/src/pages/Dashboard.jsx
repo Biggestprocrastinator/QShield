@@ -1,3 +1,5 @@
+import Charts from '../components/Charts';
+
 export default function Dashboard({ scanData, isLoading, error }) {
   if (isLoading) {
     return (
@@ -32,6 +34,25 @@ export default function Dashboard({ scanData, isLoading, error }) {
   }
 
   const { score, risk, quantum_status, summary } = scanData;
+
+  const totalAssets = summary?.total_assets || 0;
+  const highRisk = summary?.high_risk_assets || 0;
+  const expiringSoon = summary?.expiring_soon || 0;
+  const assetsList = scanData.assets || [];
+  const domainNames = assetsList.map((asset) => asset.domain).filter(Boolean);
+  const uniqueIPs = Array.from(new Set(assetsList.map((asset) => asset.ip).filter(Boolean)));
+  const webApps = domainNames.length;
+  const apis = domainNames.filter((domain) => domain.toLowerCase().includes('api')).length;
+  const servers = uniqueIPs.length;
+
+  const kpiCards = [
+    { title: 'Total Assets', value: totalAssets, className: 'bg-blue-500 text-white' },
+    { title: 'High Risk Assets', value: highRisk, className: 'bg-gradient-to-r from-red-500 to-red-700 text-white' },
+    { title: 'Expiring Soon', value: expiringSoon, className: 'bg-amber-500 text-white' },
+    { title: 'Web Apps', value: webApps, className: 'bg-indigo-500 text-white' },
+    { title: 'APIs', value: apis, className: 'bg-cyan-500 text-white' },
+    { title: 'Servers', value: servers, className: 'bg-slate-500 text-white' }
+  ];
 
   return (
     <div className="grid grid-cols-12 gap-8 auto-rows-min">
@@ -85,6 +106,18 @@ export default function Dashboard({ scanData, isLoading, error }) {
           </div>
         </div>
       </section>
+      <section className="col-span-12 bg-surface/60 backdrop-blur rounded-3xl p-6 shadow-lg border border-outline-variant/20">
+        <h4 className="font-semibold text-lg text-on-surface mb-4">Key Performance Signals</h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {kpiCards.map((card) => (
+            <div key={card.title} className={`rounded-2xl p-5 flex flex-col justify-between gap-2 shadow-xl ${card.className}`}>
+              <span className="text-xs uppercase tracking-[0.25em] opacity-80">{card.title}</span>
+              <div className="text-4xl font-black">{card.value}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <Charts data={scanData} />
     </div>
   );
 }

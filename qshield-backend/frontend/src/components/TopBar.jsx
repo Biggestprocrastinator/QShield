@@ -1,13 +1,49 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+
+const domainRegex = /^(?!-)(?:[a-z0-9-]{1,63}\.)+[a-z]{2,63}$/i;
+const ipRegex = /^(?:\d{1,3}\.){3}\d{1,3}$/;
+
+const sanitizeDomain = (value) => {
+  if (!value) return '';
+  let sanitized = value.trim().toLowerCase();
+  sanitized = sanitized.replace(/^https?:\/\//, '');
+  sanitized = sanitized.replace(/^www\./, '');
+  sanitized = sanitized.replace(/\/+$/, '');
+  return sanitized;
+};
+
+const isValidDomain = (value) => domainRegex.test(value) || ipRegex.test(value);
 
 export default function TopBar({ onScan }) {
   const [domain, setDomain] = useState('');
+  const [inputError, setInputError] = useState('');
+
+  const handleSubmit = () => {
+    setInputError('');
+    const sanitized = sanitizeDomain(domain);
+    if (!sanitized) {
+      setInputError('Please enter a domain to scan.');
+      return;
+    }
+    if (!isValidDomain(sanitized)) {
+      setInputError('Enter a valid domain without protocol.');
+      return;
+    }
+    setDomain(sanitized);
+    onScan(sanitized);
+  };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && domain.trim()) {
-      onScan(domain.trim());
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
     }
   };
+
+  const helperText = useMemo(() => {
+    if (inputError) return inputError;
+    return 'Enter a fully qualified domain (no protocol).';
+  }, [inputError]);
 
   return (
     <header className="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-8 z-40 bg-[#fef8f3]/80 backdrop-blur-md">
@@ -26,8 +62,16 @@ export default function TopBar({ onScan }) {
             value={domain}
             onChange={(e) => setDomain(e.target.value)}
             onKeyDown={handleKeyDown}
+            aria-invalid={Boolean(inputError)}
           />
+          <div className="text-xs mt-1 text-red-500 min-h-[1rem]">{helperText}</div>
         </div>
+        <button
+          className="px-4 py-2 rounded-full bg-secondary text-white font-semibold text-sm hover:bg-secondary/80 transition-colors"
+          onClick={handleSubmit}
+        >
+          Scan
+        </button>
         <div className="flex items-center gap-3 text-on-surface-variant">
           <button className="material-symbols-outlined hover:text-secondary transition-colors">notifications</button>
           <button className="material-symbols-outlined hover:text-secondary transition-colors">help_outline</button>

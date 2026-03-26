@@ -17,7 +17,7 @@ def _resolve_ip(domain: str):
         return None
 
 
-def normalize_domain(url: str) -> str:
+def clean_domain(url: str) -> str:
     if not url:
         return ""
 
@@ -27,6 +27,7 @@ def normalize_domain(url: str) -> str:
     elif stripped.startswith("https://"):
         stripped = stripped[len("https://") :]
 
+    stripped = stripped.replace("www.", "", 1)
     stripped = stripped.rstrip("/").strip()
     stripped = stripped.split("/")[0]
     return stripped
@@ -63,9 +64,9 @@ def _run_subfinder(domain: str) -> Iterable[str]:
                 continue
 
             output = [
-                normalize_domain(line)
+                clean_domain(line)
                 for line in result.stdout.splitlines()
-                if normalize_domain(line)
+                if clean_domain(line)
             ]
             if output:
                 return output
@@ -97,6 +98,8 @@ def _filter_live_domains(domains: List[str]) -> Tuple[List[str], bool]:
         if not live:
             live = domains
 
+        live = [clean_domain(line) for line in live if clean_domain(line)]
+
         print("HTTPX returned:", len(live))
         return live, True
 
@@ -121,25 +124,27 @@ def discover_assets(domain: str):
         subdomains.extend(fallback_subdomains)
     print("Subfinder count:", len(subdomains))
     all_domains = [
-        normalize_domain(d)
+        clean_domain(d)
         for d in [domain] + subdomains
         if isinstance(d, str) and d.strip()
     ]
 
     if not all_domains:
         logger.error("Subfinder returned no domains for %s", domain)
-        all_domains = [normalize_domain(domain)]
+        all_domains = [clean_domain(domain)]
 
     live_domains, httpx_success = _filter_live_domains(all_domains)
     domains = (live_domains if httpx_success else all_domains)[:MAX_ASSETS]
+    domains = [clean_domain(d) for d in domains if clean_domain(d)]
     print("Final domains count:", len(domains))
 
     assets = []
     for candidate in domains:
+        cleaned_candidate = clean_domain(candidate)
         assets.append(
             {
-                "domain": candidate,
-                "ip": _resolve_ip(candidate),
+                "domain": cleaned_candidate,
+                "ip": _resolve_ip(cleaned_candidate),
             }
         )
 

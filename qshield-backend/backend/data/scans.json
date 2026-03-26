@@ -1,1754 +1,6 @@
 [
   {
-    "timestamp": "2026-03-26T13:40:05.263370",
-    "domain": "vupune.ac.in",
-    "payload": {
-      "summary": {
-        "total_assets": 17,
-        "https_enabled": 17,
-        "http_only": 0,
-        "quantum_vulnerable": 17,
-        "quantum_safe": 0,
-        "high_risk_assets": 0
-      },
-      "counts": {
-        "domains": 17,
-        "ssl": 17,
-        "ips": 7
-      },
-      "inventory": {
-        "domains": [
-          "vuerp.vupune.ac.in",
-          "incon-ctlvu.vupune.ac.in",
-          "learner.vupune.ac.in",
-          "vunet.vupune.ac.in",
-          "iqube.vupune.ac.in",
-          "research.vupune.ac.in",
-          "onlineadmission.vupune.ac.in",
-          "icrcsd.vupune.ac.in",
-          "icsiaiml.vupune.ac.in",
-          "icaio.vupune.ac.in",
-          "vulj.vupune.ac.in",
-          "admission.vupune.ac.in",
-          "jstir.vupune.ac.in",
-          "erpadmin.vupune.ac.in",
-          "onlineadmissionapi.vupune.ac.in",
-          "www.vupune.ac.in",
-          "vupune.ac.in"
-        ],
-        "ssl_enabled": [
-          "learner.vupune.ac.in",
-          "vuerp.vupune.ac.in",
-          "iqube.vupune.ac.in",
-          "vunet.vupune.ac.in",
-          "incon-ctlvu.vupune.ac.in",
-          "onlineadmission.vupune.ac.in",
-          "research.vupune.ac.in",
-          "icrcsd.vupune.ac.in",
-          "icsiaiml.vupune.ac.in",
-          "icaio.vupune.ac.in",
-          "admission.vupune.ac.in",
-          "vulj.vupune.ac.in",
-          "jstir.vupune.ac.in",
-          "erpadmin.vupune.ac.in",
-          "onlineadmissionapi.vupune.ac.in",
-          "www.vupune.ac.in",
-          "vupune.ac.in"
-        ],
-        "http_only": [],
-        "ip_addresses": [
-          "108.159.91.123",
-          "108.159.91.34",
-          "108.159.91.76",
-          "13.205.231.9",
-          "13.234.61.250",
-          "3.109.191.27",
-          "65.1.32.72"
-        ],
-        "ports": [
-          80,
-          443
-        ]
-      },
-      "risk": "Low",
-      "score": 50,
-      "rating": "Legacy",
-      "quantum_status": "High Risk",
-      "classical_security": "Strong",
-      "quantum_security": "High Risk",
-      "insights": [
-        "All assets use TLSv1.3 (strong classical security)",
-        "HTTPS is enabled across all assets",
-        "All assets are quantum vulnerable"
-      ],
-      "assets": [
-        {
-          "domain": "vuerp.vupune.ac.in",
-          "ip": "108.159.91.34"
-        },
-        {
-          "domain": "incon-ctlvu.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "learner.vupune.ac.in",
-          "ip": "108.159.91.123"
-        },
-        {
-          "domain": "vunet.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "iqube.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "research.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "onlineadmission.vupune.ac.in",
-          "ip": "108.159.91.76"
-        },
-        {
-          "domain": "icrcsd.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "icsiaiml.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "icaio.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "vulj.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "admission.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "jstir.vupune.ac.in",
-          "ip": "13.234.61.250"
-        },
-        {
-          "domain": "erpadmin.vupune.ac.in",
-          "ip": "13.205.231.9"
-        },
-        {
-          "domain": "onlineadmissionapi.vupune.ac.in",
-          "ip": "13.205.231.9"
-        },
-        {
-          "domain": "www.vupune.ac.in",
-          "ip": "3.109.191.27"
-        },
-        {
-          "domain": "vupune.ac.in",
-          "ip": "65.1.32.72"
-        }
-      ],
-      "cbom": [
-        {
-          "domain": "learner.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vuerp.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "iqube.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vunet.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "incon-ctlvu.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "onlineadmission.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "research.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "icrcsd.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "icsiaiml.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "icaio.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "admission.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vulj.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "jstir.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "erpadmin.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "onlineadmissionapi.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "www.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-03-26T13:43:56.043426",
-    "domain": "vupune.ac.in",
-    "payload": {
-      "summary": {
-        "total_assets": 17,
-        "https_enabled": 17,
-        "http_only": 0,
-        "quantum_vulnerable": 17,
-        "quantum_safe": 0,
-        "high_risk_assets": 0
-      },
-      "counts": {
-        "domains": 17,
-        "ssl": 17,
-        "ips": 6
-      },
-      "inventory": {
-        "domains": [
-          "icaio.vupune.ac.in",
-          "icrcsd.vupune.ac.in",
-          "vuerp.vupune.ac.in",
-          "learner.vupune.ac.in",
-          "incon-ctlvu.vupune.ac.in",
-          "erpadmin.vupune.ac.in",
-          "iqube.vupune.ac.in",
-          "onlineadmission.vupune.ac.in",
-          "onlineadmissionapi.vupune.ac.in",
-          "jstir.vupune.ac.in",
-          "research.vupune.ac.in",
-          "vupune.ac.in",
-          "vulj.vupune.ac.in",
-          "admission.vupune.ac.in",
-          "icsiaiml.vupune.ac.in",
-          "vunet.vupune.ac.in",
-          "www.vupune.ac.in"
-        ],
-        "ssl_enabled": [
-          "learner.vupune.ac.in",
-          "vuerp.vupune.ac.in",
-          "icaio.vupune.ac.in",
-          "incon-ctlvu.vupune.ac.in",
-          "icrcsd.vupune.ac.in",
-          "onlineadmission.vupune.ac.in",
-          "iqube.vupune.ac.in",
-          "erpadmin.vupune.ac.in",
-          "onlineadmissionapi.vupune.ac.in",
-          "jstir.vupune.ac.in",
-          "research.vupune.ac.in",
-          "vulj.vupune.ac.in",
-          "vupune.ac.in",
-          "admission.vupune.ac.in",
-          "icsiaiml.vupune.ac.in",
-          "vunet.vupune.ac.in",
-          "www.vupune.ac.in"
-        ],
-        "http_only": [],
-        "ip_addresses": [
-          "108.159.91.123",
-          "108.159.91.80",
-          "108.159.91.88",
-          "13.205.231.9",
-          "3.6.209.22",
-          "35.154.92.192"
-        ],
-        "ports": [
-          80,
-          443
-        ]
-      },
-      "risk": "Low",
-      "score": 50,
-      "rating": "Legacy",
-      "quantum_status": "High Risk",
-      "classical_security": "Strong",
-      "quantum_security": "High Risk",
-      "insights": [
-        "All assets use TLSv1.3 (strong classical security)",
-        "HTTPS is enabled across all assets",
-        "All assets are quantum vulnerable"
-      ],
-      "assets": [
-        {
-          "domain": "icaio.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "icrcsd.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "vuerp.vupune.ac.in",
-          "ip": "108.159.91.88"
-        },
-        {
-          "domain": "learner.vupune.ac.in",
-          "ip": "108.159.91.123"
-        },
-        {
-          "domain": "incon-ctlvu.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "erpadmin.vupune.ac.in",
-          "ip": "13.205.231.9"
-        },
-        {
-          "domain": "iqube.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "onlineadmission.vupune.ac.in",
-          "ip": "108.159.91.80"
-        },
-        {
-          "domain": "onlineadmissionapi.vupune.ac.in",
-          "ip": "13.205.231.9"
-        },
-        {
-          "domain": "jstir.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "research.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "vupune.ac.in",
-          "ip": "3.6.209.22"
-        },
-        {
-          "domain": "vulj.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "admission.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "icsiaiml.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "vunet.vupune.ac.in",
-          "ip": "35.154.92.192"
-        },
-        {
-          "domain": "www.vupune.ac.in",
-          "ip": "3.6.209.22"
-        }
-      ],
-      "cbom": [
-        {
-          "domain": "learner.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vuerp.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "icaio.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "incon-ctlvu.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "icrcsd.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "onlineadmission.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "iqube.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "erpadmin.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "onlineadmissionapi.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "jstir.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "research.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vulj.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "admission.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "icsiaiml.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "vunet.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "www.vupune.ac.in",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-03-26T13:46:28.693577",
-    "domain": "meta.com",
-    "payload": {
-      "summary": {
-        "total_assets": 20,
-        "https_enabled": 20,
-        "http_only": 0,
-        "quantum_vulnerable": 20,
-        "quantum_safe": 0,
-        "high_risk_assets": 0
-      },
-      "counts": {
-        "domains": 20,
-        "ssl": 20,
-        "ips": 5
-      },
-      "inventory": {
-        "domains": [
-          "bigzipfiles.auth.meta.com",
-          "gateway.work.meta.com",
-          "gateway.spark.meta.com",
-          "gateway.quest.meta.com",
-          "gateway.horizon.meta.com",
-          "edge-chat.www.meta.com",
-          "gateway.developers.meta.com",
-          "ai.meta.com",
-          "auth.meta.com",
-          "about.meta.com",
-          "accountscenter.meta.com",
-          "familycenter.meta.com",
-          "accounts.meta.com",
-          "ar.meta.com",
-          "horizon.meta.com",
-          "alpha.www.meta.com",
-          "beta.www.meta.com",
-          "help.meta.com",
-          "alpha.work.meta.com",
-          "bugbounty.meta.com"
-        ],
-        "ssl_enabled": [
-          "bigzipfiles.auth.meta.com",
-          "gateway.horizon.meta.com",
-          "gateway.work.meta.com",
-          "gateway.spark.meta.com",
-          "gateway.quest.meta.com",
-          "auth.meta.com",
-          "about.meta.com",
-          "edge-chat.www.meta.com",
-          "ai.meta.com",
-          "gateway.developers.meta.com",
-          "accountscenter.meta.com",
-          "familycenter.meta.com",
-          "accounts.meta.com",
-          "horizon.meta.com",
-          "ar.meta.com",
-          "beta.www.meta.com",
-          "help.meta.com",
-          "alpha.work.meta.com",
-          "alpha.www.meta.com",
-          "bugbounty.meta.com"
-        ],
-        "http_only": [],
-        "ip_addresses": [
-          "57.144.124.141",
-          "57.144.124.145",
-          "57.144.210.128",
-          "57.144.210.141",
-          "57.144.42.136"
-        ],
-        "ports": [
-          80,
-          443
-        ]
-      },
-      "risk": "Low",
-      "score": 50,
-      "rating": "Legacy",
-      "quantum_status": "High Risk",
-      "classical_security": "Strong",
-      "quantum_security": "High Risk",
-      "insights": [
-        "All assets use TLSv1.3 (strong classical security)",
-        "HTTPS is enabled across all assets",
-        "All assets are quantum vulnerable"
-      ],
-      "assets": [
-        {
-          "domain": "bigzipfiles.auth.meta.com",
-          "ip": "57.144.210.128"
-        },
-        {
-          "domain": "gateway.work.meta.com",
-          "ip": "57.144.124.145"
-        },
-        {
-          "domain": "gateway.spark.meta.com",
-          "ip": "57.144.124.145"
-        },
-        {
-          "domain": "gateway.quest.meta.com",
-          "ip": "57.144.124.145"
-        },
-        {
-          "domain": "gateway.horizon.meta.com",
-          "ip": "57.144.124.145"
-        },
-        {
-          "domain": "edge-chat.www.meta.com",
-          "ip": "57.144.210.141"
-        },
-        {
-          "domain": "gateway.developers.meta.com",
-          "ip": "57.144.124.145"
-        },
-        {
-          "domain": "ai.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "auth.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "about.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "accountscenter.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "familycenter.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "accounts.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "ar.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "horizon.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "alpha.www.meta.com",
-          "ip": "57.144.42.136"
-        },
-        {
-          "domain": "beta.www.meta.com",
-          "ip": "57.144.42.136"
-        },
-        {
-          "domain": "help.meta.com",
-          "ip": "57.144.124.141"
-        },
-        {
-          "domain": "alpha.work.meta.com",
-          "ip": "57.144.42.136"
-        },
-        {
-          "domain": "bugbounty.meta.com",
-          "ip": "57.144.124.141"
-        }
-      ],
-      "cbom": [
-        {
-          "domain": "bigzipfiles.auth.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "gateway.horizon.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": false,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "gateway.work.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": false,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "gateway.spark.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": false,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "gateway.quest.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": false,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "auth.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "about.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "edge-chat.www.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "ai.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "gateway.developers.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": false,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "accountscenter.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "familycenter.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "accounts.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "horizon.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "ar.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "beta.www.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "help.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "alpha.work.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "alpha.www.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "bugbounty.meta.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "RSA",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-03-26T13:48:53.044918",
-    "domain": "ibm.com",
-    "payload": {
-      "summary": {
-        "total_assets": 1,
-        "https_enabled": 1,
-        "http_only": 0,
-        "quantum_vulnerable": 1,
-        "quantum_safe": 0,
-        "high_risk_assets": 0
-      },
-      "counts": {
-        "domains": 1,
-        "ssl": 1,
-        "ips": 1
-      },
-      "inventory": {
-        "domains": [
-          "ibm.com"
-        ],
-        "ssl_enabled": [
-          "ibm.com"
-        ],
-        "http_only": [],
-        "ip_addresses": [
-          "118.215.81.142"
-        ],
-        "ports": [
-          80,
-          443
-        ]
-      },
-      "risk": "Low",
-      "score": 50,
-      "rating": "Legacy",
-      "quantum_status": "High Risk",
-      "classical_security": "Strong",
-      "quantum_security": "High Risk",
-      "insights": [
-        "All assets use TLSv1.3 (strong classical security)",
-        "HTTPS is enabled across all assets",
-        "All assets are quantum vulnerable"
-      ],
-      "assets": [
-        {
-          "domain": "ibm.com",
-          "ip": "118.215.81.142"
-        }
-      ],
-      "cbom": [
-        {
-          "domain": "ibm.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "ECC",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-03-26T13:52:25.882665",
-    "domain": "cloudfare.com",
-    "payload": {
-      "summary": {
-        "total_assets": 20,
-        "https_enabled": 20,
-        "http_only": 0,
-        "quantum_vulnerable": 3,
-        "quantum_safe": 0,
-        "high_risk_assets": 17
-      },
-      "counts": {
-        "domains": 20,
-        "ssl": 20,
-        "ips": 2
-      },
-      "inventory": {
-        "domains": [
-          "ada.cloudfare.com",
-          "a.cloudfare.com",
-          "api.cloudfare.com",
-          "adam.ns.cloudfare.com",
-          "1atheana.ns.cloudfare.com",
-          "angelina.ns.cloudfare.com",
-          "anna.ns.cloudfare.com",
-          "alec.ns.cloudfare.com",
-          "adelaide.ns.cloudfare.com",
-          "ada.ns.cloudfare.com",
-          "aleena.ns.cloudfare.com",
-          "8.8.8.8.80.a.nel.cloudfare.com",
-          "alexis.ns.cloudfare.com",
-          "anita.ns.cloudfare.com",
-          "aida.ns.cloudfare.com",
-          "alice.ns.cloudfare.com",
-          "amir.ns.cloudfare.com",
-          "anastasia.ns.cloudfare.com",
-          "alan.ns.cloudfare.com",
-          "alex.ns.cloudfare.com"
-        ],
-        "ssl_enabled": [
-          "adam.ns.cloudfare.com",
-          "1atheana.ns.cloudfare.com",
-          "ada.cloudfare.com",
-          "a.cloudfare.com",
-          "api.cloudfare.com",
-          "angelina.ns.cloudfare.com",
-          "anna.ns.cloudfare.com",
-          "adelaide.ns.cloudfare.com",
-          "alec.ns.cloudfare.com",
-          "ada.ns.cloudfare.com",
-          "aleena.ns.cloudfare.com",
-          "8.8.8.8.80.a.nel.cloudfare.com",
-          "alexis.ns.cloudfare.com",
-          "anita.ns.cloudfare.com",
-          "aida.ns.cloudfare.com",
-          "alice.ns.cloudfare.com",
-          "alan.ns.cloudfare.com",
-          "anastasia.ns.cloudfare.com",
-          "alex.ns.cloudfare.com",
-          "amir.ns.cloudfare.com"
-        ],
-        "http_only": [],
-        "ip_addresses": [
-          "104.16.132.229",
-          "104.16.133.229"
-        ],
-        "ports": [
-          80,
-          443
-        ]
-      },
-      "risk": "High",
-      "score": 7,
-      "rating": "Critical",
-      "quantum_status": "Vulnerable",
-      "classical_security": "Moderate",
-      "quantum_security": "Vulnerable",
-      "insights": [
-        "All assets meet TLS 1.2+ requirements",
-        "HTTPS is enabled across all assets",
-        "Some assets remain quantum vulnerable"
-      ],
-      "assets": [
-        {
-          "domain": "ada.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "a.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "api.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "adam.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "1atheana.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "angelina.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "anna.ns.cloudfare.com",
-          "ip": "104.16.133.229"
-        },
-        {
-          "domain": "alec.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "adelaide.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "ada.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "aleena.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "8.8.8.8.80.a.nel.cloudfare.com",
-          "ip": "104.16.133.229"
-        },
-        {
-          "domain": "alexis.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "anita.ns.cloudfare.com",
-          "ip": "104.16.133.229"
-        },
-        {
-          "domain": "aida.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "alice.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "amir.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "anastasia.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "alan.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        },
-        {
-          "domain": "alex.ns.cloudfare.com",
-          "ip": "104.16.132.229"
-        }
-      ],
-      "cbom": [
-        {
-          "domain": "adam.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "1atheana.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "ada.cloudfare.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "ECC",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "a.cloudfare.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "ECC",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "api.cloudfare.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "ECC",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        },
-        {
-          "domain": "angelina.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "anna.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "adelaide.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "alec.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "ada.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "aleena.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "8.8.8.8.80.a.nel.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "alexis.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "anita.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "aida.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "alice.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "alan.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "anastasia.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "alex.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        },
-        {
-          "domain": "amir.ns.cloudfare.com",
-          "tls_version": "Unknown",
-          "cipher": "Unknown",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": null,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "High"
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-03-26T13:54:11.667934",
-    "domain": "https://pq.cloudflareresearch.com/",
-    "payload": {
-      "summary": {
-        "total_assets": 1,
-        "https_enabled": 1,
-        "http_only": 0,
-        "quantum_vulnerable": 1,
-        "quantum_safe": 0,
-        "high_risk_assets": 0
-      },
-      "counts": {
-        "domains": 1,
-        "ssl": 1,
-        "ips": 1
-      },
-      "inventory": {
-        "domains": [
-          "pq.cloudflareresearch.com"
-        ],
-        "ssl_enabled": [
-          "pq.cloudflareresearch.com"
-        ],
-        "http_only": [],
-        "ip_addresses": [
-          "104.18.30.220"
-        ],
-        "ports": [
-          80,
-          443
-        ]
-      },
-      "risk": "Low",
-      "score": 50,
-      "rating": "Legacy",
-      "quantum_status": "High Risk",
-      "classical_security": "Strong",
-      "quantum_security": "High Risk",
-      "insights": [
-        "All assets use TLSv1.3 (strong classical security)",
-        "HTTPS is enabled across all assets",
-        "All assets are quantum vulnerable"
-      ],
-      "assets": [
-        {
-          "domain": "pq.cloudflareresearch.com",
-          "ip": "104.18.30.220"
-        }
-      ],
-      "cbom": [
-        {
-          "domain": "pq.cloudflareresearch.com",
-          "tls_version": "TLSv1.3",
-          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
-          "algorithm_type": "ECC",
-          "key_strength": "STRONG",
-          "quantum_vulnerable": true,
-          "ports": {
-            "80": true,
-            "443": true
-          },
-          "risk_level": "Low"
-        }
-      ]
-    }
-  },
-  {
-    "timestamp": "2026-03-26T14:32:09.569295",
+    "timestamp": "2026-03-26T16:31:58.185032",
     "domain": "vupune.ac.in",
     "payload": {
       "summary": {
@@ -1769,22 +21,22 @@
       },
       "inventory": {
         "domains": [
-          "https://onlineadmissionapi.vupune.ac.in",
-          "https://onlineadmission.vupune.ac.in",
-          "https://vuerp.vupune.ac.in",
-          "https://learner.vupune.ac.in",
           "https://vunet.vupune.ac.in",
-          "https://iqube.vupune.ac.in",
-          "https://icaio.vupune.ac.in",
-          "https://incon-ctlvu.vupune.ac.in",
+          "https://icsiaiml.vupune.ac.in",
           "https://icrcsd.vupune.ac.in",
           "https://vulj.vupune.ac.in",
+          "https://vuerp.vupune.ac.in",
+          "https://learner.vupune.ac.in",
+          "https://icaio.vupune.ac.in",
+          "https://incon-ctlvu.vupune.ac.in",
+          "https://iqube.vupune.ac.in",
+          "https://erpadmin.vupune.ac.in",
+          "https://onlineadmission.vupune.ac.in",
+          "https://onlineadmissionapi.vupune.ac.in",
           "https://research.vupune.ac.in",
           "https://admission.vupune.ac.in",
-          "https://erpadmin.vupune.ac.in",
-          "https://www.vupune.ac.in",
           "https://vupune.ac.in",
-          "https://icsiaiml.vupune.ac.in"
+          "https://www.vupune.ac.in"
         ],
         "ssl_enabled": [],
         "http_only": [],
@@ -1808,35 +60,11 @@
       ],
       "assets": [
         {
-          "domain": "https://onlineadmissionapi.vupune.ac.in",
-          "ip": null
-        },
-        {
-          "domain": "https://onlineadmission.vupune.ac.in",
-          "ip": null
-        },
-        {
-          "domain": "https://vuerp.vupune.ac.in",
-          "ip": null
-        },
-        {
-          "domain": "https://learner.vupune.ac.in",
-          "ip": null
-        },
-        {
           "domain": "https://vunet.vupune.ac.in",
           "ip": null
         },
         {
-          "domain": "https://iqube.vupune.ac.in",
-          "ip": null
-        },
-        {
-          "domain": "https://icaio.vupune.ac.in",
-          "ip": null
-        },
-        {
-          "domain": "https://incon-ctlvu.vupune.ac.in",
+          "domain": "https://icsiaiml.vupune.ac.in",
           "ip": null
         },
         {
@@ -1848,6 +76,38 @@
           "ip": null
         },
         {
+          "domain": "https://vuerp.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://learner.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://icaio.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://incon-ctlvu.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://iqube.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://erpadmin.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://onlineadmission.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://onlineadmissionapi.vupune.ac.in",
+          "ip": null
+        },
+        {
           "domain": "https://research.vupune.ac.in",
           "ip": null
         },
@@ -1856,25 +116,17 @@
           "ip": null
         },
         {
-          "domain": "https://erpadmin.vupune.ac.in",
-          "ip": null
-        },
-        {
-          "domain": "https://www.vupune.ac.in",
-          "ip": null
-        },
-        {
           "domain": "https://vupune.ac.in",
           "ip": null
         },
         {
-          "domain": "https://icsiaiml.vupune.ac.in",
+          "domain": "https://www.vupune.ac.in",
           "ip": null
         }
       ],
       "cbom": [
         {
-          "domain": "https://vuerp.vupune.ac.in",
+          "domain": "https://vulj.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
           "algorithm_type": "UNKNOWN",
@@ -1906,7 +158,7 @@
           "headers_severity": "high"
         },
         {
-          "domain": "https://onlineadmission.vupune.ac.in",
+          "domain": "https://icsiaiml.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
           "algorithm_type": "UNKNOWN",
@@ -1938,39 +190,7 @@
           "headers_severity": "high"
         },
         {
-          "domain": "https://onlineadmissionapi.vupune.ac.in",
-          "tls_version": "Not Supported",
-          "cipher": "None",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": false,
-          "ports": {
-            "80": false,
-            "443": false
-          },
-          "security_headers": {
-            "hsts": false,
-            "csp": false,
-            "x_frame_options": false,
-            "x_content_type_options": false
-          },
-          "certificate": {
-            "expiry_days": null,
-            "expiry_date": "Unknown"
-          },
-          "certificate_status": "NO_TLS",
-          "risk_level": "Medium",
-          "certificate_severity": "none",
-          "certificate_label": "No TLS",
-          "tls_label": "No TLS",
-          "tls_severity": "high",
-          "quantum_label": "Safe",
-          "quantum_severity": "low",
-          "headers_label": "Insecure",
-          "headers_severity": "high"
-        },
-        {
-          "domain": "https://learner.vupune.ac.in",
+          "domain": "https://icrcsd.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
           "algorithm_type": "UNKNOWN",
@@ -2034,7 +254,7 @@
           "headers_severity": "high"
         },
         {
-          "domain": "https://vulj.vupune.ac.in",
+          "domain": "https://vuerp.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
           "algorithm_type": "UNKNOWN",
@@ -2067,6 +287,38 @@
         },
         {
           "domain": "https://incon-ctlvu.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://learner.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
           "algorithm_type": "UNKNOWN",
@@ -2162,102 +414,6 @@
           "headers_severity": "high"
         },
         {
-          "domain": "https://icrcsd.vupune.ac.in",
-          "tls_version": "Not Supported",
-          "cipher": "None",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": false,
-          "ports": {
-            "80": false,
-            "443": false
-          },
-          "security_headers": {
-            "hsts": false,
-            "csp": false,
-            "x_frame_options": false,
-            "x_content_type_options": false
-          },
-          "certificate": {
-            "expiry_days": null,
-            "expiry_date": "Unknown"
-          },
-          "certificate_status": "NO_TLS",
-          "risk_level": "Medium",
-          "certificate_severity": "none",
-          "certificate_label": "No TLS",
-          "tls_label": "No TLS",
-          "tls_severity": "high",
-          "quantum_label": "Safe",
-          "quantum_severity": "low",
-          "headers_label": "Insecure",
-          "headers_severity": "high"
-        },
-        {
-          "domain": "https://www.vupune.ac.in",
-          "tls_version": "Not Supported",
-          "cipher": "None",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": false,
-          "ports": {
-            "80": false,
-            "443": false
-          },
-          "security_headers": {
-            "hsts": false,
-            "csp": false,
-            "x_frame_options": false,
-            "x_content_type_options": false
-          },
-          "certificate": {
-            "expiry_days": null,
-            "expiry_date": "Unknown"
-          },
-          "certificate_status": "NO_TLS",
-          "risk_level": "Medium",
-          "certificate_severity": "none",
-          "certificate_label": "No TLS",
-          "tls_label": "No TLS",
-          "tls_severity": "high",
-          "quantum_label": "Safe",
-          "quantum_severity": "low",
-          "headers_label": "Insecure",
-          "headers_severity": "high"
-        },
-        {
-          "domain": "https://research.vupune.ac.in",
-          "tls_version": "Not Supported",
-          "cipher": "None",
-          "algorithm_type": "UNKNOWN",
-          "key_strength": "MODERATE",
-          "quantum_vulnerable": false,
-          "ports": {
-            "80": false,
-            "443": false
-          },
-          "security_headers": {
-            "hsts": false,
-            "csp": false,
-            "x_frame_options": false,
-            "x_content_type_options": false
-          },
-          "certificate": {
-            "expiry_days": null,
-            "expiry_date": "Unknown"
-          },
-          "certificate_status": "NO_TLS",
-          "risk_level": "Medium",
-          "certificate_severity": "none",
-          "certificate_label": "No TLS",
-          "tls_label": "No TLS",
-          "tls_severity": "high",
-          "quantum_label": "Safe",
-          "quantum_severity": "low",
-          "headers_label": "Insecure",
-          "headers_severity": "high"
-        },
-        {
           "domain": "https://erpadmin.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
@@ -2290,7 +446,39 @@
           "headers_severity": "high"
         },
         {
-          "domain": "https://admission.vupune.ac.in",
+          "domain": "https://onlineadmissionapi.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://onlineadmission.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
           "algorithm_type": "UNKNOWN",
@@ -2354,6 +542,423 @@
           "headers_severity": "high"
         },
         {
+          "domain": "https://admission.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://research.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://www.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T16:38:28.464448",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 16,
+        "https_enabled": 0,
+        "http_only": 0,
+        "quantum_vulnerable": 0,
+        "quantum_safe": 16,
+        "high_risk_assets": 0,
+        "header_issues": 16,
+        "unreachable_assets": 0,
+        "expiring_soon": 0
+      },
+      "counts": {
+        "domains": 16,
+        "ssl": 0,
+        "ips": 0
+      },
+      "inventory": {
+        "domains": [
+          "https://icrcsd.vupune.ac.in",
+          "https://onlineadmissionapi.vupune.ac.in",
+          "https://learner.vupune.ac.in",
+          "https://vuerp.vupune.ac.in",
+          "https://vulj.vupune.ac.in",
+          "https://icaio.vupune.ac.in",
+          "https://iqube.vupune.ac.in",
+          "https://erpadmin.vupune.ac.in",
+          "https://onlineadmission.vupune.ac.in",
+          "https://icsiaiml.vupune.ac.in",
+          "https://vunet.vupune.ac.in",
+          "https://incon-ctlvu.vupune.ac.in",
+          "https://research.vupune.ac.in",
+          "https://admission.vupune.ac.in",
+          "https://vupune.ac.in",
+          "https://www.vupune.ac.in"
+        ],
+        "ssl_enabled": [],
+        "http_only": [],
+        "ip_addresses": [],
+        "ports": []
+      },
+      "risk": "Medium",
+      "score": 20,
+      "rating": "Critical",
+      "quantum_status": "Safe",
+      "classical_security": "Moderate",
+      "quantum_security": "Safe",
+      "insights": [
+        "All assets meet TLS 1.2+ requirements",
+        "No HTTPS endpoints are available",
+        "No quantum-vulnerable assets detected",
+        "CSP missing on 16/16 assets",
+        "HSTS not enabled on 16/16 assets",
+        "Clickjacking protection missing on 16/16 assets",
+        "16 assets do not support TLS"
+      ],
+      "assets": [
+        {
+          "domain": "https://icrcsd.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://onlineadmissionapi.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://learner.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://vuerp.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://vulj.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://icaio.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://iqube.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://erpadmin.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://onlineadmission.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://icsiaiml.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://vunet.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://incon-ctlvu.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://research.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://admission.vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://vupune.ac.in",
+          "ip": null
+        },
+        {
+          "domain": "https://www.vupune.ac.in",
+          "ip": null
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "https://vulj.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://onlineadmissionapi.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://icrcsd.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://learner.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://vuerp.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://onlineadmission.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
           "domain": "https://icsiaiml.vupune.ac.in",
           "tls_version": "Not Supported",
           "cipher": "None",
@@ -2384,6 +989,2900 @@
           "quantum_severity": "low",
           "headers_label": "Insecure",
           "headers_severity": "high"
+        },
+        {
+          "domain": "https://erpadmin.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://iqube.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://icaio.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://incon-ctlvu.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://research.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://vunet.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://admission.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "https://www.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T16:42:46.184904",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 15,
+        "https_enabled": 15,
+        "http_only": 0,
+        "quantum_vulnerable": 15,
+        "quantum_safe": 0,
+        "high_risk_assets": 0,
+        "header_issues": 15,
+        "unreachable_assets": 0,
+        "expiring_soon": 0
+      },
+      "counts": {
+        "domains": 15,
+        "ssl": 15,
+        "ips": 9
+      },
+      "inventory": {
+        "domains": [
+          "incon-ctlvu.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "research.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "ssl_enabled": [
+          "learner.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "research.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "108.157.238.42",
+          "13.204.231.10",
+          "13.234.61.250",
+          "18.155.49.78",
+          "3.108.22.15",
+          "3.6.209.22",
+          "35.154.152.22",
+          "35.154.92.192",
+          "54.230.27.53"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "Low",
+      "score": 50,
+      "rating": "Legacy",
+      "quantum_status": "High Risk",
+      "classical_security": "Strong",
+      "quantum_security": "High Risk",
+      "insights": [
+        "All assets use TLSv1.3 (strong classical security)",
+        "HTTPS is enabled across all assets",
+        "All assets are quantum vulnerable",
+        "CSP missing on 15/15 assets",
+        "HSTS not enabled on 15/15 assets",
+        "Clickjacking protection missing on 14/15 assets",
+        "All assets expose HTTP (port 80), potential downgrade attack risk"
+      ],
+      "assets": [
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "ip": "108.157.238.42"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.155.49.78"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "3.108.22.15"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "54.230.27.53"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "35.154.152.22"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "3.6.209.22"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "learner.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 132,
+            "expiry_date": "2026-08-05"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 189,
+            "expiry_date": "2026-10-01"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T16:52:52.183943",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 16,
+        "https_enabled": 16,
+        "http_only": 0,
+        "quantum_vulnerable": 16,
+        "quantum_safe": 0,
+        "high_risk_assets": 0,
+        "header_issues": 16,
+        "unreachable_assets": 0,
+        "expiring_soon": 0
+      },
+      "counts": {
+        "domains": 16,
+        "ssl": 16,
+        "ips": 8
+      },
+      "inventory": {
+        "domains": [
+          "learner.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "research.vupune.ac.in",
+          "jstir.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "ssl_enabled": [
+          "learner.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "jstir.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "research.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "108.157.238.28",
+          "13.204.231.10",
+          "13.234.61.250",
+          "18.155.49.97",
+          "3.108.22.15",
+          "3.6.209.22",
+          "35.154.92.192",
+          "54.230.27.47"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "Low",
+      "score": 50,
+      "rating": "Legacy",
+      "quantum_status": "High Risk",
+      "classical_security": "Strong",
+      "quantum_security": "High Risk",
+      "insights": [
+        "All assets use TLSv1.3 (strong classical security)",
+        "HTTPS is enabled across all assets",
+        "All assets are quantum vulnerable",
+        "CSP missing on 16/16 assets",
+        "HSTS not enabled on 16/16 assets",
+        "Clickjacking protection missing on 15/16 assets",
+        "All assets expose HTTP (port 80), potential downgrade attack risk"
+      ],
+      "assets": [
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.155.49.97"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "54.230.27.47"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "ip": "108.157.238.28"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "3.108.22.15"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "3.108.22.15"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "jstir.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "3.6.209.22"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "learner.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "jstir.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 132,
+            "expiry_date": "2026-08-05"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 189,
+            "expiry_date": "2026-10-01"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T16:56:55.718046",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 16,
+        "https_enabled": 16,
+        "http_only": 0,
+        "quantum_vulnerable": 16,
+        "quantum_safe": 0,
+        "high_risk_assets": 0,
+        "header_issues": 16,
+        "unreachable_assets": 0,
+        "expiring_soon": 0
+      },
+      "counts": {
+        "domains": 16,
+        "ssl": 16,
+        "ips": 8
+      },
+      "inventory": {
+        "domains": [
+          "onlineadmissionapi.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "jstir.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "research.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "ssl_enabled": [
+          "onlineadmissionapi.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "jstir.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "research.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "108.157.238.42",
+          "13.204.231.10",
+          "13.205.231.9",
+          "13.234.61.250",
+          "18.155.49.43",
+          "3.6.209.22",
+          "35.154.92.192",
+          "54.230.27.53"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "Low",
+      "score": 50,
+      "rating": "Legacy",
+      "quantum_status": "High Risk",
+      "classical_security": "Strong",
+      "quantum_security": "High Risk",
+      "insights": [
+        "All assets use TLSv1.3 (strong classical security)",
+        "HTTPS is enabled across all assets",
+        "All assets are quantum vulnerable",
+        "CSP missing on 16/16 assets",
+        "HSTS not enabled on 16/16 assets",
+        "Clickjacking protection missing on 15/16 assets",
+        "All assets expose HTTP (port 80), potential downgrade attack risk"
+      ],
+      "assets": [
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "13.205.231.9"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "54.230.27.53"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.155.49.43"
+        },
+        {
+          "domain": "jstir.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "ip": "108.157.238.42"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "13.205.231.9"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "3.6.209.22"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "jstir.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 132,
+            "expiry_date": "2026-08-05"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 189,
+            "expiry_date": "2026-10-01"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T17:03:25.202822",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 15,
+        "https_enabled": 15,
+        "http_only": 0,
+        "quantum_vulnerable": 15,
+        "quantum_safe": 0,
+        "high_risk_assets": 0,
+        "header_issues": 15,
+        "unreachable_assets": 0,
+        "expiring_soon": 0
+      },
+      "counts": {
+        "domains": 15,
+        "ssl": 15,
+        "ips": 9
+      },
+      "inventory": {
+        "domains": [
+          "vunet.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "research.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "ssl_enabled": [
+          "vunet.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "research.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "108.157.238.42",
+          "13.204.231.10",
+          "13.234.61.250",
+          "18.155.49.43",
+          "3.108.22.15",
+          "3.109.191.27",
+          "35.154.152.22",
+          "35.154.92.192",
+          "54.230.27.70"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "Low",
+      "score": 50,
+      "rating": "Legacy",
+      "quantum_status": "High Risk",
+      "classical_security": "Strong",
+      "quantum_security": "High Risk",
+      "insights": [
+        "All assets use TLSv1.3 (strong classical security)",
+        "HTTPS is enabled across all assets",
+        "All assets are quantum vulnerable",
+        "CSP missing on 15/15 assets",
+        "HSTS not enabled on 15/15 assets",
+        "Clickjacking protection missing on 14/15 assets",
+        "All assets expose HTTP (port 80), potential downgrade attack risk"
+      ],
+      "assets": [
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "54.230.27.70"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.155.49.43"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "ip": "108.157.238.42"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "35.154.152.22"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "3.108.22.15"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "3.109.191.27"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "vunet.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 132,
+            "expiry_date": "2026-08-05"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 189,
+            "expiry_date": "2026-10-01"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
         }
       ]
     }
