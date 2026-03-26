@@ -1,4 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 
 const navItems = [
   { path: '/', icon: 'dashboard', label: 'Dashboard' },
@@ -10,6 +12,14 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const { logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
+
   return (
     <aside className="fixed inset-y-0 left-0 z-50 flex flex-col py-6 bg-gradient-to-b from-[#81001d] to-[#a51c30] docked left-0 h-full w-64 shadow-2xl shadow-[#1d1b19]/20">
       <div className="px-6 mb-10">
@@ -51,6 +61,13 @@ export default function Sidebar() {
         </NavLink>
         <button className="w-full mt-4 bg-gradient-to-r from-secondary to-secondary-container text-white py-3 px-4 rounded-xl font-bold uppercase text-xs tracking-widest shadow-xl shadow-secondary/20 active:scale-95 transition-all">
           Emergency Lockdown
+        </button>
+        <button 
+          onClick={handleLogout}
+          className="w-full mt-2 bg-zinc-900 border border-zinc-700 hover:bg-zinc-800 text-white py-3 px-4 rounded-xl font-bold uppercase text-xs tracking-widest shadow-xl transition-all flex items-center justify-center gap-2"
+        >
+          <span className="material-symbols-outlined text-sm">logout</span>
+          Logout
         </button>
       </div>
     </aside>

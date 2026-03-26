@@ -8,6 +8,10 @@ import Security from './pages/Security';
 import Analytics from './pages/Analytics';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './context/AuthContext';
 
 export default function App() {
   const [scanData, setScanData] = useState(null);
@@ -37,18 +41,25 @@ export default function App() {
   };
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout onScan={handleScan} />}>
-          <Route index element={<Dashboard scanData={scanData} isLoading={isLoading} error={error} />} />
-          <Route path="assets" element={<Assets scanData={scanData} isLoading={isLoading} error={error} />} />
-          <Route path="monitoring" element={<Monitoring scanData={scanData} isLoading={isLoading} error={error} />} />
-          <Route path="security" element={<Security scanData={scanData} isLoading={isLoading} error={error} />} />
-          <Route path="analytics" element={<Analytics scanData={scanData} isLoading={isLoading} error={error} />} />
-          <Route path="reports" element={<Reports scanData={scanData} isLoading={isLoading} error={error} />} />
-          <Route path="settings" element={<Settings />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          
+          <Route element={<ProtectedRoute />}>
+            <Route path="/" element={<Layout onScan={handleScan} />}>
+              <Route index element={<Dashboard scanData={scanData} isLoading={isLoading} error={error} />} />
+              <Route path="assets" element={<Assets />} />
+              <Route path="monitoring" element={<Monitoring />} />
+              <Route path="security" element={<Security />} />
+              <Route path="analytics" element={<Analytics />} />
+              <Route path="reports" element={<Reports scanData={scanData} isLoading={isLoading} error={error} />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }

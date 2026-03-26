@@ -1,16 +1,32 @@
 # Python
 venv/
+.venv/
 __pycache__/
+**/__pycache__/
 *.pyc
 
 # Environment
 .env
 
+# Database
+*.db
+*.sqlite3
+
+# Executables / Binaries
+*.exe
+
+# Build logs
+build_output.txt
+
+# Frontend build output
+frontend/dist/
+frontend-static/
+
 # OS
 .DS_Store
 Thumbs.db
 
-# Node (if frontend later)
+# Node
 node_modules/
 
 # VS Code

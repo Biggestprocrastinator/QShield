@@ -1,13 +1,16 @@
 import logging
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
-from pathlib import Path
-import os
+
+from backend.app.db import engine, Base
+from backend.app.routers import auth
 from backend.app.services.asset_discovery import discover_assets
 from backend.app.services.cbom_generator import generate_cbom
 from backend.app.services.pqc_risk import assess_pqc_risk
@@ -18,8 +21,11 @@ from backend.app.services.storage import save_scan, get_latest_scans
 from backend.app.services.cert_analysis import get_certificate_expiry
 from backend.app.services.security_headers import check_security_headers
 
+# Initialize DB tables on startup
+Base.metadata.create_all(bind=engine)
 
 logger = logging.getLogger(__name__)
+
 app = FastAPI()
 
 app.add_middleware(
@@ -34,6 +40,8 @@ app.add_middleware(
 static_assets_dir = Path("frontend/dist/assets")
 if static_assets_dir.exists():
     app.mount("/assets", StaticFiles(directory=str(static_assets_dir)), name="assets")
+
+app.include_router(auth.router, prefix="/auth", tags=["auth"])
 
 class ScanRequest(BaseModel):
     domain: str
@@ -315,21 +323,22 @@ def scan_domain(request: ScanRequest):
 
     return response
 
+
 @app.get("/scans")
 def get_scans_history():
     return get_latest_scans()
+
 
 @app.get("/{full_path:path}")
 def serve_spa(full_path: str):
     dist_path = os.path.join("frontend", "dist")
     file_path = os.path.join(dist_path, full_path)
-    
+
     if full_path and os.path.isfile(file_path):
         return FileResponse(file_path)
-    
+
     index_path = os.path.join(dist_path, "index.html")
     if os.path.exists(index_path):
         return FileResponse(index_path)
-        
-    return {"detail": "Frontend not built. Please run 'npm run build' in the frontend directory."}
 
+    return {"detail": "Frontend not built. Please run 'npm run build' in the frontend directory."}
