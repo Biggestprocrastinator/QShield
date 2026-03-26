@@ -42,28 +42,38 @@ def _locate_executable(name: str, fallback: str | None = None) -> List[str]:
 
 
 def _run_subfinder(domain: str) -> Iterable[str]:
-    command = _locate_executable("subfinder", fallback="subfinder.exe") + ["-d", domain, "-silent"]
+    commands = [
+        ["subfinder", "-d", domain, "-silent"],
+        _locate_executable("subfinder", fallback="subfinder.exe") + ["-d", domain, "-silent"],
+    ]
 
-    try:
-        result = subprocess.run(
-            command,
-            capture_output=True,
-            text=True,
-            timeout=25,
-            check=False,
-        )
+    for command in commands:
+        try:
+            result = subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+                timeout=25,
+                check=False,
+            )
 
-        if result.returncode != 0:
-            return []
+            if result.returncode != 0:
+                logger.warning("Subfinder failed: %s", (result.stderr or "").strip())
+                continue
 
-        return [
-            normalize_domain(line)
-            for line in result.stdout.splitlines()
-            if normalize_domain(line)
-        ]
+            output = [
+                normalize_domain(line)
+                for line in result.stdout.splitlines()
+                if normalize_domain(line)
+            ]
+            if output:
+                return output
 
-    except (subprocess.TimeoutExpired, OSError):
-        return []
+        except (subprocess.TimeoutExpired, OSError) as exc:
+            logger.warning("Subfinder error: %s", exc)
+            continue
+
+    return []
 
 
 def _filter_live_domains(domains: List[str]) -> Tuple[List[str], bool]:

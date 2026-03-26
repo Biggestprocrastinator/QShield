@@ -2,6 +2,8 @@ import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from backend.app.services.asset_discovery import discover_assets
 from backend.app.services.cbom_generator import generate_cbom
@@ -14,7 +16,6 @@ from backend.app.services.real_crypto_scan import scan_tls
 logger = logging.getLogger(__name__)
 app = FastAPI()
 
-from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -23,7 +24,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Moved StaticFiles mount to the bottom
+# Serve the dashboard UI without shadowing API routes like /scan
+app.mount("/ui", StaticFiles(directory="frontend", html=True), name="frontend")
 
 class ScanRequest(BaseModel):
     domain: str
@@ -183,9 +185,3 @@ def scan_domain(request: ScanRequest):
 
     return response
 
-from fastapi.staticfiles import StaticFiles
-import os
-
-# Serve the static build of the React app if it exists
-if os.path.exists("frontend/dist"):
-    app.mount("/", StaticFiles(directory="frontend/dist", html=True), name="frontend")
