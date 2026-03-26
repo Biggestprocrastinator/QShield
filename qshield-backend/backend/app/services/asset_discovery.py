@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Iterable, List, Tuple
 
 MAX_ASSETS = 20
+MAX_SUBDOMAINS = 50
 
 logger = logging.getLogger(__name__)
 
@@ -53,7 +54,7 @@ def _run_subfinder(domain: str) -> Iterable[str]:
                 command,
                 capture_output=True,
                 text=True,
-                timeout=25,
+                timeout=60,
                 check=False,
             )
 
@@ -80,11 +81,11 @@ def _filter_live_domains(domains: List[str]) -> Tuple[List[str], bool]:
     if not domains:
         return [], True
 
-    command = _locate_executable("httpx") + ["-silent"]
+    cmd = _locate_executable("httpx") + ["-silent"]
     try:
-        payload = "\n".join(domains) + "\n"
+        payload = "\n".join(domains)
         result = subprocess.run(
-            command,
+            cmd,
             input=payload,
             capture_output=True,
             text=True,
@@ -92,45 +93,49 @@ def _filter_live_domains(domains: List[str]) -> Tuple[List[str], bool]:
             check=False,
         )
 
-        if result.returncode != 0:
-            return domains, False
+        live = result.stdout.splitlines()
+        if not live:
+            live = domains
 
-        live = [
-            normalize_domain(line)
-            for line in result.stdout.splitlines()
-            if normalize_domain(line)
-        ]
-
+        print("HTTPX returned:", len(live))
         return live, True
 
     except (subprocess.TimeoutExpired, OSError):
+        print("HTTPX returned: 0 (fallback)")
         return domains, False
 
 
 def discover_assets(domain: str):
-    raw_domains = [normalize_domain(domain)]
-    raw_domains.extend(_run_subfinder(domain))
+    subdomains = _run_subfinder(domain)
+    subdomains = list(dict.fromkeys(subdomains))  # dedupe while keeping order
+    subdomains = subdomains[:MAX_SUBDOMAINS]
+    print("Subfinder count:", len(subdomains))
+    print("Subdomains limited to:", len(subdomains))
+    if not subdomains:
+        fallback_subdomains = [
+            f"www.{domain}",
+            f"api.{domain}",
+            f"mail.{domain}",
+        ]
+        print("Using fallback subdomains")
+        subdomains.extend(fallback_subdomains)
+    print("Subfinder count:", len(subdomains))
+    all_domains = [
+        normalize_domain(d)
+        for d in [domain] + subdomains
+        if isinstance(d, str) and d.strip()
+    ]
 
-    seen = set()
-    deduped = []
-    for candidate in raw_domains:
-        normalized = normalize_domain(candidate)
-        if not normalized or normalized in seen:
-            continue
-        seen.add(normalized)
-        deduped.append(normalized)
-
-    if not deduped:
+    if not all_domains:
         logger.error("Subfinder returned no domains for %s", domain)
-        deduped = [normalize_domain(domain)]
+        all_domains = [normalize_domain(domain)]
 
-    print("Subfinder domains:", deduped)
-
-    live_domains, httpx_success = _filter_live_domains(deduped)
-    target_domains = (live_domains if httpx_success else deduped)[:MAX_ASSETS]
+    live_domains, httpx_success = _filter_live_domains(all_domains)
+    domains = (live_domains if httpx_success else all_domains)[:MAX_ASSETS]
+    print("Final domains count:", len(domains))
 
     assets = []
-    for candidate in target_domains:
+    for candidate in domains:
         assets.append(
             {
                 "domain": candidate,

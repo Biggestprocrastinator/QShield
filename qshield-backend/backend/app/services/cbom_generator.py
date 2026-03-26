@@ -49,6 +49,7 @@ def generate_cbom(crypto_results):
 
         quantum_vulnerable = not (tls_version == "TLSv1.3" and key_strength == "STRONG")
 
+        certificate = item.get("certificate", {"expiry_days": None, "expiry_date": "Unknown"})
         cbom.append({
             "domain": item.get("domain"),
             "tls_version": tls_version,
@@ -57,6 +58,14 @@ def generate_cbom(crypto_results):
             "key_strength": key_strength,
             "quantum_vulnerable": quantum_vulnerable,
             "ports": item.get("ports", {"80": False, "443": False}),
+            "security_headers": item.get("security_headers", {
+                "hsts": False,
+                "csp": False,
+                "x_frame_options": False,
+                "x_content_type_options": False,
+            }),
+            "certificate": certificate,
+            "certificate_status": item.get("certificate_status", "UNKNOWN"),
         })
 
     return cbom

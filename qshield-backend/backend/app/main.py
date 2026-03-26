@@ -14,6 +14,8 @@ from backend.app.services.rating_engine import calculate_rating
 from backend.app.services.nmap_scan import scan_ports
 from backend.app.services.real_crypto_scan import scan_tls
 from backend.app.services.storage import save_scan, get_latest_scans
+from backend.app.services.cert_analysis import get_certificate_expiry
+from backend.app.services.security_headers import check_security_headers
 
 
 logger = logging.getLogger(__name__)
@@ -34,6 +36,47 @@ class ScanRequest(BaseModel):
     domain: str
 
 
+def map_certificate_ui(status: str) -> dict:
+    return {
+        "OK": {"certificate_severity": "low", "certificate_label": "Valid"},
+        "WARNING": {"certificate_severity": "medium", "certificate_label": "Expiring Soon"},
+        "CRITICAL": {"certificate_severity": "high", "certificate_label": "Critical Expiry"},
+        "NO_TLS": {"certificate_severity": "none", "certificate_label": "No TLS"},
+        "NO_CERT": {"certificate_severity": "none", "certificate_label": "No Certificate"},
+        "UNREACHABLE": {"certificate_severity": "none", "certificate_label": "Unreachable"},
+    }.get(status, {"certificate_severity": "none", "certificate_label": "Unknown"})
+
+
+def map_tls_ui(strength: str, version: str) -> dict:
+    if version == "Not Supported":
+        return {"tls_label": "No TLS", "tls_severity": "high"}
+
+    normalized = (strength or "").upper()
+    if normalized == "STRONG":
+        return {"tls_label": "Secure", "tls_severity": "low"}
+    if normalized == "MODERATE":
+        return {"tls_label": "Moderate", "tls_severity": "medium"}
+    if normalized == "WEAK":
+        return {"tls_label": "Weak", "tls_severity": "high"}
+    return {"tls_label": "Moderate", "tls_severity": "medium"}
+
+
+def map_quantum_ui(vulnerable: bool) -> dict:
+    if vulnerable:
+        return {"quantum_label": "Vulnerable", "quantum_severity": "high"}
+    return {"quantum_label": "Safe", "quantum_severity": "low"}
+
+
+def map_header_ui(entry: dict) -> dict:
+    headers = entry.get("security_headers", {})
+    missing = sum(1 for value in headers.values() if not value)
+    if missing == 0:
+        return {"headers_label": "Secure", "headers_severity": "low"}
+    if missing <= 2:
+        return {"headers_label": "Partial", "headers_severity": "medium"}
+    return {"headers_label": "Insecure", "headers_severity": "high"}
+
+
 def run_crypto_scans(assets: list[dict]) -> list[dict]:
     results = []
 
@@ -44,21 +87,37 @@ def run_crypto_scans(assets: list[dict]) -> list[dict]:
         print(f"Scanning {domain}...")
         port_info = scan_ports(domain)
         ports = port_info["ports"]
+        security_headers = check_security_headers(domain)
+        has_tls = bool(ports.get("443"))
+        cert_info = get_certificate_expiry(domain, port_443_open=has_tls)
+        cert_status = cert_info.get("certificate_status", "UNREACHABLE")
 
-        if not ports.get("443"):
+        if not has_tls:
             return {
                 "domain": domain,
                 "ip": asset.get("ip"),
                 "ports": ports,
+                "security_headers": security_headers,
                 "tls_version": "Not Supported",
                 "cipher": "None",
                 "certificate_algo": None,
                 "key_size": None,
+            "certificate": {
+                "expiry_days": cert_info.get("expiry_days"),
+                "expiry_date": cert_info.get("expiry_date"),
+            },
+                "certificate_status": cert_status,
             }
 
         tls_result = scan_tls(domain)
         tls_result["ports"] = ports
         tls_result["ip"] = asset.get("ip")
+        tls_result["security_headers"] = security_headers
+        tls_result["certificate"] = {
+            "expiry_days": cert_info.get("expiry_days"),
+            "expiry_date": cert_info.get("expiry_date"),
+        }
+        tls_result["certificate_status"] = cert_status
         return tls_result
 
     with ThreadPoolExecutor(max_workers=5) as executor:
@@ -96,6 +155,12 @@ def scan_domain(request: ScanRequest):
 
     cbom = generate_cbom(crypto_results)
     cbom, risk = assess_pqc_risk(cbom)
+
+    for entry in cbom:
+        entry.update(map_certificate_ui(entry.get("certificate_status", "UNREACHABLE")))
+        entry.update(map_tls_ui(entry.get("key_strength"), entry.get("tls_version")))
+        entry.update(map_quantum_ui(entry.get("quantum_vulnerable")))
+        entry.update(map_header_ui(entry))
     rating_data = calculate_rating(cbom)
 
     summary = {
@@ -109,6 +174,21 @@ def scan_domain(request: ScanRequest):
         "quantum_vulnerable": sum(1 for entry in cbom if entry.get("quantum_vulnerable") is True),
         "quantum_safe": sum(1 for entry in cbom if entry.get("quantum_vulnerable") is False),
         "high_risk_assets": sum(1 for entry in cbom if entry.get("risk_level") == "High"),
+        "header_issues": sum(
+            1
+            for entry in cbom
+            if not all(entry.get("security_headers", {}).values())
+        ),
+        "unreachable_assets": sum(
+            1
+            for entry in cbom
+            if entry.get("certificate_status") == "UNREACHABLE"
+        ),
+        "expiring_soon": sum(
+            1
+            for entry in cbom
+            if 0 <= (entry.get("certificate", {}).get("expiry_days") or -1) < 30
+            ),
     }
 
     inventory_domains = [asset["domain"] for asset in assets if asset.get("domain")]
@@ -156,6 +236,48 @@ def scan_domain(request: ScanRequest):
             insights.append("Some assets remain quantum vulnerable")
         else:
             insights.append("No quantum-vulnerable assets detected")
+
+        security_headers = [entry.get("security_headers", {}) for entry in cbom]
+        total = len(security_headers)
+        missing_csp = sum(1 for headers in security_headers if not headers.get("csp"))
+        missing_hsts = sum(1 for headers in security_headers if not headers.get("hsts"))
+        missing_frame = sum(1 for headers in security_headers if not headers.get("x_frame_options"))
+
+        if missing_csp:
+            insights.append(f"CSP missing on {missing_csp}/{total} assets")
+        if missing_hsts:
+            insights.append(f"HSTS not enabled on {missing_hsts}/{total} assets")
+        if missing_frame:
+            insights.append(f"Clickjacking protection missing on {missing_frame}/{total} assets")
+
+        if all(entry.get("ports", {}).get("80") for entry in cbom):
+            insights.append("All assets expose HTTP (port 80), potential downgrade attack risk")
+
+        critical_certs = sum(
+            1
+            for entry in cbom
+            if 0 <= (entry.get("certificate", {}).get("expiry_days") or -1) < 15
+        )
+        expiring_soon = summary["expiring_soon"]
+        if expiring_soon:
+            insights.append(f"{expiring_soon} certificates expiring within 30 days")
+        if critical_certs:
+            insights.append(f"{critical_certs} certificates critically close to expiry")
+
+        tls_missing = sum(
+            1
+            for entry in cbom
+            if entry.get("certificate_status") == "NO_TLS"
+        )
+        misconfigured = sum(
+            1
+            for entry in cbom
+            if entry.get("certificate_status") in {"UNREACHABLE", "NO_CERT"}
+        )
+        if tls_missing:
+            insights.append(f"{tls_missing} assets do not support TLS")
+        if misconfigured:
+            insights.append(f"{misconfigured} assets unreachable or TLS handshake failed")
 
     counts = {
         "domains": len(inventory_domains),
