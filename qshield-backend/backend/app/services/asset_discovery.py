@@ -4,6 +4,12 @@ import subprocess
 from pathlib import Path
 from typing import Iterable, List, Tuple
 
+try:
+    import dns
+    import dns.resolver
+except ImportError:  # pragma: no cover
+    dns = None
+
 MAX_ASSETS = 20
 MAX_SUBDOMAINS = 50
 
@@ -14,7 +20,17 @@ def _resolve_ip(domain: str):
     try:
         return socket.gethostbyname(domain)
     except Exception:
-        return None
+        if dns is None:
+            return None
+        try:
+            answers = dns.resolver.resolve(domain, "A")
+            for answer in answers:
+                ip_value = str(answer)
+                if ip_value:
+                    return ip_value
+        except Exception:
+            return None
+    return None
 
 
 def clean_domain(url: str) -> str:
@@ -95,17 +111,15 @@ def _filter_live_domains(domains: List[str]) -> Tuple[List[str], bool]:
         )
 
         live = result.stdout.splitlines()
-        if not live:
-            live = domains
-
         live = [clean_domain(line) for line in live if clean_domain(line)]
+        live = list(dict.fromkeys(live))
 
         print("HTTPX returned:", len(live))
         return live, True
 
     except (subprocess.TimeoutExpired, OSError):
         print("HTTPX returned: 0 (fallback)")
-        return domains, False
+        return [], False
 
 
 def discover_assets(domain: str):
@@ -123,29 +137,32 @@ def discover_assets(domain: str):
         print("Using fallback subdomains")
         subdomains.extend(fallback_subdomains)
     print("Subfinder count:", len(subdomains))
-    all_domains = [
-        clean_domain(d)
-        for d in [domain] + subdomains
-        if isinstance(d, str) and d.strip()
-    ]
-
-    if not all_domains:
+    domain_clean = clean_domain(domain)
+    subdomains = [clean_domain(d) for d in subdomains if clean_domain(d)]
+    if domain_clean and domain_clean not in subdomains:
+        subdomains.insert(0, domain_clean)
+    if not subdomains:
         logger.error("Subfinder returned no domains for %s", domain)
-        all_domains = [clean_domain(domain)]
-
-    live_domains, httpx_success = _filter_live_domains(all_domains)
-    domains = (live_domains if httpx_success else all_domains)[:MAX_ASSETS]
-    domains = [clean_domain(d) for d in domains if clean_domain(d)]
-    print("Final domains count:", len(domains))
-
+        subdomains = [domain_clean] if domain_clean else []
+    print("Subfinder returned:", len(subdomains))
+    live_domains, httpx_success = _filter_live_domains(subdomains)
     assets = []
-    for candidate in domains:
+    for candidate in subdomains:
         cleaned_candidate = clean_domain(candidate)
+        ip_address = _resolve_ip(cleaned_candidate)
+        print(f"{cleaned_candidate} → {ip_address}")
         assets.append(
             {
                 "domain": cleaned_candidate,
-                "ip": _resolve_ip(cleaned_candidate),
+                "ip": ip_address,
+                "is_live": cleaned_candidate in live_domains,
             }
         )
+    print("Live domains:", len(live_domains))
+
+    if not assets:
+        logger.error("Subfinder returned no domains for %s", domain)
+    assets = assets[:MAX_ASSETS]
+    print("Final assets:", len(assets))
 
     return assets

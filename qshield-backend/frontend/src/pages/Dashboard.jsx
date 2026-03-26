@@ -4,8 +4,10 @@ import LiveActivity from '../components/LiveActivity';
 import Recommendations from '../components/Recommendations';
 import { CertificateExpiryCard, IpVersionCard } from '../components/AnalyticsWidgets';
 import TopAssets from '../components/TopAssets';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard({ scanData, isLoading, error }) {
+  const navigate = useNavigate();
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh]">
@@ -52,12 +54,20 @@ export default function Dashboard({ scanData, isLoading, error }) {
 
   const kpiCards = [
     { title: 'Total Assets', value: totalAssets, className: 'bg-blue-500 text-white' },
-    { title: 'High Risk Assets', value: highRisk, className: 'bg-gradient-to-r from-red-500 to-red-700 text-white' },
-    { title: 'Expiring Soon', value: expiringSoon, className: 'bg-amber-500 text-white' },
-    { title: 'Web Apps', value: webApps, className: 'bg-indigo-500 text-white' },
-    { title: 'APIs', value: apis, className: 'bg-cyan-500 text-white' },
-    { title: 'Servers', value: servers, className: 'bg-slate-500 text-white' }
+    { title: 'High Risk Assets', value: highRisk, className: 'bg-gradient-to-r from-red-500 to-red-700 text-white', filter: 'high' },
+    { title: 'Expiring Soon', value: expiringSoon, className: 'bg-amber-500 text-white', filter: 'expiring' },
+    { title: 'Web Apps', value: webApps, className: 'bg-indigo-500 text-white', filter: 'web' },
+    { title: 'APIs', value: apis, className: 'bg-cyan-500 text-white', filter: 'api' },
+    { title: 'Servers', value: servers, className: 'bg-slate-500 text-white', filter: 'server' }
   ];
+
+  const handleCardClick = (filter) => {
+    if (filter) {
+      navigate('/assets', { state: { filter } });
+      return;
+    }
+    navigate('/assets');
+  };
 
   return (
     <div className="grid grid-cols-12 gap-4 auto-rows-min">
@@ -116,7 +126,16 @@ export default function Dashboard({ scanData, isLoading, error }) {
           {kpiCards.map((card) => (
             <div
               key={card.title}
-              className={`rounded-2xl w-full min-w-0 p-3 flex flex-col justify-between gap-1 shadow-xl overflow-hidden truncate ${card.className}`}
+              role="button"
+              tabIndex={0}
+              onClick={() => handleCardClick(card.filter)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  handleCardClick(card.filter);
+                }
+              }}
+              className={`rounded-2xl w-full min-w-0 p-3 flex flex-col justify-between gap-1 overflow-hidden truncate ${card.className} shadow-lg shadow-black/25 cursor-pointer transition-transform duration-200 ease-out transform hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary`}
             >
               <span className="text-xs uppercase tracking-[0.4em] opacity-80 truncate leading-tight">{card.title}</span>
               <div className="text-2xl font-bold leading-tight">{card.value}</div>

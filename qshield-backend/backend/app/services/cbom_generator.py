@@ -52,6 +52,7 @@ def generate_cbom(crypto_results):
         certificate = item.get("certificate", {"expiry_days": None, "expiry_date": "Unknown"})
         cbom.append({
             "domain": item.get("domain"),
+            "ip": item.get("ip"),
             "tls_version": tls_version,
             "cipher": cipher,
             "algorithm_type": algorithm_type,
@@ -66,6 +67,9 @@ def generate_cbom(crypto_results):
             }),
             "certificate": certificate,
             "certificate_status": item.get("certificate_status", "UNKNOWN"),
+            "services": item.get("services", []),
+            "outdated_services": bool(item.get("outdated_services")),
+            "type": (item.get("type") or "server"),
         })
 
     return cbom

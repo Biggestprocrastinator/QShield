@@ -29,6 +29,8 @@ def assess_pqc_risk(cbom):
             else:
                 risk_level = "Medium"
 
+        if item.get("outdated_services"):
+            risk_level = "High"
         item["quantum_vulnerable"] = quantum_vulnerable
         item["risk_level"] = risk_level
 

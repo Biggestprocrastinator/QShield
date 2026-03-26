@@ -6229,5 +6229,6192 @@
         }
       ]
     }
+  },
+  {
+    "timestamp": "2026-03-26T18:20:41.998707",
+    "domain": "pnb.bank.in",
+    "payload": {
+      "summary": {
+        "total_assets": 20,
+        "https_enabled": 20,
+        "http_only": 0,
+        "quantum_vulnerable": 17,
+        "quantum_safe": 2,
+        "high_risk_assets": 6,
+        "header_issues": 9,
+        "unreachable_assets": 3,
+        "expiring_soon": 0
+      },
+      "counts": {
+        "domains": 20,
+        "ssl": 20,
+        "ips": 19
+      },
+      "inventory": {
+        "domains": [
+          "digimsme.pnb.bank.in",
+          "weblens.pnb.bank.in",
+          "upi.pnb.bank.in",
+          "aafip.pnb.bank.in",
+          "apitrk.pnb.bank.in",
+          "edge.pnb.bank.in",
+          "drm.pnb.bank.in",
+          "giftcorpbanking.pnb.bank.in",
+          "puducherrydatapi.pnb.bank.in",
+          "eots.pnb.bank.in",
+          "digitalbanking.pnb.bank.in",
+          "kc.pnb.bank.in",
+          "apptrk.pnb.bank.in",
+          "mypnb.pnb.bank.in",
+          "atmmonitoring.pnb.bank.in",
+          "tnretmbs.pnb.bank.in",
+          "tncorpmbs.pnb.bank.in",
+          "hrms.pnb.bank.in",
+          "corpmbs.pnb.bank.in",
+          "mcaapi.pnb.bank.in"
+        ],
+        "ssl_enabled": [
+          "digimsme.pnb.bank.in",
+          "aafip.pnb.bank.in",
+          "upi.pnb.bank.in",
+          "weblens.pnb.bank.in",
+          "apitrk.pnb.bank.in",
+          "edge.pnb.bank.in",
+          "drm.pnb.bank.in",
+          "puducherrydatapi.pnb.bank.in",
+          "eots.pnb.bank.in",
+          "giftcorpbanking.pnb.bank.in",
+          "kc.pnb.bank.in",
+          "digitalbanking.pnb.bank.in",
+          "mypnb.pnb.bank.in",
+          "apptrk.pnb.bank.in",
+          "atmmonitoring.pnb.bank.in",
+          "tnretmbs.pnb.bank.in",
+          "tncorpmbs.pnb.bank.in",
+          "hrms.pnb.bank.in",
+          "corpmbs.pnb.bank.in",
+          "mcaapi.pnb.bank.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "1.7.178.30",
+          "103.109.224.126",
+          "103.109.224.129",
+          "103.109.224.154",
+          "103.109.224.159",
+          "103.109.224.193",
+          "103.109.224.246",
+          "103.109.224.254",
+          "103.109.224.75",
+          "103.109.224.97",
+          "103.109.225.186",
+          "103.109.225.21",
+          "103.109.225.215",
+          "103.109.225.53",
+          "103.109.225.57",
+          "103.109.225.91",
+          "103.109.225.99",
+          "103.109.227.36",
+          "103.122.156.66"
+        ],
+        "ports": [
+          443
+        ]
+      },
+      "risk": "High",
+      "score": 42,
+      "rating": "Critical",
+      "quantum_status": "High Risk",
+      "classical_security": "Moderate",
+      "quantum_security": "High Risk",
+      "insights": [
+        "All assets meet TLS 1.2+ requirements",
+        "HTTPS is enabled across all assets",
+        "Some assets remain quantum vulnerable",
+        "CSP missing on 9/20 assets",
+        "HSTS not enabled on 1/20 assets",
+        "Clickjacking protection missing on 6/20 assets",
+        "3 assets unreachable or TLS handshake failed"
+      ],
+      "assets": [
+        {
+          "domain": "digimsme.pnb.bank.in",
+          "ip": "103.109.224.246"
+        },
+        {
+          "domain": "weblens.pnb.bank.in",
+          "ip": "103.109.225.53"
+        },
+        {
+          "domain": "upi.pnb.bank.in",
+          "ip": "103.109.224.129"
+        },
+        {
+          "domain": "aafip.pnb.bank.in",
+          "ip": "103.109.224.159"
+        },
+        {
+          "domain": "apitrk.pnb.bank.in",
+          "ip": "1.7.178.30"
+        },
+        {
+          "domain": "edge.pnb.bank.in",
+          "ip": "103.122.156.66"
+        },
+        {
+          "domain": "drm.pnb.bank.in",
+          "ip": "103.109.224.97"
+        },
+        {
+          "domain": "giftcorpbanking.pnb.bank.in",
+          "ip": "103.109.224.254"
+        },
+        {
+          "domain": "puducherrydatapi.pnb.bank.in",
+          "ip": "103.109.225.99"
+        },
+        {
+          "domain": "eots.pnb.bank.in",
+          "ip": "103.109.224.126"
+        },
+        {
+          "domain": "digitalbanking.pnb.bank.in",
+          "ip": "103.109.225.57"
+        },
+        {
+          "domain": "kc.pnb.bank.in",
+          "ip": "103.109.224.154"
+        },
+        {
+          "domain": "apptrk.pnb.bank.in",
+          "ip": "1.7.178.30"
+        },
+        {
+          "domain": "mypnb.pnb.bank.in",
+          "ip": "103.109.225.21"
+        },
+        {
+          "domain": "atmmonitoring.pnb.bank.in",
+          "ip": "103.109.225.215"
+        },
+        {
+          "domain": "tnretmbs.pnb.bank.in",
+          "ip": "103.109.225.91"
+        },
+        {
+          "domain": "tncorpmbs.pnb.bank.in",
+          "ip": "103.109.224.75"
+        },
+        {
+          "domain": "hrms.pnb.bank.in",
+          "ip": "103.109.225.186"
+        },
+        {
+          "domain": "corpmbs.pnb.bank.in",
+          "ip": "103.109.224.193"
+        },
+        {
+          "domain": "mcaapi.pnb.bank.in",
+          "ip": "103.109.227.36"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "digimsme.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 139,
+            "expiry_date": "2026-08-12"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "aafip.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 159,
+            "expiry_date": "2026-09-01"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "upi.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 139,
+            "expiry_date": "2026-08-12"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "weblens.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 120,
+            "expiry_date": "2026-07-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "apitrk.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 214,
+            "expiry_date": "2026-10-27"
+          },
+          "certificate_status": "OK",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "edge.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 154,
+            "expiry_date": "2026-08-27"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "drm.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "UNREACHABLE",
+          "risk_level": "Low",
+          "certificate_severity": "none",
+          "certificate_label": "Unreachable",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "puducherrydatapi.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 227,
+            "expiry_date": "2026-11-09"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "eots.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "UNREACHABLE",
+          "risk_level": "Low",
+          "certificate_severity": "none",
+          "certificate_label": "Unreachable",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "giftcorpbanking.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 214,
+            "expiry_date": "2026-10-27"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "kc.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 166,
+            "expiry_date": "2026-09-08"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "digitalbanking.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 137,
+            "expiry_date": "2026-08-10"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "mypnb.pnb.bank.in",
+          "tls_version": "Unknown",
+          "cipher": "Unknown",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": null,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 118,
+            "expiry_date": "2026-07-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Moderate",
+          "tls_severity": "medium",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "apptrk.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 168,
+            "expiry_date": "2026-09-10"
+          },
+          "certificate_status": "OK",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "atmmonitoring.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 152,
+            "expiry_date": "2026-08-25"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "tnretmbs.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 125,
+            "expiry_date": "2026-07-29"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "tncorpmbs.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 125,
+            "expiry_date": "2026-07-29"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "hrms.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 152,
+            "expiry_date": "2026-08-25"
+          },
+          "certificate_status": "OK",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "corpmbs.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-CHACHA20-POLY1305",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 145,
+            "expiry_date": "2026-08-18"
+          },
+          "certificate_status": "OK",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "mcaapi.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "UNREACHABLE",
+          "risk_level": "High",
+          "certificate_severity": "none",
+          "certificate_label": "Unreachable",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T19:34:49.554632",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 15,
+        "https_enabled": 15,
+        "http_only": 0,
+        "quantum_vulnerable": 15,
+        "quantum_safe": 0,
+        "high_risk_assets": 0,
+        "header_issues": 15,
+        "unreachable_assets": 0,
+        "expiring_soon": 0
+      },
+      "counts": {
+        "domains": 15,
+        "ssl": 15,
+        "ips": 9
+      },
+      "inventory": {
+        "domains": [
+          "incon-ctlvu.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "research.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "ssl_enabled": [
+          "vulj.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "research.vupune.ac.in",
+          "vuerp.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "108.159.80.41",
+          "13.204.231.10",
+          "13.205.231.9",
+          "13.234.61.250",
+          "18.155.49.43",
+          "18.239.111.43",
+          "3.108.22.15",
+          "3.6.209.22",
+          "35.154.92.192"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "Low",
+      "score": 50,
+      "rating": "Legacy",
+      "quantum_status": "High Risk",
+      "classical_security": "Strong",
+      "quantum_security": "High Risk",
+      "insights": [
+        "All assets use TLSv1.3 (strong classical security)",
+        "HTTPS is enabled across all assets",
+        "All assets are quantum vulnerable",
+        "CSP missing on 15/15 assets",
+        "HSTS not enabled on 15/15 assets",
+        "Clickjacking protection missing on 14/15 assets",
+        "All assets expose HTTP (port 80), potential downgrade attack risk"
+      ],
+      "assets": [
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "3.108.22.15"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "108.159.80.41"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.155.49.43"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "13.204.231.10"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "35.154.92.192"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "ip": "18.239.111.43"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "13.205.231.9"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "13.234.61.250"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "3.6.209.22"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "vulj.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vuerp.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 132,
+            "expiry_date": "2026-08-05"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 189,
+            "expiry_date": "2026-10-01"
+          },
+          "certificate_status": "OK",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T20:05:24.388226",
+    "domain": "pnb.bank.in",
+    "payload": {
+      "summary": {
+        "total_assets": 20,
+        "https_enabled": 18,
+        "http_only": 0,
+        "quantum_vulnerable": 13,
+        "quantum_safe": 4,
+        "high_risk_assets": 5,
+        "header_issues": 11,
+        "unreachable_assets": 1,
+        "expiring_soon": 0,
+        "outdated_services": 0
+      },
+      "counts": {
+        "domains": 20,
+        "ssl": 18,
+        "ips": 18
+      },
+      "inventory": {
+        "domains": [
+          "rewardz.pnb.bank.in",
+          "egstxp.pnb.bank.in",
+          "p22cucm1-expwaye1.pnb.bank.in",
+          "apps.pnb.bank.in",
+          "edge.pnb.bank.in",
+          "images.pnb.bank.in",
+          "dsj.pnb.bank.in",
+          "pnbapps.pnb.bank.in",
+          "mypnb.pnb.bank.in",
+          "pnbinsightx.pnb.bank.in",
+          "aafiu.pnb.bank.in",
+          "applications.pnb.bank.in",
+          "digikccreview.pnb.bank.in",
+          "pnbvkyc.pnb.bank.in",
+          "aafip.pnb.bank.in",
+          "bbps.pnb.bank.in",
+          "mvc.pnb.bank.in",
+          "instaloans.pnb.bank.in",
+          "mvcapi.pnb.bank.in",
+          "feepayment.pnb.bank.in"
+        ],
+        "ssl_enabled": [
+          "p22cucm1-expwaye1.pnb.bank.in",
+          "rewardz.pnb.bank.in",
+          "edge.pnb.bank.in",
+          "egstxp.pnb.bank.in",
+          "apps.pnb.bank.in",
+          "images.pnb.bank.in",
+          "pnbapps.pnb.bank.in",
+          "dsj.pnb.bank.in",
+          "pnbvkyc.pnb.bank.in",
+          "aafiu.pnb.bank.in",
+          "mvc.pnb.bank.in",
+          "digikccreview.pnb.bank.in",
+          "aafip.pnb.bank.in",
+          "applications.pnb.bank.in",
+          "bbps.pnb.bank.in",
+          "mvcapi.pnb.bank.in",
+          "feepayment.pnb.bank.in",
+          "instaloans.pnb.bank.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "1.7.178.31",
+          "103.109.224.100",
+          "103.109.224.126",
+          "103.109.224.158",
+          "103.109.224.159",
+          "103.109.224.172",
+          "103.109.224.237",
+          "103.109.224.246",
+          "103.109.225.188",
+          "103.109.225.200",
+          "103.109.225.21",
+          "103.109.225.236",
+          "103.109.225.67",
+          "103.122.156.66",
+          "103.122.156.69",
+          "103.26.98.137",
+          "202.65.143.115",
+          "4.187.129.133"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "High",
+      "score": 40,
+      "rating": "Critical",
+      "quantum_status": "Vulnerable",
+      "classical_security": "Moderate",
+      "quantum_security": "Vulnerable",
+      "insights": [
+        "All assets meet TLS 1.2+ requirements",
+        "Some assets remain quantum vulnerable",
+        "CSP missing on 10/20 assets",
+        "HSTS not enabled on 2/20 assets",
+        "Clickjacking protection missing on 7/20 assets",
+        "2 assets do not support TLS",
+        "1 assets unreachable or TLS handshake failed"
+      ],
+      "assets": [
+        {
+          "domain": "rewardz.pnb.bank.in",
+          "ip": "202.65.143.115",
+          "type": "web"
+        },
+        {
+          "domain": "egstxp.pnb.bank.in",
+          "ip": "103.109.224.246",
+          "type": "web"
+        },
+        {
+          "domain": "p22cucm1-expwaye1.pnb.bank.in",
+          "ip": "103.122.156.69",
+          "type": "web"
+        },
+        {
+          "domain": "apps.pnb.bank.in",
+          "ip": "103.109.224.126",
+          "type": "web"
+        },
+        {
+          "domain": "edge.pnb.bank.in",
+          "ip": "103.122.156.66",
+          "type": "web"
+        },
+        {
+          "domain": "images.pnb.bank.in",
+          "ip": "1.7.178.31",
+          "type": "web"
+        },
+        {
+          "domain": "dsj.pnb.bank.in",
+          "ip": "103.109.224.100",
+          "type": "web"
+        },
+        {
+          "domain": "pnbapps.pnb.bank.in",
+          "ip": "103.109.225.236",
+          "type": "web"
+        },
+        {
+          "domain": "mypnb.pnb.bank.in",
+          "ip": "103.109.225.21",
+          "type": "server"
+        },
+        {
+          "domain": "pnbinsightx.pnb.bank.in",
+          "ip": "103.109.224.172",
+          "type": "server"
+        },
+        {
+          "domain": "aafiu.pnb.bank.in",
+          "ip": "103.109.225.188",
+          "type": "web"
+        },
+        {
+          "domain": "applications.pnb.bank.in",
+          "ip": "103.109.225.21",
+          "type": "web"
+        },
+        {
+          "domain": "digikccreview.pnb.bank.in",
+          "ip": "103.109.224.237",
+          "type": "web"
+        },
+        {
+          "domain": "pnbvkyc.pnb.bank.in",
+          "ip": "4.187.129.133",
+          "type": "web"
+        },
+        {
+          "domain": "aafip.pnb.bank.in",
+          "ip": "103.109.224.159",
+          "type": "web"
+        },
+        {
+          "domain": "bbps.pnb.bank.in",
+          "ip": "103.26.98.137",
+          "type": "web"
+        },
+        {
+          "domain": "mvc.pnb.bank.in",
+          "ip": "103.109.225.200",
+          "type": "web"
+        },
+        {
+          "domain": "instaloans.pnb.bank.in",
+          "ip": "103.109.224.158",
+          "type": "web"
+        },
+        {
+          "domain": "mvcapi.pnb.bank.in",
+          "ip": "103.109.225.200",
+          "type": "web"
+        },
+        {
+          "domain": "feepayment.pnb.bank.in",
+          "ip": "103.109.225.67",
+          "type": "web"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "p22cucm1-expwaye1.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 154,
+            "expiry_date": "2026-08-27"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 443,
+              "service": "http",
+              "product": "Cisco Expressway E",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "rewardz.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 214,
+            "expiry_date": "2026-10-27"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "edge.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 154,
+            "expiry_date": "2026-08-27"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "egstxp.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 139,
+            "expiry_date": "2026-08-12"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "apps.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 118,
+            "expiry_date": "2026-07-22"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "images.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 168,
+            "expiry_date": "2026-09-10"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "mypnb.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "pnbapps.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 117,
+            "expiry_date": "2026-07-21"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "pnbinsightx.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "dsj.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "UNREACHABLE",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "none",
+          "certificate_label": "Unreachable",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "pnbvkyc.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_AES_256_GCM_SHA384",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 153,
+            "expiry_date": "2026-08-26"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Microsoft Azure Application Gateway",
+              "version": "v2",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "Microsoft Azure Application Gateway",
+              "version": "v2",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "aafiu.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 159,
+            "expiry_date": "2026-09-01"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "mvc.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 227,
+            "expiry_date": "2026-11-09"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "digikccreview.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 167,
+            "expiry_date": "2026-09-09"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "aafip.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 159,
+            "expiry_date": "2026-09-01"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "applications.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 118,
+            "expiry_date": "2026-07-22"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "bbps.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 215,
+            "expiry_date": "2026-10-28"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "mvcapi.pnb.bank.in",
+          "tls_version": "Unknown",
+          "cipher": "Unknown",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": null,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 227,
+            "expiry_date": "2026-11-09"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 443,
+              "service": "tcpwrapped",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Moderate",
+          "tls_severity": "medium",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "feepayment.pnb.bank.in",
+          "tls_version": "Unknown",
+          "cipher": "Unknown",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": null,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 118,
+            "expiry_date": "2026-07-22"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 443,
+              "service": "tcpwrapped",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Moderate",
+          "tls_severity": "medium",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "instaloans.pnb.bank.in",
+          "tls_version": "Unknown",
+          "cipher": "Unknown",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": null,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 139,
+            "expiry_date": "2026-08-12"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Moderate",
+          "tls_severity": "medium",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T20:12:59.616721",
+    "domain": "pnb.bank.in",
+    "payload": {
+      "summary": {
+        "total_assets": 1,
+        "https_enabled": 1,
+        "http_only": 0,
+        "quantum_vulnerable": 1,
+        "quantum_safe": 0,
+        "high_risk_assets": 0,
+        "header_issues": 0,
+        "unreachable_assets": 0,
+        "expiring_soon": 0,
+        "outdated_services": 0
+      },
+      "counts": {
+        "domains": 1,
+        "ssl": 1,
+        "ips": 1
+      },
+      "inventory": {
+        "domains": [
+          "tnretmbs.pnb.bank.in"
+        ],
+        "ssl_enabled": [
+          "tnretmbs.pnb.bank.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "103.109.224.91"
+        ],
+        "ports": [
+          443
+        ]
+      },
+      "risk": "Low",
+      "score": 50,
+      "rating": "Legacy",
+      "quantum_status": "High Risk",
+      "classical_security": "Strong",
+      "quantum_security": "High Risk",
+      "insights": [
+        "All assets use TLSv1.3 (strong classical security)",
+        "HTTPS is enabled across all assets",
+        "All assets are quantum vulnerable"
+      ],
+      "assets": [
+        {
+          "domain": "tnretmbs.pnb.bank.in",
+          "ip": "103.109.224.91",
+          "services": [],
+          "type": "web"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "tnretmbs.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 125,
+            "expiry_date": "2026-07-29"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T20:21:05.508919",
+    "domain": "pnb.bank.in",
+    "payload": {
+      "summary": {
+        "total_assets": 20,
+        "https_enabled": 10,
+        "http_only": 0,
+        "quantum_vulnerable": 8,
+        "quantum_safe": 12,
+        "high_risk_assets": 5,
+        "header_issues": 9,
+        "unreachable_assets": 0,
+        "expiring_soon": 0,
+        "outdated_services": 0
+      },
+      "counts": {
+        "domains": 20,
+        "ssl": 10,
+        "ips": 16
+      },
+      "inventory": {
+        "domains": [
+          "swiftcimplrdr.pnb.bank.in",
+          "tab.pnb.bank.in",
+          "digikccreview.pnb.bank.in",
+          "feepayment.pnb.bank.in",
+          "hrms.pnb.bank.in",
+          "kyc360.pnb.bank.in",
+          "pfmsrrb.pnb.bank.in",
+          "pnb-kibana-prd.pnb.bank.in",
+          "pnb-prd-dwp.pnb.bank.in",
+          "slbcbengal.pnb.bank.in",
+          "apitrk.pnb.bank.in",
+          "drms.pnb.bank.in",
+          "harbor.pnb.bank.in",
+          "smbmbs.pnb.bank.in",
+          "stpcreditcard.pnb.bank.in",
+          "ibanking.pnb.bank.in",
+          "icorpplus.pnb.bank.in",
+          "tractorexpress.pnb.bank.in",
+          "webapi.pnb.bank.in",
+          "pnb.bank.in"
+        ],
+        "ssl_enabled": [
+          "kyc360.pnb.bank.in",
+          "tab.pnb.bank.in",
+          "hrms.pnb.bank.in",
+          "feepayment.pnb.bank.in",
+          "digikccreview.pnb.bank.in",
+          "slbcbengal.pnb.bank.in",
+          "apitrk.pnb.bank.in",
+          "ibanking.pnb.bank.in",
+          "tractorexpress.pnb.bank.in",
+          "pnb.bank.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "1.7.178.30",
+          "1.7.88.227",
+          "103.109.224.112",
+          "103.109.224.186",
+          "103.109.224.220",
+          "103.109.224.236",
+          "103.109.224.237",
+          "103.109.224.65",
+          "103.109.224.8",
+          "103.109.224.90",
+          "103.109.225.113",
+          "103.109.225.14",
+          "103.109.225.67",
+          "103.109.227.175",
+          "49.50.72.207",
+          "49.50.90.144"
+        ],
+        "ports": [
+          443
+        ]
+      },
+      "risk": "High",
+      "score": 30,
+      "rating": "Critical",
+      "quantum_status": "Vulnerable",
+      "classical_security": "Moderate",
+      "quantum_security": "Vulnerable",
+      "insights": [
+        "All assets meet TLS 1.2+ requirements",
+        "Some assets remain quantum vulnerable",
+        "CSP missing on 9/20 assets",
+        "HSTS not enabled on 7/20 assets",
+        "Clickjacking protection missing on 9/20 assets",
+        "10 assets do not support TLS"
+      ],
+      "assets": [
+        {
+          "domain": "swiftcimplrdr.pnb.bank.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "tab.pnb.bank.in",
+          "ip": "103.109.225.113",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        },
+        {
+          "domain": "digikccreview.pnb.bank.in",
+          "ip": "103.109.224.237",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        },
+        {
+          "domain": "feepayment.pnb.bank.in",
+          "ip": "103.109.225.67",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        },
+        {
+          "domain": "hrms.pnb.bank.in",
+          "ip": "103.109.224.186",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        },
+        {
+          "domain": "kyc360.pnb.bank.in",
+          "ip": "103.109.224.8",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        },
+        {
+          "domain": "pfmsrrb.pnb.bank.in",
+          "ip": "103.109.224.220",
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "pnb-kibana-prd.pnb.bank.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "pnb-prd-dwp.pnb.bank.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "slbcbengal.pnb.bank.in",
+          "ip": "49.50.72.207",
+          "is_live": false,
+          "services": [
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "apitrk.pnb.bank.in",
+          "ip": "1.7.178.30",
+          "is_live": false,
+          "services": [
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "drms.pnb.bank.in",
+          "ip": "1.7.88.227",
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "harbor.pnb.bank.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "smbmbs.pnb.bank.in",
+          "ip": "103.109.225.14",
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "stpcreditcard.pnb.bank.in",
+          "ip": "103.109.224.112",
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "ibanking.pnb.bank.in",
+          "ip": "103.109.227.175",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        },
+        {
+          "domain": "icorpplus.pnb.bank.in",
+          "ip": "103.109.224.65",
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "tractorexpress.pnb.bank.in",
+          "ip": "103.109.224.90",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        },
+        {
+          "domain": "webapi.pnb.bank.in",
+          "ip": "103.109.224.236",
+          "is_live": false,
+          "services": [],
+          "type": "api"
+        },
+        {
+          "domain": "pnb.bank.in",
+          "ip": "49.50.90.144",
+          "is_live": false,
+          "services": [],
+          "type": "web"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "swiftcimplrdr.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "kyc360.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 319,
+            "expiry_date": "2027-02-09"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "pfmsrrb.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "pnb-kibana-prd.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "pnb-prd-dwp.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "tab.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 117,
+            "expiry_date": "2026-07-21"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "hrms.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 152,
+            "expiry_date": "2026-08-25"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "feepayment.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 118,
+            "expiry_date": "2026-07-22"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "digikccreview.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 167,
+            "expiry_date": "2026-09-09"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "harbor.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "drms.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "smbmbs.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "stpcreditcard.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "icorpplus.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "slbcbengal.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 153,
+            "expiry_date": "2026-08-26"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "apitrk.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES256-GCM-SHA384",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 214,
+            "expiry_date": "2026-10-27"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "webapi.pnb.bank.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "api",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "ibanking.pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 147,
+            "expiry_date": "2026-08-20"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "tractorexpress.pnb.bank.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 215,
+            "expiry_date": "2026-10-28"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        },
+        {
+          "domain": "pnb.bank.in",
+          "tls_version": "TLSv1.2",
+          "cipher": "ECDHE-RSA-AES128-GCM-SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": false,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": true,
+            "csp": true,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 137,
+            "expiry_date": "2026-08-10"
+          },
+          "certificate_status": "OK",
+          "services": [],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "High",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Secure",
+          "headers_severity": "low"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T20:34:37.309876",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 20,
+        "https_enabled": 13,
+        "http_only": 0,
+        "quantum_vulnerable": 13,
+        "quantum_safe": 7,
+        "high_risk_assets": 0,
+        "header_issues": 20,
+        "unreachable_assets": 0,
+        "expiring_soon": 0,
+        "outdated_services": 0
+      },
+      "counts": {
+        "domains": 20,
+        "ssl": 13,
+        "ips": 7
+      },
+      "inventory": {
+        "domains": [
+          "onlineadmission.vupune.ac.in",
+          "testingicaio.vupune.ac.in",
+          "jstir.vupune.ac.in",
+          "erp.vupune.ac.in",
+          "admissions.vupune.ac.in",
+          "convo.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "vupune.ac.in",
+          "admission.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "event.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "phdadmission.vupune.ac.in",
+          "research.vupune.ac.in",
+          "testingiqube.vupune.ac.in"
+        ],
+        "ssl_enabled": [
+          "jstir.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "vupune.ac.in",
+          "admission.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "research.vupune.ac.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "108.159.80.129",
+          "13.204.231.10",
+          "13.234.61.250",
+          "18.172.64.52",
+          "3.109.191.27",
+          "35.154.152.22",
+          "35.154.92.192"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "Medium",
+      "score": 39,
+      "rating": "Critical",
+      "quantum_status": "Vulnerable",
+      "classical_security": "Moderate",
+      "quantum_security": "Vulnerable",
+      "insights": [
+        "All assets meet TLS 1.2+ requirements",
+        "Some assets remain quantum vulnerable",
+        "CSP missing on 20/20 assets",
+        "HSTS not enabled on 20/20 assets",
+        "Clickjacking protection missing on 19/20 assets",
+        "7 assets do not support TLS"
+      ],
+      "assets": [
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "108.159.80.129",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "testingicaio.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "jstir.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "erp.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "admissions.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "convo.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.234.61.250",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.172.64.52",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "35.154.92.192",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "3.109.191.27",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "35.154.92.192",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "35.154.152.22",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "35.154.92.192",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "event.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "35.154.152.22",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "phdadmission.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "13.234.61.250",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "testingiqube.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "testingicaio.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admissions.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erp.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "convo.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "jstir.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 189,
+            "expiry_date": "2026-10-01"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        },
+        {
+          "domain": "event.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 132,
+            "expiry_date": "2026-08-05"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "phdadmission.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "testingiqube.vupune.ac.in",
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-26T20:40:34.591120",
+    "domain": "vupune.ac.in",
+    "payload": {
+      "summary": {
+        "total_assets": 20,
+        "https_enabled": 14,
+        "http_only": 0,
+        "quantum_vulnerable": 14,
+        "quantum_safe": 6,
+        "high_risk_assets": 0,
+        "header_issues": 20,
+        "unreachable_assets": 0,
+        "expiring_soon": 0,
+        "outdated_services": 0
+      },
+      "counts": {
+        "domains": 20,
+        "ssl": 14,
+        "ips": 7
+      },
+      "inventory": {
+        "domains": [
+          "onlineadmissionapi.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "erp.vupune.ac.in",
+          "icaio.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "admissions.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "phdadmission.vupune.ac.in",
+          "research.vupune.ac.in",
+          "testingicaio.vupune.ac.in",
+          "testingiqube.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "convo.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "ssl_enabled": [
+          "icaio.vupune.ac.in",
+          "vulj.vupune.ac.in",
+          "admission.vupune.ac.in",
+          "onlineadmissionapi.vupune.ac.in",
+          "learner.vupune.ac.in",
+          "icsiaiml.vupune.ac.in",
+          "iqube.vupune.ac.in",
+          "research.vupune.ac.in",
+          "vunet.vupune.ac.in",
+          "erpadmin.vupune.ac.in",
+          "incon-ctlvu.vupune.ac.in",
+          "icrcsd.vupune.ac.in",
+          "onlineadmission.vupune.ac.in",
+          "vupune.ac.in"
+        ],
+        "http_only": [],
+        "ip_addresses": [
+          "108.159.80.129",
+          "13.204.231.10",
+          "13.234.61.250",
+          "18.172.64.63",
+          "35.154.152.22",
+          "35.154.92.192",
+          "65.1.32.72"
+        ],
+        "ports": [
+          80,
+          443
+        ]
+      },
+      "risk": "Medium",
+      "score": 41,
+      "rating": "Critical",
+      "quantum_status": "Vulnerable",
+      "classical_security": "Moderate",
+      "quantum_security": "Vulnerable",
+      "insights": [
+        "All assets meet TLS 1.2+ requirements",
+        "Some assets remain quantum vulnerable",
+        "CSP missing on 20/20 assets",
+        "HSTS not enabled on 20/20 assets",
+        "Clickjacking protection missing on 19/20 assets",
+        "6 assets do not support TLS"
+      ],
+      "assets": [
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "35.154.152.22",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "erp.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "13.234.61.250",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.172.64.63",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "admissions.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "35.154.92.192",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "phdadmission.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "testingicaio.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "testingiqube.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "13.234.61.250",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "108.159.80.129",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "convo.vupune.ac.in",
+          "ip": null,
+          "is_live": false,
+          "services": [],
+          "type": "server"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "35.154.152.22",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "ip": "35.154.92.192",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "65.1.32.72",
+          "is_live": true,
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "type": "web"
+        }
+      ],
+      "cbom": [
+        {
+          "domain": "erp.vupune.ac.in",
+          "ip": null,
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icaio.vupune.ac.in",
+          "ip": "13.234.61.250",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vulj.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admission.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "admissions.vupune.ac.in",
+          "ip": null,
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "phdadmission.vupune.ac.in",
+          "ip": null,
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmissionapi.vupune.ac.in",
+          "ip": "35.154.152.22",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "testingicaio.vupune.ac.in",
+          "ip": null,
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "testingiqube.vupune.ac.in",
+          "ip": null,
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "learner.vupune.ac.in",
+          "ip": "18.172.64.63",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 310,
+            "expiry_date": "2027-01-30"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icsiaiml.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "convo.vupune.ac.in",
+          "ip": null,
+          "tls_version": "Not Supported",
+          "cipher": "None",
+          "algorithm_type": "UNKNOWN",
+          "key_strength": "MODERATE",
+          "quantum_vulnerable": false,
+          "ports": {
+            "80": false,
+            "443": false
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": null,
+            "expiry_date": "Unknown"
+          },
+          "certificate_status": "NO_TLS",
+          "services": [],
+          "outdated_services": false,
+          "type": "server",
+          "risk_level": "Medium",
+          "certificate_severity": "none",
+          "certificate_label": "No TLS",
+          "tls_label": "No TLS",
+          "tls_severity": "high",
+          "quantum_label": "Safe",
+          "quantum_severity": "low",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "iqube.vupune.ac.in",
+          "ip": "35.154.92.192",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "research.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vunet.vupune.ac.in",
+          "ip": "13.234.61.250",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "erpadmin.vupune.ac.in",
+          "ip": "35.154.152.22",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 132,
+            "expiry_date": "2026-08-05"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "incon-ctlvu.vupune.ac.in",
+          "ip": "13.204.231.10",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "icrcsd.vupune.ac.in",
+          "ip": "35.154.92.192",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 182,
+            "expiry_date": "2026-09-24"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "onlineadmission.vupune.ac.in",
+          "ip": "108.159.80.129",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": false,
+            "x_content_type_options": false
+          },
+          "certificate": {
+            "expiry_days": 180,
+            "expiry_date": "2026-09-22"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "Amazon CloudFront httpd",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "https",
+              "product": "",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Insecure",
+          "headers_severity": "high"
+        },
+        {
+          "domain": "vupune.ac.in",
+          "ip": "65.1.32.72",
+          "tls_version": "TLSv1.3",
+          "cipher": "TLS_CHACHA20_POLY1305_SHA256",
+          "algorithm_type": "RSA",
+          "key_strength": "STRONG",
+          "quantum_vulnerable": true,
+          "ports": {
+            "80": true,
+            "443": true
+          },
+          "security_headers": {
+            "hsts": false,
+            "csp": false,
+            "x_frame_options": true,
+            "x_content_type_options": true
+          },
+          "certificate": {
+            "expiry_days": 189,
+            "expiry_date": "2026-10-01"
+          },
+          "certificate_status": "OK",
+          "services": [
+            {
+              "port": 80,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            },
+            {
+              "port": 443,
+              "service": "http",
+              "product": "AWS Elastic Load Balancing",
+              "version": "",
+              "outdated": false
+            }
+          ],
+          "outdated_services": false,
+          "type": "web",
+          "risk_level": "Low",
+          "certificate_severity": "low",
+          "certificate_label": "Valid",
+          "tls_label": "Secure",
+          "tls_severity": "low",
+          "quantum_label": "Vulnerable",
+          "quantum_severity": "high",
+          "headers_label": "Partial",
+          "headers_severity": "medium"
+        }
+      ]
+    }
   }
 ]

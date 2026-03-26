@@ -15,7 +15,7 @@ from backend.app.services.asset_discovery import discover_assets
 from backend.app.services.cbom_generator import generate_cbom
 from backend.app.services.pqc_risk import assess_pqc_risk
 from backend.app.services.rating_engine import calculate_rating
-from backend.app.services.nmap_scan import scan_ports
+from backend.app.services.nmap_scan import scan_ports, scan_service_versions
 from backend.app.services.real_crypto_scan import scan_tls
 from backend.app.services.storage import save_scan, get_latest_scans
 from backend.app.services.cert_analysis import get_certificate_expiry
@@ -88,6 +88,17 @@ def map_header_ui(entry: dict) -> dict:
     return {"headers_label": "Insecure", "headers_severity": "high"}
 
 
+def classify_asset_type(domain: str | None, ports: dict | None) -> str:
+    normalized = (domain or "").lower()
+    port_map = ports or {}
+    has_web_port = bool(port_map.get("80") or port_map.get("443"))
+    if has_web_port:
+        return "web"
+    if "api" in normalized:
+        return "api"
+    return "server"
+
+
 def run_crypto_scans(assets: list[dict]) -> list[dict]:
     results = []
 
@@ -102,6 +113,17 @@ def run_crypto_scans(assets: list[dict]) -> list[dict]:
         has_tls = bool(ports.get("443"))
         cert_info = get_certificate_expiry(domain, port_443_open=has_tls)
         cert_status = cert_info.get("certificate_status", "UNREACHABLE")
+        asset_type = classify_asset_type(domain, ports)
+        target = asset.get("ip") or domain
+        print("Before Nmap:", asset)
+        service_result = scan_service_versions(target) if target else {"services": [], "ip": None}
+        services = service_result.get("services", [])
+        discovered_ip = service_result.get("ip")
+        if not asset.get("ip") and discovered_ip:
+            asset["ip"] = discovered_ip
+        asset["services"] = services
+        print("After Nmap:", asset)
+        outdated = any(service.get("outdated") for service in services)
 
         if not has_tls:
             return {
@@ -113,10 +135,13 @@ def run_crypto_scans(assets: list[dict]) -> list[dict]:
                 "cipher": "None",
                 "certificate_algo": None,
                 "key_size": None,
-            "certificate": {
-                "expiry_days": cert_info.get("expiry_days"),
-                "expiry_date": cert_info.get("expiry_date"),
-            },
+                "type": asset_type,
+                "services": services,
+                "outdated_services": outdated,
+                "certificate": {
+                    "expiry_days": cert_info.get("expiry_days"),
+                    "expiry_date": cert_info.get("expiry_date"),
+                },
                 "certificate_status": cert_status,
             }
 
@@ -129,6 +154,9 @@ def run_crypto_scans(assets: list[dict]) -> list[dict]:
             "expiry_date": cert_info.get("expiry_date"),
         }
         tls_result["certificate_status"] = cert_status
+        tls_result["type"] = asset_type
+        tls_result["services"] = services
+        tls_result["outdated_services"] = outdated
         return tls_result
 
     with ThreadPoolExecutor(max_workers=5) as executor:
@@ -152,6 +180,10 @@ def run_crypto_scans(assets: list[dict]) -> list[dict]:
                     "certificate_algo": None,
                     "key_size": None,
                     "error": str(exc),
+                    "type": "server",
+                    "ports": {},
+                    "services": [],
+                    "outdated_services": False,
                 })
 
     return results
@@ -164,6 +196,19 @@ def scan_domain(request: ScanRequest):
     crypto_results = run_crypto_scans(assets)
     logger.debug("crypto scan results: %s", crypto_results)
 
+    domain_type_map = {
+        entry.get("domain"): (entry.get("type") or "server")
+        for entry in crypto_results
+        if entry.get("domain")
+    }
+    assets = [
+        {
+            **asset,
+            "type": domain_type_map.get(asset.get("domain")) or "server",
+        }
+        for asset in assets
+    ]
+
     cbom = generate_cbom(crypto_results)
     cbom, risk = assess_pqc_risk(cbom)
 
@@ -173,6 +218,8 @@ def scan_domain(request: ScanRequest):
         entry.update(map_quantum_ui(entry.get("quantum_vulnerable")))
         entry.update(map_header_ui(entry))
     rating_data = calculate_rating(cbom)
+
+    outdated_services_count = sum(1 for entry in cbom if entry.get("outdated_services"))
 
     summary = {
         "total_assets": len(assets),
@@ -200,6 +247,7 @@ def scan_domain(request: ScanRequest):
             for entry in cbom
             if 0 <= (entry.get("certificate", {}).get("expiry_days") or -1) < 30
             ),
+        "outdated_services": outdated_services_count,
     }
 
     inventory_domains = [asset["domain"] for asset in assets if asset.get("domain")]
@@ -289,6 +337,9 @@ def scan_domain(request: ScanRequest):
             insights.append(f"{tls_missing} assets do not support TLS")
         if misconfigured:
             insights.append(f"{misconfigured} assets unreachable or TLS handshake failed")
+
+        if outdated_services_count:
+            insights.append(f"Outdated services detected on {outdated_services_count} assets")
 
     counts = {
         "domains": len(inventory_domains),
