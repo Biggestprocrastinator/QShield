@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-surface text-on-surface overflow-hidden;
+    @apply bg-surface text-on-surface overflow-hidden leading-tight tracking-normal;
     font-family: 'Inter', sans-serif;
   }
 }

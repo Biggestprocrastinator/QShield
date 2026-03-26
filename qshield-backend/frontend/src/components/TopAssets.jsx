@@ -71,18 +71,18 @@ export default function TopAssets({ data }) {
     }
     const className = certStatusBadges[label] || certStatusBadges.Valid;
     return (
-      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${className}`}>
+      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${className}`}>
         {certStatusIcon(label)} {label}
       </span>
     );
   };
 
   return (
-    <section className="col-span-12 mt-6 bg-gray-900 rounded-2xl border border-white/10 shadow-xl p-6">
-      <div className="flex items-center justify-between mb-4">
+    <section className="col-span-12 mt-6 bg-gray-900 rounded-2xl border border-white/10 shadow-xl p-4">
+      <div className="flex items-center justify-between mb-3">
         <div>
-          <h3 className="text-white text-lg font-semibold">Top 5 Assets Summary</h3>
-          <p className="text-xs text-on-surface-variant">Prioritized by risk and certificate health</p>
+          <h3 className="text-white text-sm font-semibold tracking-wide">Top 5 Assets Summary</h3>
+          <p className="text-[11px] text-on-surface-variant">Prioritized by risk and certificate health</p>
         </div>
         <span className="text-xs uppercase tracking-[0.3em] text-secondary">Live</span>
       </div>
@@ -91,10 +91,10 @@ export default function TopAssets({ data }) {
           <table className="min-w-full text-sm divide-y divide-outline-variant/30">
             <thead className="bg-surface-container-low">
               <tr>
-                <th className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Domain</th>
-                <th className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Risk</th>
-                <th className="px-4 py-3 text-left text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Certificate</th>
-                <th className="px-4 py-3 text-right text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Expiry</th>
+                <th className="px-3 py-2 text-left text-[9px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Domain</th>
+                <th className="px-3 py-2 text-left text-[9px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Risk</th>
+                <th className="px-3 py-2 text-left text-[9px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Certificate</th>
+                <th className="px-3 py-2 text-right text-[9px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Expiry</th>
               </tr>
             </thead>
             <tbody className="bg-surface">
@@ -103,14 +103,14 @@ export default function TopAssets({ data }) {
                 const riskBadge = riskBadges[asset.risk_level] || riskBadges.Low;
                 return (
                   <tr key={asset.domain} className="hover:bg-surface-variant/20 transition-colors">
-                    <td className="px-4 py-3 text-sm text-on-surface font-semibold">{asset.domain}</td>
-                    <td className="px-4 py-3">
-                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${riskBadge}`}>
+                    <td className="px-3 py-2 text-[11px] text-on-surface font-semibold">{asset.domain}</td>
+                    <td className="px-3 py-2">
+                      <span className={`px-2 py-1 rounded-full text-xs font-semibold ${riskBadge}`}>
                         {asset.risk_level || 'Low'}
                       </span>
                     </td>
-                    <td className="px-4 py-3">{renderCertStatus(asset)}</td>
-                    <td className="px-4 py-3 text-right text-xs text-on-surface-variant">{expiryLabel}</td>
+                    <td className="px-3 py-2">{renderCertStatus(asset)}</td>
+                    <td className="px-3 py-2 text-right text-[11px] text-on-surface-variant">{expiryLabel}</td>
                   </tr>
                 );
               })}

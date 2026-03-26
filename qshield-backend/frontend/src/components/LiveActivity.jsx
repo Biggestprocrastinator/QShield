@@ -19,13 +19,13 @@ export default function LiveActivity({ summary }) {
     }
 
     return (
-      <div key={item.label} className="flex gap-3 items-start">
-        <div className="flex-shrink-0 h-8 w-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-base">
-          {item.icon}
-        </div>
-        <div className="flex-1">
-          <p className="text-on-surface font-semibold">{item.label}</p>
-          <p className="text-xs text-on-surface-variant">
+    <div key={item.label} className="flex gap-2 items-start">
+      <div className="flex-shrink-0 h-8 w-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-sm">
+        {item.icon}
+      </div>
+      <div className="flex-1">
+          <p className="text-sm text-on-surface font-semibold leading-tight">{item.label}</p>
+          <p className="text-[11px] text-on-surface-variant leading-tight">
             {value !== null ? `${value} • ${item.status}` : item.status}
           </p>
         </div>
@@ -34,15 +34,15 @@ export default function LiveActivity({ summary }) {
   });
 
   return (
-    <section className="col-span-12 md:col-span-6 bg-surface/70 backdrop-blur rounded-3xl p-6 shadow-lg border border-outline-variant/20 space-y-4">
+    <section className="col-span-12 md:col-span-6 bg-surface/70 backdrop-blur rounded-3xl p-4 shadow-lg border border-outline-variant/20 space-y-3">
       <div className="flex items-center justify-between">
         <div>
-          <h4 className="font-semibold text-lg text-on-surface">Live Activity</h4>
+          <h4 className="font-semibold text-sm text-on-surface tracking-wide">Live Activity</h4>
           <p className="text-xs text-on-surface-variant">Streaming telemetry from the latest scan run</p>
         </div>
         <span className="text-xs font-bold text-secondary uppercase tracking-[0.3em]">Realtime</span>
       </div>
-      <div className="space-y-4">{items}</div>
+      <div className="space-y-3">{items}</div>
     </section>
   );
 }

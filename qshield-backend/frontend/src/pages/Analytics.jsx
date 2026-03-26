@@ -34,56 +34,56 @@ export default function Analytics({ scanData, isLoading, error }) {
   const { insights, counts, summary } = scanData;
 
   return (
-    <div className="grid grid-cols-12 gap-8 auto-rows-min">
-      <section className="col-span-12 glass-card rounded-lg p-8 shadow-2xl shadow-[#1d1b19]/5">
-        <div className="flex justify-between items-start mb-6">
+    <div className="grid grid-cols-12 gap-4 auto-rows-min">
+      <section className="col-span-12 glass-card rounded-lg p-4 shadow-2xl shadow-[#1d1b19]/5">
+        <div className="flex justify-between items-start mb-4">
           <div>
-            <h3 className="font-headline text-2xl font-extrabold text-on-surface tracking-tight">Scan Analytics</h3>
-            <p className="text-on-surface-variant text-sm mt-1">Aggregated insights and adoption metrics.</p>
+            <h3 className="font-headline text-sm font-semibold text-on-surface tracking-[0.2em]">Scan Analytics</h3>
+            <p className="text-on-surface-variant text-xs mt-1">Aggregated insights and adoption metrics.</p>
           </div>
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Metrics</span>
+          <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Metrics</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-           <div className="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 flex items-center justify-between shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+           <div className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 flex items-center justify-between shadow-sm">
             <div>
               <h3 className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant/60 mb-2">HTTPS Adoption</h3>
-              <p className="text-3xl font-black text-green-600">{summary?.https_enabled || 0} / {summary?.total_assets || 0}</p>
+              <p className="text-2xl font-black text-green-600">{summary?.https_enabled || 0} / {summary?.total_assets || 0}</p>
             </div>
-            <span className="material-symbols-outlined text-4xl text-green-600/20">lock</span>
+            <span className="material-symbols-outlined text-2xl text-green-600/20">lock</span>
           </div>
-          <div className="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 flex items-center justify-between shadow-sm">
+          <div className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 flex items-center justify-between shadow-sm">
             <div>
               <h3 className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant/60 mb-2">Quantum Vulnerable</h3>
-              <p className="text-3xl font-black text-error">{summary?.quantum_vulnerable || 0}</p>
+              <p className="text-2xl font-black text-error">{summary?.quantum_vulnerable || 0}</p>
             </div>
-            <span className="material-symbols-outlined text-4xl text-error/20">warning</span>
+            <span className="material-symbols-outlined text-2xl text-error/20">warning</span>
           </div>
-          <div className="bg-surface-container-low p-6 rounded-xl border border-outline-variant/30 flex items-center justify-between shadow-sm">
+          <div className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30 flex items-center justify-between shadow-sm">
             <div>
               <h3 className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant/60 mb-2">Unique IPs</h3>
-              <p className="text-3xl font-black text-secondary">{counts?.ips || 0}</p>
+              <p className="text-2xl font-black text-secondary">{counts?.ips || 0}</p>
             </div>
-            <span className="material-symbols-outlined text-4xl text-secondary/20">router</span>
+            <span className="material-symbols-outlined text-2xl text-secondary/20">router</span>
           </div>
         </div>
 
-        <div className="bg-surface-container-low rounded-xl border border-outline-variant/30 p-6 shadow-sm mt-4">
-          <h2 className="text-lg font-bold mb-6 text-on-surface flex items-center">
-            <span className="material-symbols-outlined mr-2 text-primary">lightbulb</span>
+        <div className="bg-surface-container-low rounded-xl border border-outline-variant/30 p-4 shadow-sm mt-3">
+          <h2 className="text-base font-semibold mb-4 text-on-surface flex items-center">
+            <span className="material-symbols-outlined mr-2 text-primary text-xl">lightbulb</span>
             Actionable Insights
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3">
             {insights && insights.length > 0 ? (
               insights.map((insight, idx) => (
-                <div key={idx} className="relative pl-6 pb-6 border-l-2 border-outline-variant/30 last:pb-0">
+                <div key={idx} className="relative pl-4 pb-4 border-l-2 border-outline-variant/30 last:pb-0">
                   <div className="absolute -left-[7px] top-0 w-3 h-3 rounded-full bg-primary ring-4 ring-surface"></div>
                   <h4 className="text-sm font-bold mt-1 text-on-surface">Platform Insight</h4>
-                  <p className="text-xs text-on-surface-variant mt-1 leading-relaxed">{insight}</p>
+                  <p className="text-[11px] text-on-surface-variant mt-1 leading-tight">{insight}</p>
                 </div>
               ))
             ) : (
-              <p className="text-sm text-on-surface-variant font-medium italic p-4">Empty insight list.</p>
+              <p className="text-[11px] text-on-surface-variant font-medium italic p-3">Empty insight list.</p>
             )}
           </div>
         </div>

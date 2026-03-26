@@ -9,18 +9,18 @@ export default function Recommendations({ insights }) {
     });
 
   return (
-    <section className="col-span-12 md:col-span-6 bg-surface/90 backdrop-blur rounded-3xl p-6 shadow-lg border border-outline-variant/20">
-      <div className="flex items-center justify-between mb-4">
+    <section className="col-span-12 md:col-span-6 bg-surface/90 backdrop-blur rounded-3xl p-4 shadow-lg border border-outline-variant/20">
+      <div className="flex items-center justify-between mb-3">
         <div>
-          <h4 className="font-semibold text-lg text-on-surface">Recommended Actions</h4>
-          <p className="text-xs text-on-surface-variant">Based on the latest telemetry</p>
+          <h4 className="font-semibold text-sm text-on-surface tracking-wide">Recommended Actions</h4>
+          <p className="text-[11px] text-on-surface-variant">Based on the latest telemetry</p>
         </div>
         <span className="text-xs font-bold text-secondary uppercase tracking-[0.25em]">Action</span>
       </div>
-      <ul className="space-y-3">
+      <ul className="space-y-2">
         {recommendations.map((rec, index) => (
-          <li key={index} className="flex gap-3 text-sm text-on-surface">
-            <span className="text-secondary">✔</span>
+          <li key={index} className="flex gap-2 text-[11px] text-on-surface leading-tight">
+            <span className="text-secondary">✓</span>
             <span>{rec}</span>
           </li>
         ))}

@@ -1,8 +1,8 @@
-import Charts from '../components/Charts';
+import { AssetDistributionCard, RiskDistributionCard } from '../components/Charts';
 import ThreatBanner from '../components/ThreatBanner';
 import LiveActivity from '../components/LiveActivity';
 import Recommendations from '../components/Recommendations';
-import AnalyticsWidgets from '../components/AnalyticsWidgets';
+import { CertificateExpiryCard, IpVersionCard } from '../components/AnalyticsWidgets';
 import TopAssets from '../components/TopAssets';
 
 export default function Dashboard({ scanData, isLoading, error }) {
@@ -60,73 +60,80 @@ export default function Dashboard({ scanData, isLoading, error }) {
   ];
 
   return (
-    <div className="grid grid-cols-12 gap-8 auto-rows-min">
+    <div className="grid grid-cols-12 gap-4 auto-rows-min">
       <ThreatBanner risk={risk} rating={rating} />
-      <section className="col-span-12 glass-card rounded-lg p-8 shadow-2xl shadow-[#1d1b19]/5">
-        <div className="flex justify-between items-start mb-6">
+      <section className="col-span-12 glass-card rounded-lg p-4 shadow-2xl shadow-[#1d1b19]/5">
+        <div className="flex justify-between items-start mb-4">
           <div>
-            <h3 className="font-headline text-2xl font-extrabold text-on-surface tracking-tight">Dashboard Overview</h3>
-            <p className="text-on-surface-variant text-sm mt-1">High-level security and compliance metrics.</p>
+            <h3 className="font-headline text-sm font-semibold text-on-surface tracking-[0.2em]">Dashboard Overview</h3>
+            <p className="text-on-surface-variant text-xs mt-1">High-level security and compliance metrics.</p>
           </div>
-          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Executive</span>
+          <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Executive</span>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
           <div className="space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant/60">Security Score</span>
-            <div className="text-4xl font-black text-primary">{score || 0}</div>
-            <div className="flex items-center gap-1 text-xs text-on-surface-variant font-bold mt-2">
-              <span className="material-symbols-outlined text-sm">analytics</span> Overall rating
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-on-surface-variant/70">Security Score</span>
+            <div className="text-2xl font-bold text-primary leading-tight">{score || 0}</div>
+            <div className="flex items-center gap-1 text-[11px] text-on-surface-variant font-semibold mt-1 leading-tight tracking-wide">
+              <span className="material-symbols-outlined text-[12px]">analytics</span> Overall rating
             </div>
           </div>
           <div className="space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant/60">Risk Level</span>
-            <div className={`text-3xl font-black ${
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-on-surface-variant/70">Risk Level</span>
+            <div className={`text-2xl font-bold leading-tight ${
               risk === 'Low' ? 'text-green-600' : 
               risk === 'Medium' ? 'text-secondary' : 
               'text-error'
             }`}>
               {risk || 'Unknown'}
             </div>
-            <div className={`flex items-center gap-1 text-xs font-bold mt-2 ${
+            <div className={`flex items-center gap-1 text-[11px] font-semibold mt-1 leading-tight tracking-wide ${
               risk === 'Low' ? 'text-green-600' : 
               risk === 'Medium' ? 'text-secondary' : 
               'text-error'
             }`}>
-              <span className="material-symbols-outlined text-sm">{risk === 'Low' ? 'verified' : 'warning'}</span> Assessment
+              <span className="material-symbols-outlined text-[12px]">{risk === 'Low' ? 'verified' : 'warning'}</span> Assessment
             </div>
           </div>
           <div className="space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant/60">Quantum Status</span>
-            <div className="text-2xl font-black text-on-surface pt-1 pb-1">{quantum_status || 'Unknown'}</div>
-            <div className="flex items-center gap-1 text-xs text-secondary font-bold mt-2">
-              <span className="material-symbols-outlined text-sm">memory</span> PQC Check
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-on-surface-variant/70">Quantum Status</span>
+            <div className="text-2xl font-bold text-on-surface pt-1 pb-1 leading-tight">{quantum_status || 'Unknown'}</div>
+            <div className="flex items-center gap-1 text-[11px] text-secondary font-semibold mt-1 leading-tight tracking-wide">
+              <span className="material-symbols-outlined text-[12px]">memory</span> PQC Check
             </div>
           </div>
           <div className="space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-on-surface-variant/60">Total Assets</span>
-            <div className="text-4xl font-black text-on-surface">{summary?.total_assets || 0}</div>
-            <div className="flex items-center gap-1 text-xs text-on-surface-variant font-bold mt-2">
-              <span className="material-symbols-outlined text-sm">hub</span> Discovered endpoints
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-on-surface-variant/70">Total Assets</span>
+            <div className="text-2xl font-bold text-on-surface leading-tight">{summary?.total_assets || 0}</div>
+            <div className="flex items-center gap-1 text-[11px] text-on-surface-variant font-semibold mt-1 leading-tight tracking-wide">
+              <span className="material-symbols-outlined text-[12px]">hub</span> Discovered endpoints
             </div>
           </div>
         </div>
       </section>
-      <section className="col-span-12 bg-surface/60 backdrop-blur rounded-3xl p-6 shadow-lg border border-outline-variant/20">
-        <h4 className="font-semibold text-lg text-on-surface mb-4">Key Performance Signals</h4>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <section className="col-span-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {kpiCards.map((card) => (
-            <div key={card.title} className={`rounded-2xl p-5 flex flex-col justify-between gap-2 shadow-xl ${card.className}`}>
-              <span className="text-xs uppercase tracking-[0.25em] opacity-80">{card.title}</span>
-              <div className="text-4xl font-black">{card.value}</div>
+            <div
+              key={card.title}
+              className={`rounded-2xl w-full min-w-0 p-3 flex flex-col justify-between gap-1 shadow-xl overflow-hidden truncate ${card.className}`}
+            >
+              <span className="text-xs uppercase tracking-[0.4em] opacity-80 truncate leading-tight">{card.title}</span>
+              <div className="text-2xl font-bold leading-tight">{card.value}</div>
             </div>
           ))}
         </div>
       </section>
+      <section className="col-span-12">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+          <AssetDistributionCard data={scanData} />
+          <RiskDistributionCard data={scanData} />
+          <CertificateExpiryCard data={scanData} />
+          <IpVersionCard data={scanData} />
+        </div>
+      </section>
       <LiveActivity summary={summary} />
       <Recommendations insights={insights} />
-      <Charts data={scanData} />
-      <AnalyticsWidgets data={scanData} />
       <TopAssets data={scanData} />
     </div>
   );

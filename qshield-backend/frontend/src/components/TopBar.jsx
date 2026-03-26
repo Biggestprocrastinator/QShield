@@ -46,17 +46,17 @@ export default function TopBar({ onScan }) {
   }, [inputError]);
 
   return (
-    <header className="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-8 z-40 bg-[#fef8f3]/80 backdrop-blur-md">
-      <div className="flex items-center gap-4">
-        <h2 className="font-inter text-lg font-bold text-[#594141]">Security Command Center</h2>
+    <header className="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-6 z-40 bg-[#fef8f3]/80 backdrop-blur-md">
+      <div className="flex items-center gap-3">
+        <h2 className="font-inter text-base font-bold text-[#594141] tracking-wide">Security Command Center</h2>
         <span className="h-4 w-[1px] bg-outline-variant/30"></span>
         <span className="text-xs font-bold uppercase tracking-widest text-secondary">Operational Mode</span>
       </div>
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4">
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-sm">search</span>
           <input
-            className="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-secondary/20 w-64"
+            className="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-secondary/20 w-56"
             placeholder="Scan domain (e.g. example.com)..."
             type="text"
             value={domain}
@@ -67,7 +67,7 @@ export default function TopBar({ onScan }) {
           <div className="text-xs mt-1 text-red-500 min-h-[1rem]">{helperText}</div>
         </div>
         <button
-          className="px-4 py-2 rounded-full bg-secondary text-white font-semibold text-sm hover:bg-secondary/80 transition-colors"
+          className="px-3 py-1.5 rounded-full bg-secondary text-white font-semibold text-sm hover:bg-secondary/80 transition-colors"
           onClick={handleSubmit}
         >
           Scan
