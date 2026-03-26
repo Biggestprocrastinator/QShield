@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import AssetGraph from '../components/AssetGraph';
 
 const filterLabels = {
   high: 'High Risk',
@@ -116,6 +117,7 @@ export default function Assets({ scanData, isLoading, error }) {
 
   return (
     <div className="grid grid-cols-12 gap-8 auto-rows-min">
+      {/* Asset Inventory Table */}
       <section className="col-span-12 glass-card rounded-lg p-8 shadow-2xl shadow-[#1d1b19]/5">
         <div className="flex flex-wrap justify-between items-start gap-3 mb-6">
           <div>
@@ -169,6 +171,13 @@ export default function Assets({ scanData, isLoading, error }) {
               )}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      {/* Network Graph Section */}
+      <section className="col-span-12 rounded-lg shadow-2xl shadow-[#1d1b19]/10 border border-outline-variant/30 flex flex-col overflow-hidden bg-surface">
+        <div className="p-1 min-h-[600px] h-[600px] relative w-full">
+          <AssetGraph scanData={scanData} />
         </div>
       </section>
     </div>
