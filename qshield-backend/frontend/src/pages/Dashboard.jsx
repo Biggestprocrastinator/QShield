@@ -48,15 +48,13 @@ export default function Dashboard({ scanData, isLoading, error }) {
   const assetsList = scanData.assets || [];
   const domainNames = assetsList.map((asset) => asset.domain).filter(Boolean);
   const uniqueIPs = Array.from(new Set(assetsList.map((asset) => asset.ip).filter(Boolean)));
-  const webApps = domainNames.length;
-  const apis = domainNames.filter((domain) => domain.toLowerCase().includes('api')).length;
+  const apis = assetsList.filter((asset) => (asset.type || '').toLowerCase() === 'api').length;
   const servers = uniqueIPs.length;
 
   const kpiCards = [
     { title: 'Total Assets', value: totalAssets, className: 'bg-blue-500 text-white' },
     { title: 'High Risk Assets', value: highRisk, className: 'bg-gradient-to-r from-red-500 to-red-700 text-white', filter: 'high' },
     { title: 'Expiring Soon', value: expiringSoon, className: 'bg-amber-500 text-white', filter: 'expiring' },
-    { title: 'Web Apps', value: webApps, className: 'bg-indigo-500 text-white', filter: 'web' },
     { title: 'APIs', value: apis, className: 'bg-cyan-500 text-white', filter: 'api' },
     { title: 'Servers', value: servers, className: 'bg-slate-500 text-white', filter: 'server' }
   ];
@@ -122,7 +120,7 @@ export default function Dashboard({ scanData, isLoading, error }) {
         </div>
       </section>
       <section className="col-span-12">
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {kpiCards.map((card) => (
             <div
               key={card.title}
