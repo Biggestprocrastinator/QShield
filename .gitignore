@@ -31,3 +31,5 @@ node_modules/
 
 # VS Code
 .vscode/
+# Backend data
+qshield-backend/backend/data/scans.json

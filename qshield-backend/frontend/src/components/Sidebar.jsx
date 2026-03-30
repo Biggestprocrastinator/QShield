@@ -8,6 +8,7 @@ const navItems = [
   { path: '/asset-inventory', icon: 'account_tree', label: 'Asset Inventory' },
   // { path: '/monitoring', icon: 'monitor_heart', label: 'Monitoring' },
   { path: '/security', icon: 'security', label: 'Security' },
+  { path: '/vulnerability-scan', icon: 'bug_report', label: 'Vulnerability Scan' },
   { path: '/analytics', icon: 'policy', label: 'Posture of PQC' },
   { path: '/reports', icon: 'description', label: 'Reports', fill: true },
 ];

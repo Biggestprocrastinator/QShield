@@ -42,8 +42,8 @@ def get_certificate_expiry(domain: str, port_443_open: bool = True) -> dict:
     if not port_443_open:
         return {
             "expiry_days": None,
-            "expiry_date": "Unknown",
-            "certificate_status": "NO_TLS",
+            "expiry_date": None,
+            "certificate_status": "No HTTPS",
         }
 
     try:
@@ -63,7 +63,7 @@ def get_certificate_expiry(domain: str, port_443_open: bool = True) -> dict:
             print("Expiry missing for:", domain)
             return {
                 "expiry_days": None,
-                "expiry_date": "Unknown",
+                "expiry_date": None,
                 "certificate_status": "NO_CERT",
             }
 
@@ -72,7 +72,7 @@ def get_certificate_expiry(domain: str, port_443_open: bool = True) -> dict:
             print("Expiry parse failed for:", domain, "value:", not_after)
             return {
                 "expiry_days": None,
-                "expiry_date": "Unknown",
+                "expiry_date": None,
                 "certificate_status": "NO_CERT",
             }
 
@@ -95,7 +95,7 @@ def get_certificate_expiry(domain: str, port_443_open: bool = True) -> dict:
         print("Certificate expiry error for:", domain, "error:", exc)
         return {
             "expiry_days": None,
-            "expiry_date": "Unknown",
+            "expiry_date": None,
             "certificate_status": "UNREACHABLE",
         }
 

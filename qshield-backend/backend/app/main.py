@@ -1,9 +1,17 @@
+import http.client
+import json
 import logging
 import os
+import re
+import ssl
+import subprocess
+import tempfile
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
@@ -47,12 +55,28 @@ class ScanRequest(BaseModel):
     domain: str
 
 
+class NucleiRequest(BaseModel):
+    domains: list[str]
+    mode: str | None = "fast"
+
+
+NUCLEI_STATUS = {
+    "running": False,
+    "requests": 0,
+    "templates": 0,
+    "stats": None,
+    "last_lines": [],
+    "last_update": None,
+}
+
+
 def map_certificate_ui(status: str) -> dict:
     return {
         "OK": {"certificate_severity": "low", "certificate_label": "Valid"},
         "WARNING": {"certificate_severity": "medium", "certificate_label": "Expiring Soon"},
         "CRITICAL": {"certificate_severity": "high", "certificate_label": "Critical Expiry"},
         "NO_TLS": {"certificate_severity": "none", "certificate_label": "No TLS"},
+        "No HTTPS": {"certificate_severity": "none", "certificate_label": "No HTTPS"},
         "NO_CERT": {"certificate_severity": "none", "certificate_label": "No Certificate"},
         "UNREACHABLE": {"certificate_severity": "none", "certificate_label": "Unreachable"},
     }.get(status, {"certificate_severity": "none", "certificate_label": "Unknown"})
@@ -88,15 +112,56 @@ def map_header_ui(entry: dict) -> dict:
     return {"headers_label": "Insecure", "headers_severity": "high"}
 
 
-def classify_asset_type(domain: str | None, ports: dict | None) -> str:
+def _probe_json_response(domain: str, port: int, use_https: bool, path: str) -> bool:
+    try:
+        if use_https:
+            context = ssl._create_unverified_context()
+            conn = http.client.HTTPSConnection(domain, port=port, timeout=3, context=context)
+        else:
+            conn = http.client.HTTPConnection(domain, port=port, timeout=3)
+        conn.request("GET", path, headers={"Accept": "application/json", "User-Agent": "QShield/1.0"})
+        response = conn.getresponse()
+        content_type = (response.getheader("Content-Type") or "").lower()
+        body = response.read(256) or b""
+        conn.close()
+        if "application/json" in content_type:
+            return True
+        trimmed = body.strip()
+        return trimmed.startswith(b"{") or trimmed.startswith(b"[")
+    except Exception:
+        return False
+
+
+def _is_api_asset(domain: str | None, ports: dict | None) -> bool:
+    if not domain:
+        return False
+    normalized = domain.lower()
+    if "/api" in normalized or normalized.startswith("api.") or ".api." in normalized:
+        return True
+
+    port_map = ports or {}
+    candidates: list[tuple[bool, int]] = []
+    for port in (443, 8443):
+        if port_map.get(str(port)):
+            candidates.append((True, port))
+    for port in (80, 8080):
+        if port_map.get(str(port)):
+            candidates.append((False, port))
+
+    for use_https, port in candidates:
+        if _probe_json_response(domain, port, use_https, "/api"):
+            return True
+        if _probe_json_response(domain, port, use_https, "/"):
+            return True
+    return False
+
+
+def classify_asset_type(domain: str | None, ports: dict | None, is_api: bool = False) -> str:
     normalized = (domain or "").lower()
     port_map = ports or {}
-    has_web_port = bool(
-        port_map.get("80")
-        or port_map.get("443")
-        or port_map.get("8080")
-        or port_map.get("8443")
-    )
+    has_web_port = bool(port_map.get("80") or port_map.get("443"))
+    if is_api:
+        return "api"
     if has_web_port:
         return "web"
     if "api" in normalized:
@@ -118,7 +183,8 @@ def run_crypto_scans(assets: list[dict]) -> list[dict]:
         has_tls = bool(ports.get("443"))
         cert_info = get_certificate_expiry(domain, port_443_open=has_tls)
         cert_status = cert_info.get("certificate_status", "UNREACHABLE")
-        asset_type = classify_asset_type(domain, ports)
+        is_api = _is_api_asset(domain, ports)
+        asset_type = classify_asset_type(domain, ports, is_api=is_api)
         target = asset.get("ip") or domain
         print("Before Nmap:", asset)
         service_result = scan_service_versions(target) if target else {"services": [], "ip": None}
@@ -400,6 +466,165 @@ def scan_domain(request: ScanRequest):
 @app.get("/scans")
 def get_scans_history():
     return get_latest_scans()
+
+
+def _parse_nuclei_output(output: str) -> list[dict]:
+    results = []
+    for line in output.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            payload = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        info = payload.get("info") or {}
+        results.append({
+            "name": info.get("name") or payload.get("name") or "Unknown",
+            "severity": (info.get("severity") or payload.get("severity") or "unknown").lower(),
+            "template": payload.get("template-id") or payload.get("template") or "unknown",
+            "matched": payload.get("matched-at") or payload.get("matched") or payload.get("host") or "",
+        })
+    return results
+
+
+@app.post("/run-nuclei")
+def run_nuclei_scan(request: NucleiRequest):
+    raw_domains = [domain.strip() for domain in (request.domains or []) if domain and domain.strip()]
+    domains = []
+    for domain in raw_domains:
+        if "://" in domain:
+            domains.append(domain)
+        else:
+            domains.append(f"https://{domain}")
+    if not domains:
+        return {"success": False, "error": "No domains provided", "findings": [], "summary": {}, "total": 0}
+
+    local_nuclei = os.path.join(os.getcwd(), "nuclei.exe")
+    nuclei_cmd = local_nuclei if os.path.exists(local_nuclei) else "nuclei"
+    if nuclei_cmd != "nuclei" and not os.path.isfile(nuclei_cmd):
+        return {"success": False, "error": f"Nuclei not found at {nuclei_cmd}", "findings": [], "summary": {}, "total": 0}
+
+    mode = (request.mode or "fast").lower()
+    with tempfile.TemporaryDirectory() as tmpdir:
+        domains_path = os.path.join(tmpdir, "domains.txt")
+        with open(domains_path, "w", encoding="utf-8") as handle:
+            handle.write("\n".join(domains))
+
+        if not os.path.isfile(domains_path):
+            return {"success": False, "error": "Domains file was not created", "findings": [], "summary": {}, "total": 0}
+        if os.path.getsize(domains_path) == 0:
+            return {"success": False, "error": "Domains file is empty", "findings": [], "summary": {}, "total": 0}
+
+        NUCLEI_STATUS.update({
+            "running": True,
+            "requests": 0,
+            "templates": 0,
+            "stats": None,
+            "last_lines": [],
+            "last_update": None,
+        })
+
+        try:
+            base_cmd = [
+                nuclei_cmd,
+                "-l",
+                domains_path,
+                "-jsonl",
+                "-stats",
+            ]
+            if mode == "deep":
+                cmd = base_cmd
+            else:
+                cmd = base_cmd + [
+                    "-c",
+                    "50",
+                    "-timeout",
+                    "5",
+                    "-retries",
+                    "1",
+                    "-rate-limit",
+                    "150",
+                    "-severity",
+                    "high",
+                    "-tags",
+                    "cve,exposure",
+                ]
+
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+            )
+        except FileNotFoundError:
+            NUCLEI_STATUS["running"] = False
+            return {"success": False, "error": "Nuclei binary not found on server PATH", "findings": [], "summary": {}, "total": 0}
+        except Exception as exc:
+            NUCLEI_STATUS["running"] = False
+            return {"success": False, "error": f"Failed to run nuclei: {exc}", "findings": [], "summary": {}, "total": 0}
+
+        stdout_lines = []
+        if process.stdout:
+            for line in process.stdout:
+                line = line.strip()
+                if not line:
+                    continue
+                print(line)
+                stdout_lines.append(line)
+                NUCLEI_STATUS["last_update"] = line
+                parsed_stats = None
+                if line.startswith("{") and line.endswith("}"):
+                    try:
+                        parsed_stats = json.loads(line)
+                    except json.JSONDecodeError:
+                        parsed_stats = None
+                if isinstance(parsed_stats, dict) and (
+                    "percent" in parsed_stats
+                    or "requests" in parsed_stats
+                    or "total" in parsed_stats
+                    or "rps" in parsed_stats
+                ):
+                    NUCLEI_STATUS["stats"] = parsed_stats
+                    if "requests" in parsed_stats:
+                        NUCLEI_STATUS["requests"] = int(parsed_stats.get("requests") or 0)
+                    if "templates" in parsed_stats:
+                        NUCLEI_STATUS["templates"] = int(parsed_stats.get("templates") or 0)
+                else:
+                    NUCLEI_STATUS["last_lines"] = (NUCLEI_STATUS["last_lines"] + [line])[-12:]
+                    req_match = re.search(r"requests\s*:\s*(\d+)", line, re.IGNORECASE)
+                    tmpl_match = re.search(r"templates\s*:\s*(\d+)", line, re.IGNORECASE)
+                    if req_match:
+                        NUCLEI_STATUS["requests"] = int(req_match.group(1))
+                    if tmpl_match:
+                        NUCLEI_STATUS["templates"] = int(tmpl_match.group(1))
+
+        process.wait()
+
+    NUCLEI_STATUS["running"] = False
+
+    if process.returncode != 0:
+        print("Nuclei failed")
+        return {
+            "success": False,
+            "error": f"Nuclei exited with code {process.returncode}",
+            "findings": [],
+            "summary": {},
+            "total": 0,
+        }
+
+    findings = _parse_nuclei_output("".join(stdout_lines))
+    summary = {}
+    for entry in findings:
+        severity = entry.get("severity", "unknown") or "unknown"
+        summary[severity] = summary.get(severity, 0) + 1
+
+    return {"success": True, "findings": findings, "summary": summary, "total": len(findings)}
+
+
+@app.get("/nuclei-status")
+def nuclei_status():
+    return NUCLEI_STATUS
 
 
 @app.get("/{full_path:path}")

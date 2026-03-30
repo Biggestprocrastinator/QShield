@@ -9,6 +9,7 @@ import Security from './pages/Security';
 import Analytics from './pages/Analytics';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import VulnerabilityScan from './pages/VulnerabilityScan';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -71,6 +72,7 @@ export default function App() {
               <Route path="asset-inventory" element={<AssetInventory scanData={scanData} isLoading={isLoading} error={error} />} />
               <Route path="monitoring" element={<Monitoring scanData={scanData} isLoading={isLoading} error={error} />} />
               <Route path="security" element={<Security scanData={scanData} isLoading={isLoading} error={error} />} />
+              <Route path="vulnerability-scan" element={<VulnerabilityScan scanData={scanData} isLoading={isLoading} error={error} />} />
               <Route path="analytics" element={<Analytics scanData={scanData} isLoading={isLoading} error={error} />} />
               <Route path="reports" element={<Reports scanData={scanData} isLoading={isLoading} error={error} />} />
               <Route path="settings" element={<Settings />} />
