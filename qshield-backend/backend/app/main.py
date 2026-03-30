@@ -18,6 +18,9 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from email.message import EmailMessage
 import smtplib
+from dotenv import load_dotenv
+
+load_dotenv()  # Load .env file so SMTP credentials are available
 
 from backend.app.db import engine, Base
 from backend.app.routers import auth
@@ -513,8 +516,10 @@ async def deliver_report(
             smtp_pass = os.environ.get("SMTP_PASS")
             
             if not smtp_server or not smtp_user or not smtp_pass:
-                logger.warning(f"SMTP not configured. Simulating email send to {emails} with attachment {filename}")
-                return
+                raise Exception(
+                    "SMTP is not configured on this server. "
+                    "Please set SMTP_SERVER, SMTP_USER, and SMTP_PASS in the .env file."
+                )
                 
             try:
                 msg = EmailMessage()

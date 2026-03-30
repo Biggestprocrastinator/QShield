@@ -8,3 +8,4 @@ starlette==1.0.0
 python-jose[cryptography]
 PyJWT==2.12.1
 bcrypt==5.0.0
+python-dotenv
