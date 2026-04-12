@@ -4,7 +4,19 @@ import re
 import shutil
 import subprocess
 import sys
+from typing import Any
 from pathlib import Path
+
+import socket
+import ssl
+
+try:
+    from cryptography import x509
+    from cryptography.hazmat.primitives.asymmetric import ec, rsa
+except ImportError:  # pragma: no cover
+    x509 = None
+    rsa = None
+    ec = None
 
 
 def _resolve_sslyze_command() -> list[str]:
@@ -136,6 +148,65 @@ def _extract_error_message(result: subprocess.CompletedProcess[str]) -> str:
 logger = logging.getLogger(__name__)
 
 
+def _fetch_peer_certificate_der(hostname: str, timeout: float = 5.0) -> bytes | None:
+    if not hostname:
+        return None
+
+    # We only need the server certificate bytes; verification is not required.
+    context = ssl.create_default_context()
+    context.check_hostname = False
+    context.verify_mode = ssl.CERT_NONE
+
+    try:
+        with socket.create_connection((hostname, 443), timeout=timeout) as sock:
+            with context.wrap_socket(sock, server_hostname=hostname) as ssock:
+                return ssock.getpeercert(binary_form=True)
+    except Exception:
+        return None
+
+
+def _extract_encryption_details(hostname: str) -> dict[str, Any] | None:
+    """
+    Extract key size, public-key algorithm, and signature hash using an SSL handshake.
+
+    Returns:
+      {
+        "key_size": int|None,
+        "algorithm": "RSA"|"ECDSA"|"Unknown",
+        "signature": str|None,
+      }
+    """
+    if x509 is None:
+        return None
+
+    binary_cert = _fetch_peer_certificate_der(hostname)
+    if not binary_cert:
+        return None
+
+    try:
+        cert = x509.load_der_x509_certificate(binary_cert)
+        key = cert.public_key()
+
+        key_size = getattr(key, "key_size", None)
+        if not isinstance(key_size, int):
+            key_size = None
+
+        algorithm = "Unknown"
+        if rsa is not None and isinstance(key, rsa.RSAPublicKey):
+            algorithm = "RSA"
+        elif ec is not None and isinstance(key, ec.EllipticCurvePublicKey):
+            algorithm = "ECDSA"
+
+        signature = None
+        sig_hash = getattr(cert, "signature_hash_algorithm", None)
+        if sig_hash is not None:
+            signature = getattr(sig_hash, "name", None)
+
+        return {"key_size": key_size, "algorithm": algorithm, "signature": signature}
+    except Exception:
+        return None
+
+
 def scan_tls(domain: str):
     hostname = _extract_hostname(domain)
     target = f"{hostname}:443"
@@ -206,6 +277,15 @@ def scan_tls(domain: str):
 
         cipher = _select_best_cipher(server)
         certificate_algo, key_size = _extract_certificate_details(server)
+
+        encryption = _extract_encryption_details(hostname) or {}
+        if encryption.get("algorithm") == "RSA":
+            certificate_algo = "RSA"
+        elif encryption.get("algorithm") == "ECDSA":
+            certificate_algo = "ECC"
+        if isinstance(encryption.get("key_size"), int):
+            key_size = int(encryption["key_size"])
+        signature = encryption.get("signature")
         logger.info("parsed tls=%s cipher=%s", tls_version, cipher)
 
         return {
@@ -214,6 +294,8 @@ def scan_tls(domain: str):
             "cipher": cipher,
             "certificate_algo": certificate_algo,
             "key_size": key_size,
+            "algorithm": encryption.get("algorithm"),
+            "signature": signature,
         }
 
     except (json.JSONDecodeError, OSError, subprocess.TimeoutExpired) as e:
@@ -224,6 +306,8 @@ def scan_tls(domain: str):
             "cipher": "Unknown",
             "certificate_algo": None,
             "key_size": None,
+            "algorithm": None,
+            "signature": None,
             "error": str(e),
         }
     except Exception as e:
@@ -234,5 +318,7 @@ def scan_tls(domain: str):
             "cipher": "Unknown",
             "certificate_algo": None,
             "key_size": None,
+            "algorithm": None,
+            "signature": None,
             "error": str(e),
         }
