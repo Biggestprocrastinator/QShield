@@ -47,12 +47,12 @@
       0 2px 8px rgba(0,0,0,0.06);
   }
 
-  /* ── Ultra Clean Dotted Background ── */
+  /* ── Topographic Contour Background ── */
   .tech-pattern {
-    background-color: #f8fafc;
-    background-image: radial-gradient(#cbd5e1 1px, transparent 0);
-    background-size: 24px 24px;
-    background-position: -12px -12px;
+    background-color: #fdf9f2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cpath d='M-50 30C50 10,150 50,250 30C350 10,450 50,650 30' fill='none' stroke='rgba(181,10,46,.05)' stroke-width='1.2'/%3E%3Cpath d='M-50 67C30 47,130 82,230 62C330 42,430 77,650 67' fill='none' stroke='rgba(181,10,46,.04)' stroke-width='1'/%3E%3Cpath d='M-50 104C70 79,170 114,270 94C370 74,470 109,650 104' fill='none' stroke='rgba(250,188,10,.06)' stroke-width='1'/%3E%3Cpath d='M-50 142C40 117,140 152,240 132C340 112,440 147,650 142' fill='none' stroke='rgba(181,10,46,.05)' stroke-width='1'/%3E%3Cpath d='M-50 180C60 155,160 190,260 170C360 150,460 185,650 180' fill='none' stroke='rgba(181,10,46,.04)' stroke-width='1.2'/%3E%3Cpath d='M-50 218C50 193,150 228,250 208C350 188,450 223,650 218' fill='none' stroke='rgba(250,188,10,.05)' stroke-width='1'/%3E%3Cpath d='M-50 256C70 231,170 266,270 246C370 226,470 261,650 256' fill='none' stroke='rgba(181,10,46,.05)' stroke-width='1'/%3E%3Cpath d='M-50 294C40 269,140 304,240 284C340 264,440 299,650 294' fill='none' stroke='rgba(181,10,46,.04)' stroke-width='1'/%3E%3Cpath d='M-50 331C60 306,160 341,260 321C360 301,460 336,650 331' fill='none' stroke='rgba(250,188,10,.06)' stroke-width='1.2'/%3E%3Cpath d='M-50 368C50 343,150 378,250 358C350 338,450 373,650 368' fill='none' stroke='rgba(181,10,46,.05)' stroke-width='1'/%3E%3Cellipse cx='155' cy='195' rx='108' ry='68' fill='none' stroke='rgba(181,10,46,.04)' stroke-width='1'/%3E%3Cellipse cx='155' cy='195' rx='72' ry='45' fill='none' stroke='rgba(181,10,46,.055)' stroke-width='1'/%3E%3Cellipse cx='155' cy='195' rx='40' ry='25' fill='none' stroke='rgba(250,188,10,.08)' stroke-width='1.2'/%3E%3Cellipse cx='155' cy='195' rx='18' ry='11' fill='none' stroke='rgba(250,188,10,.1)' stroke-width='1'/%3E%3Cellipse cx='462' cy='112' rx='90' ry='56' fill='none' stroke='rgba(181,10,46,.04)' stroke-width='1'/%3E%3Cellipse cx='462' cy='112' rx='58' ry='36' fill='none' stroke='rgba(250,188,10,.06)' stroke-width='1'/%3E%3Cellipse cx='462' cy='112' rx='30' ry='19' fill='none' stroke='rgba(181,10,46,.07)' stroke-width='1'/%3E%3Cellipse cx='488' cy='322' rx='76' ry='48' fill='none' stroke='rgba(250,188,10,.05)' stroke-width='1'/%3E%3Cellipse cx='488' cy='322' rx='48' ry='30' fill='none' stroke='rgba(181,10,46,.055)' stroke-width='1'/%3E%3Cellipse cx='488' cy='322' rx='24' ry='15' fill='none' stroke='rgba(250,188,10,.08)' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 600px 400px;
+    background-attachment: fixed;
   }
 
   /* ── Sidebar noise texture overlay ── */
