@@ -72,8 +72,8 @@ export default function Assets({ scanData, isLoading, error }) {
       <div className="bg-error-container text-on-error-container p-4 flex items-center gap-3 rounded-lg shadow-sm border border-error/20">
         <span className="material-symbols-outlined text-error">error</span>
         <div className="flex-1">
-            <h4 className="font-bold text-sm">Scan Failed</h4>
-            <p className="text-xs">{error}</p>
+          <h4 className="font-bold text-sm">Scan Failed</h4>
+          <p className="text-xs">{error}</p>
         </div>
       </div>
     );
@@ -132,11 +132,11 @@ export default function Assets({ scanData, isLoading, error }) {
       let matchSearch = true;
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
-        matchSearch = (asset.domain || '').toLowerCase().includes(q) || 
-                      (asset.ip || '').toLowerCase().includes(q) ||
-                      (asset.type || '').toLowerCase().includes(q);
+        matchSearch = (asset.domain || '').toLowerCase().includes(q) ||
+          (asset.ip || '').toLowerCase().includes(q) ||
+          (asset.type || '').toLowerCase().includes(q);
       }
-      
+
       let matchType = true;
       if (typeFilter !== 'All') {
         matchType = asset.type === typeFilter;
@@ -168,7 +168,7 @@ export default function Assets({ scanData, isLoading, error }) {
 
       {/* Categorization Pills */}
       <div className="flex flex-wrap gap-3">
-        <button 
+        <button
           onClick={() => setTypeFilter('All')}
           className={`px-4 py-1.5 rounded-full text-sm font-bold transition-colors shadow-sm border border-transparent ${typeFilter === 'All' ? 'bg-[#721c24] text-white' : 'bg-[#e9ecef] text-gray-600 hover:bg-gray-300'} `}
         >
@@ -182,7 +182,7 @@ export default function Assets({ scanData, isLoading, error }) {
             pillClass += " hover:brightness-95";
           }
           return (
-            <button 
+            <button
               key={type}
               onClick={() => setTypeFilter(type)}
               className={`px-4 py-1.5 rounded-full text-[13px] font-bold transition-all shadow-sm ${pillClass} `}
@@ -198,15 +198,15 @@ export default function Assets({ scanData, isLoading, error }) {
         <div className="flex items-center gap-8 w-full max-w-4xl">
           <div className="relative flex-1">
             <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">search</span>
-            <input 
-              type="text" 
-              placeholder="Search assets, types..." 
+            <input
+              type="text"
+              placeholder="Search assets, types..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-11 pr-4 py-2.5 bg-white border border-[#dee2e6] rounded-lg text-[15px] font-medium text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#721c24]/20 focus:border-[#721c24]"
             />
           </div>
-          
+
           <div className="flex items-center gap-4">
             <span className="text-[15px] font-medium text-gray-500">Risk:</span>
             <div className="flex flex-wrap gap-1 border border-[#dee2e6] rounded-md p-1 bg-white">
@@ -218,7 +218,7 @@ export default function Assets({ scanData, isLoading, error }) {
                   if (risk === 'Medium') riskColor += ' hover:text-amber-600';
                   if (risk === 'Low') riskColor += ' hover:text-green-600';
                 }
-                
+
                 return (
                   <button
                     key={risk}
@@ -246,6 +246,7 @@ export default function Assets({ scanData, isLoading, error }) {
                 <th className="p-4 w-4 bg-transparent"></th>
                 <th className="p-4 text-[11px] font-bold tracking-[0.1em] text-[#721c24] uppercase whitespace-nowrap bg-transparent">Asset</th>
                 <th className="p-4 text-[11px] font-bold tracking-[0.1em] text-[#721c24] uppercase whitespace-nowrap bg-transparent">Asset Type</th>
+                <th className="p-4 text-[11px] font-bold tracking-[0.1em] text-[#721c24] uppercase whitespace-nowrap bg-transparent">Services</th>
                 <th className="p-4 text-[11px] font-bold tracking-[0.1em] text-[#721c24] uppercase whitespace-nowrap bg-transparent">IP / Subnet</th>
                 <th className="p-4 text-[11px] font-bold tracking-[0.1em] text-[#721c24] uppercase whitespace-nowrap bg-transparent">Cipher Str.</th>
                 <th className="p-4 text-[11px] font-bold tracking-[0.1em] text-[#721c24] uppercase whitespace-nowrap bg-transparent">TLS</th>
@@ -265,10 +266,10 @@ export default function Assets({ scanData, isLoading, error }) {
                   if (asset.tls_label === 'Secure') cipherColor = 'text-green-700 bg-green-50';
                   else if (asset.tls_label === 'Moderate') cipherColor = 'text-[#b07d12] bg-[#fbf5e6]';
                   else if (asset.tls_label === 'Weak') cipherColor = 'text-red-700 bg-red-50';
-                  
+
                   const typeClass = getTypeColorClass(asset.type);
                   const isApi = (asset.type || '').toLowerCase() === 'api';
-                  
+
                   return (
                     <tr key={i} className="hover:bg-black/[0.02] transition-colors">
                       <td className="p-4 w-4"></td>
@@ -277,6 +278,25 @@ export default function Assets({ scanData, isLoading, error }) {
                         <span className={`px-2.5 py-1 rounded-full text-[12px] font-bold ${typeClass} whitespace-nowrap`}>
                           {asset.type}
                         </span>
+                      </td>
+                      <td className="p-4 text-[14px] font-medium whitespace-nowrap">
+                        <div className="flex flex-wrap gap-1">
+                          {asset.services && asset.services.length > 0 ? (
+                            asset.services.map((svc, idx) => {
+                              const isOutdated = svc.outdated;
+                              const colorClass = isOutdated ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800';
+                              const nameStr = svc.product || svc.service || 'unknown';
+                              const verStr = svc.version ? ` v${svc.version}` : '';
+                              return (
+                                <span key={idx} className={`px-2 py-0.5 rounded text-[11px] font-bold ${colorClass}`}>
+                                  {nameStr}{verStr}
+                                </span>
+                              );
+                            })
+                          ) : (
+                            <span className="text-gray-400">--</span>
+                          )}
+                        </div>
                       </td>
                       <td className="p-4 text-[14px] font-medium text-gray-700 whitespace-nowrap">
                         {asset.ip ? (
@@ -331,12 +351,11 @@ export default function Assets({ scanData, isLoading, error }) {
                         )}
                       </td>
                       <td className="p-4 text-[14px] whitespace-nowrap">
-                        <span className={`px-2 inline-flex text-xs leading-5 font-bold rounded-full ${
-                          asset.risk_level === 'Low' ? 'bg-green-100 text-green-800' : 
+                        <span className={`px-2 inline-flex text-xs leading-5 font-bold rounded-full ${asset.risk_level === 'Low' ? 'bg-green-100 text-green-800' :
                           asset.risk_level === 'Medium' || asset.risk_level === 'Moderate' ? 'bg-secondary-container text-on-secondary-container bg-[#fbf5e6] text-[#b07d12]' :
-                          asset.risk_level === 'High' || asset.risk_level === 'Critical' ? 'bg-error-container text-on-error-container bg-red-100 text-red-800' :
-                          'bg-gray-100 text-gray-800'
-                        }`}>
+                            asset.risk_level === 'High' || asset.risk_level === 'Critical' ? 'bg-error-container text-on-error-container bg-red-100 text-red-800' :
+                              'bg-gray-100 text-gray-800'
+                          }`}>
                           {asset.risk_level || 'Unknown'}
                         </span>
                       </td>
@@ -345,7 +364,7 @@ export default function Assets({ scanData, isLoading, error }) {
                 })
               ) : (
                 <tr>
-                  <td colSpan="13" className="p-12 text-center">
+                  <td colSpan="14" className="p-12 text-center">
                     <span className="material-symbols-outlined text-4xl text-gray-300 mb-2">search_off</span>
                     <p className="text-gray-500 font-medium">No assets matching your filters</p>
                   </td>

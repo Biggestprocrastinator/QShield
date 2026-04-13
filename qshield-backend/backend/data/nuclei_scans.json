@@ -124,5 +124,31 @@
         }
       ]
     }
+  },
+  {
+    "run_id": "d05ab62a-a42f-4d4e-abbc-902789153334",
+    "timestamp": "2026-04-13T18:25:47.519665",
+    "payload": {
+      "success": true,
+      "mode": "fast",
+      "targets": [
+        "erpadmin.vupune.ac.in",
+        "incon-ctlvu.vupune.ac.in",
+        "iqube.vupune.ac.in",
+        "vulj.vupune.ac.in",
+        "vunet.vupune.ac.in",
+        "learner.vupune.ac.in",
+        "icaio.vupune.ac.in",
+        "icsiaiml.vupune.ac.in",
+        "onlineadmissionapi.vupune.ac.in",
+        "research.vupune.ac.in",
+        "jstir.vupune.ac.in",
+        "admission.vupune.ac.in",
+        "icrcsd.vupune.ac.in"
+      ],
+      "target_count": 13,
+      "findings": [],
+      "summary": {}
+    }
   }
 ]
