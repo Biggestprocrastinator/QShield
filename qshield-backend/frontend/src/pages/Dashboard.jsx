@@ -55,11 +55,11 @@ export default function Dashboard({ scanData, isLoading, error }) {
   const servers = uniqueIPs.length;
 
   const kpiCards = [
-    { title: 'Total Assets', value: totalAssets, className: 'border-l-4 border-blue-500 text-slate-800 shadow-sm hover:shadow-md transition-shadow', filter: '' },
-    { title: 'High Risk Assets', value: highRisk, className: 'border-l-4 border-primary text-slate-800 shadow-sm hover:shadow-md transition-shadow', filter: 'high' },
-    { title: 'Expiring Soon', value: expiringSoon, className: 'border-l-4 border-secondary text-slate-800 shadow-sm hover:shadow-md transition-shadow', filter: 'expiring' },
-    { title: 'APIs', value: apis, className: 'border-l-4 border-indigo-500 text-slate-800 shadow-sm hover:shadow-md transition-shadow', filter: 'api' },
-    { title: 'Servers', value: servers, className: 'border-l-4 border-emerald-500 text-slate-800 shadow-sm hover:shadow-md transition-shadow', filter: 'server' }
+    { title: 'Total Assets', value: totalAssets, accentClass: 'border-l-4 border-blue-500', filter: '', delay: '0ms' },
+    { title: 'High Risk Assets', value: highRisk, accentClass: 'border-l-4 border-primary', filter: 'high', delay: '60ms' },
+    { title: 'Expiring Soon', value: expiringSoon, accentClass: 'border-l-4 border-secondary', filter: 'expiring', delay: '120ms' },
+    { title: 'APIs', value: apis, accentClass: 'border-l-4 border-indigo-500', filter: 'api', delay: '180ms' },
+    { title: 'Servers', value: servers, accentClass: 'border-l-4 border-emerald-500', filter: 'server', delay: '240ms' },
   ];
 
   const handleCardClick = (filter) => {
@@ -137,8 +137,8 @@ export default function Dashboard({ scanData, isLoading, error }) {
                   handleCardClick(card.filter);
                 }
               }}
-              className={`rounded-2xl w-full min-w-0 p-3 flex flex-col justify-between gap-1 overflow-hidden truncate ${card.className} shadow-lg shadow-black/5 border border-[#e5dfd3] cursor-pointer transition-transform duration-200 ease-out transform hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary`}
-              style={{ background: 'linear-gradient(135deg, #fdfbf6 0%, #f8f4ec 100%)' }}
+              className={`glass-card card-rise rounded-2xl w-full min-w-0 p-3 flex flex-col justify-between gap-1 overflow-hidden truncate text-slate-800 ${card.accentClass} cursor-pointer transition-all duration-200 ease-out transform hover:-translate-y-1 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary`}
+              style={{ background: 'linear-gradient(135deg, #fdfbf6 0%, #f8f4ec 100%)', animationDelay: card.delay }}
             >
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 truncate leading-tight">{card.title}</span>
               <div className="text-3xl font-black text-slate-800 leading-tight mt-1">{card.value}</div>

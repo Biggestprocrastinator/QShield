@@ -13,21 +13,121 @@
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
-  
-  /* Premium Glass Card */
-  .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.04), 0 2px 8px rgba(15, 23, 42, 0.02);
+
+  /* ── Liquid Glass TopBar ── */
+  .liquid-glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.88) 0%,
+      rgba(253, 251, 246, 0.80) 100%
+    );
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 4px 32px rgba(181, 10, 46, 0.05),
+      0 1px 8px rgba(15, 23, 42, 0.04);
   }
 
-  /* Ultra Clean Dotted Background */
+  /* ── Premium Card (Cream/Beige) ── */
+  .glass-card {
+    background: linear-gradient(135deg, #fdfbf6 0%, #f8f4ec 100%);
+    border: 1px solid #e5dfd3;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.95) inset,
+      0 4px 24px rgba(181,10,46,0.04),
+      0 1px 4px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .glass-card:hover {
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.95) inset,
+      0 8px 32px rgba(181,10,46,0.08),
+      0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  /* ── Ultra Clean Dotted Background ── */
   .tech-pattern {
-    background-color: #f8fafc; /* Tailwind slate-50 */
-    background-image: radial-gradient(#cbd5e1 1px, transparent 0); /* Tailwind slate-300 */
+    background-color: #f8fafc;
+    background-image: radial-gradient(#cbd5e1 1px, transparent 0);
     background-size: 24px 24px;
     background-position: -12px -12px;
+  }
+
+  /* ── Sidebar noise texture overlay ── */
+  .sidebar-noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  /* ── Sidebar ambient glow orbs ── */
+  .sidebar-glow-top {
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(250,188,10,0.18) 0%, transparent 70%);
+    pointer-events: none;
+    animation: orb-drift 8s ease-in-out infinite alternate;
+  }
+  .sidebar-glow-bottom {
+    position: absolute;
+    bottom: 40px;
+    right: -30px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(250,188,10,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    animation: orb-drift 10s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes orb-drift {
+    0%   { transform: translate(0, 0) scale(1); opacity: 0.8; }
+    50%  { transform: translate(12px, 18px) scale(1.08); opacity: 1; }
+    100% { transform: translate(-8px, 10px) scale(0.96); opacity: 0.7; }
+  }
+
+  /* ── Nav item active glow pulse ── */
+  @keyframes accent-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(250,188,10,0); }
+    50%       { box-shadow: 0 0 0 3px rgba(250,188,10,0.15); }
+  }
+  .nav-active-pulse {
+    animation: accent-pulse 2.4s ease-in-out infinite;
+  }
+
+  /* ── Gold shimmer dot ping ── */
+  @keyframes ping-gold {
+    0% { transform: scale(1); opacity: 0.9; }
+    70% { transform: scale(2.2); opacity: 0; }
+    100% { transform: scale(2.2); opacity: 0; }
+  }
+  .ping-gold {
+    animation: ping-gold 1.8s cubic-bezier(0,0,0.2,1) infinite;
+  }
+
+  /* ── Card entrance animation ── */
+  @keyframes card-rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card-rise {
+    animation: card-rise 0.4s ease both;
+  }
+
+  /* ── Scan button pulse while running ── */
+  @keyframes scan-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(181,10,46,0.4); }
+    50%       { box-shadow: 0 0 0 6px rgba(181,10,46,0); }
+  }
+  .scan-pulse {
+    animation: scan-pulse 1.2s ease-in-out infinite;
   }
 }
