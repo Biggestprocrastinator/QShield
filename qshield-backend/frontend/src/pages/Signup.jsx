@@ -55,7 +55,7 @@ export default function Signup() {
         <div className="max-w-md w-full">
           <div className="mb-10">
             <h2 className="text-3xl font-bold text-[#81001d] tracking-tight">Create account</h2>
-            <p className="text-[#594141] mt-2 text-sm">Join QShield to start monitoring your assets</p>
+            <p className="text-[#594141] mt-2 text-sm">Join Requiem to start monitoring your assets</p>
           </div>
 
           {error && (
@@ -73,7 +73,7 @@ export default function Signup() {
                 className="w-full bg-white border border-[#e1bebe] rounded-xl px-4 py-3 text-[#1d1b19] text-sm focus:outline-none focus:border-[#81001d] focus:ring-2 focus:ring-[#81001d]/20 transition-all placeholder:text-[#8d7070]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@qshield.com"
+                placeholder="admin@requiem.com"
               />
             </div>
 

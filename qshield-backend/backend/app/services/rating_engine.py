@@ -34,13 +34,14 @@ def calculate_rating(cbom):
 
         total_score += max(score, 0)
 
-    avg_score = max(total_score // count, 0)
+    avg_score_100 = max(total_score // count, 0)
+    avg_score = min(avg_score_100 * 10, 1000)
 
-    if avg_score >= 85:
+    if avg_score >= 850:
         rating = "Elite"
-    elif avg_score >= 70:
+    elif avg_score >= 700:
         rating = "Standard"
-    elif avg_score >= 50:
+    elif avg_score >= 500:
         rating = "Legacy"
     else:
         rating = "Critical"

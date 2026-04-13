@@ -230,10 +230,10 @@ export default function Reports({ scanData, isLoading, error }) {
           <div className="space-y-3">
             <div className="flex justify-between items-end">
               <span className="text-sm font-bold">Overall Score</span>
-              <span className="text-2xl font-black text-secondary">{scanData?.score || 0}/100</span>
+              <span className="text-2xl font-black text-secondary">{scanData?.score || 0}/1000</span>
             </div>
             <div className="h-3 w-full bg-surface-container-high rounded-full overflow-hidden shadow-inner">
-              <div className="h-full bg-gradient-to-r from-secondary to-primary rounded-full transition-all duration-1000" style={{ width: `${scanData?.score || 0}%` }}></div>
+              <div className="h-full bg-gradient-to-r from-secondary to-primary rounded-full transition-all duration-1000" style={{ width: `${(scanData?.score || 0) / 10}%` }}></div>
             </div>
           </div>
           <div className="space-y-3">

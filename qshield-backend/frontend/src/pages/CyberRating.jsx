@@ -41,11 +41,11 @@ export default function CyberRating({ scanData, isLoading, error }) {
   const classical = scanData.classical_security || 'N/A';
   const quantum = scanData.quantum_security || 'N/A';
 
-  const scoreColor = score > 80 ? '#4ade80' : score > 60 ? '#facc15' : '#ef4444';
+  const scoreColor = score > 800 ? '#4ade80' : score > 600 ? '#facc15' : '#ef4444';
 
   const doughnutData = {
     datasets: [{
-      data: [score, 100 - score],
+      data: [score, 1000 - score],
       backgroundColor: [scoreColor, 'rgba(255, 255, 255, 0.05)'],
       borderWidth: 0,
       circumference: 240,
@@ -92,7 +92,7 @@ export default function CyberRating({ scanData, isLoading, error }) {
       {/* Main Score Card */}
       <div className="col-span-12 lg:col-span-5 glass-card p-8 rounded-3xl border border-outline-variant/30 flex flex-col items-center justify-center relative overflow-hidden bg-surface shadow-2xl">
         <div className="absolute top-0 right-0 p-6">
-           <div className="text-[10px] font-bold text-on-surface-variant/50 uppercase tracking-[0.2em]">Overall Score</div>
+          <div className="text-[10px] font-bold text-on-surface-variant/50 uppercase tracking-[0.2em]">Overall Score</div>
         </div>
         <div className="w-64 h-64 relative">
           <Doughnut data={doughnutData} options={doughnutOptions} />
@@ -102,11 +102,11 @@ export default function CyberRating({ scanData, isLoading, error }) {
           </div>
         </div>
         <div className="mt-4 text-center">
-          <div className={`text-3xl font-black uppercase tracking-tighter ${score > 80 ? 'text-green-500' : 'text-yellow-500'}`}>
-            {score > 85 ? 'Excellent' : score > 70 ? 'Secure' : score > 50 ? 'Moderate' : 'Critical'}
+          <div className={`text-3xl font-black uppercase tracking-tighter ${score > 800 ? 'text-green-500' : 'text-yellow-500'}`}>
+            {score > 850 ? 'Excellent' : score > 700 ? 'Secure' : score > 500 ? 'Moderate' : 'Critical'}
           </div>
           <p className="text-xs text-on-surface-variant mt-2 max-w-xs mx-auto">
-            Your infrastructure is {score}% protected against both classical and nascent quantum threats.
+            Your infrastructure is {Math.round((score / 1000) * 100)}% protected against both classical and nascent quantum threats.
           </p>
         </div>
       </div>
@@ -151,7 +151,7 @@ export default function CyberRating({ scanData, isLoading, error }) {
 
         {/* History / Trend */}
         <div className="col-span-1 glass-card p-6 rounded-3xl border border-outline-variant/30 bg-surface flex flex-col justify-between">
-           <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 text-blue-500">
+          <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 text-blue-500">
             <span className="material-symbols-outlined">trending_up</span>
           </div>
           <h3 className="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Score Trend</h3>
@@ -166,8 +166,8 @@ export default function CyberRating({ scanData, isLoading, error }) {
       <div className="col-span-12 glass-card p-8 rounded-3xl border border-outline-variant/30 bg-surface">
         <h3 className="text-sm font-bold text-secondary uppercase tracking-widest mb-8">Asset Risk Distribution</h3>
         <div className="h-64">
-           <Bar 
-            data={barData} 
+          <Bar
+            data={barData}
             options={{
               responsive: true,
               maintainAspectRatio: false,
@@ -176,7 +176,7 @@ export default function CyberRating({ scanData, isLoading, error }) {
                 y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'rgba(255,255,255,0.5)' } },
                 x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.7)', font: { weight: 'bold' } } }
               }
-            }} 
+            }}
           />
         </div>
       </div>

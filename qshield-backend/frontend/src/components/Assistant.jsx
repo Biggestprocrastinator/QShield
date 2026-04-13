@@ -84,7 +84,7 @@ export default function Assistant({ scanData, nucleiResults = [] }) {
       >
         <div className="flex items-center justify-between mb-3">
           <div>
-            <h3 className="text-sm font-semibold tracking-[0.3em] uppercase text-slate-200">QShield Assistant</h3>
+            <h3 className="text-sm font-semibold tracking-[0.3em] uppercase text-slate-200">Requiem Assistant</h3>
             <p className="text-xs text-slate-400 mt-1">Select an option to explore insights</p>
           </div>
           <button

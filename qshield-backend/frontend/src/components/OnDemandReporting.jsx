@@ -3,10 +3,10 @@ import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 export default function OnDemandReporting({ scanData }) {
-  const [reportType, setReportType] = useState('');
+  const [selectedReports, setSelectedReports] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
+
   // Delivery options state
   const [sendViaEmail, setSendViaEmail] = useState(true);
   const [emailAddresses, setEmailAddresses] = useState("");
@@ -14,7 +14,7 @@ export default function OnDemandReporting({ scanData }) {
   const [saveLocationPath, setSaveLocationPath] = useState("/Reports/OnDemand/");
   const [downloadLink, setDownloadLink] = useState(false);
   const [slackNotification, setSlackNotification] = useState(false);
-  
+
   // Advanced settings state
   const [includeCharts, setIncludeCharts] = useState(true);
   const [passwordProtect, setPasswordProtect] = useState(false);
@@ -29,13 +29,20 @@ export default function OnDemandReporting({ scanData }) {
   ];
 
   const handleSelectReport = (type) => {
-    setReportType(type);
-    setIsDropdownOpen(false);
+    if (selectedReports.includes(type)) {
+      setSelectedReports(selectedReports.filter(r => r !== type));
+    } else {
+      setSelectedReports([...selectedReports, type]);
+    }
+  };
+
+  const removeReport = (typeId) => {
+    setSelectedReports(selectedReports.filter(r => r !== typeId));
   };
 
   const handleGenerateReport = () => {
-    if (!reportType) {
-      alert('Please select a Report Type to generate.');
+    if (selectedReports.length === 0) {
+      alert('Please select at least one Report Type to generate.');
       return;
     }
 
@@ -52,207 +59,421 @@ export default function OnDemandReporting({ scanData }) {
         pqc: 'Posture of Post-Quantum Cryptography (PQC)',
         cyber: 'Cyber Risk Rating'
       };
-      const title = reportTitleMap[reportType] || 'Security Report';
-      const reportName = `QShield_${reportType.toUpperCase()}_Report_${new Date().toISOString().split('T')[0]}.pdf`;
+
+      const reportName = `REQUIEM_Combined_Report_${new Date().toISOString().split('T')[0]}.pdf`;
       const doc = new jsPDF();
-      
       const pageWidth = doc.internal.pageSize.getWidth();
-      
-      // Header
-      doc.setFontSize(22);
-      doc.setTextColor(229, 160, 62); // Qshield orange
-      doc.text(`QShield - ${title}`, 14, 22);
-      
-      doc.setFontSize(10);
-      doc.setTextColor(100, 100, 100);
-      doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 30);
-      
-      doc.setLineDashPattern([], 0);
+      const pageHeight = doc.internal.pageSize.getHeight();
+
+      // --- Title Page ---
+      // Background Accent -> A stylish vertical stripe on the left edge
+      doc.setFillColor(181, 10, 46); // PNB Red (#B50A2E)
+      doc.rect(0, 0, 15, pageHeight, 'F'); // Left vertical edge full height
+
+      doc.setFillColor(229, 160, 62); // Gold accent
+      doc.rect(15, 0, 3, pageHeight, 'F'); // Thin gold edge next to it
+
+      // Main Title Area
+      doc.setFontSize(48);
+      doc.setTextColor(181, 10, 46); // Crimson
+      doc.setFont('helvetica', 'bold');
+      doc.text("REQUIEM", 35, 80);
+
+      doc.setFontSize(16);
+      doc.setTextColor(229, 160, 62); // Gold
+      doc.setFont('helvetica', 'normal');
+      doc.text("PUNJAB NATIONAL BANK", 35, 95);
+
       doc.setDrawColor(200, 200, 200);
-      doc.line(14, 35, pageWidth - 14, 35);
-      
-      // Content Generation based on reportType
-      let startY = 45;
-      
+      doc.setLineWidth(0.5);
+      doc.line(35, 105, pageWidth - 20, 105);
+
+      doc.setFontSize(12);
+      doc.setTextColor(100, 100, 100);
+      doc.setFont('helvetica', 'italic');
+      doc.text("Strategic Security Assessment & Posture Report", 35, 115);
+
+      // Contents section
+      doc.setFontSize(12);
+      doc.setTextColor(181, 10, 46);
+      doc.setFont('helvetica', 'bold');
+      doc.text("INCLUDED REPORTS", 35, 160);
+
+      const selectedTitles = selectedReports.map(type => reportTitleMap[type]);
+      doc.setFontSize(12);
+      doc.setTextColor(50, 50, 50);
+      doc.setFont('helvetica', 'normal');
+
+      let currY = 175;
+      selectedTitles.forEach((t) => {
+        doc.setDrawColor(229, 160, 62);
+        doc.setFillColor(229, 160, 62);
+        doc.circle(38, currY - 1.5, 1.5, 'F'); // bullet
+        doc.text(t, 45, currY);
+        currY += 8;
+      });
+
+      // Meta at the bottom right
+      let metaY = pageHeight - 50;
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(150, 150, 150);
+      doc.text("Generated:", pageWidth - 20, metaY, { align: 'right' });
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(50, 50, 50);
+      doc.text(`${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}`, pageWidth - 20, metaY + 6, { align: 'right' });
+
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(150, 150, 150);
+      doc.text("Classification:", pageWidth - 20, metaY + 18, { align: 'right' });
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(181, 10, 46); // Red
+      doc.text("STRICTLY CONFIDENTIAL", pageWidth - 20, metaY + 24, { align: 'right' });
+      // --- End Title Page ---
+
       if (!scanData) {
+        doc.addPage();
         doc.setFontSize(12);
         doc.setTextColor(200, 50, 50);
-        doc.text("No active scan data found to generate this report.", 14, startY);
+        doc.text("No active scan data found to generate this report.", 14, 45);
       } else {
-        if (reportType === 'exec') {
-          doc.setFontSize(14);
-          doc.setTextColor(50, 50, 50);
-          doc.text("Executive Summary", 14, startY);
-          
-          const summaryData = scanData.summary || {};
-          const body = [
-            ['Total Assets Scanned', summaryData.total_assets?.toString() || '0'],
-            ['HTTP Only (Insecure)', summaryData.http_only?.toString() || '0'],
-            ['Quantum Safe Assets', summaryData.quantum_safe?.toString() || '0'],
-            ['High Risk Assets', summaryData.high_risk_assets?.toString() || '0']
-          ];
-          
-          autoTable(doc, {
-            startY: startY + 5,
-            head: [['Metric', 'Value']],
-            body: body,
-            theme: 'striped',
-            headStyles: { fillColor: [229, 160, 62] },
-          });
-        } 
-        else if (reportType === 'discovery') {
-          doc.setFontSize(14);
-          doc.setTextColor(50, 50, 50);
-          doc.text("Assets Discovery Counts", 14, startY);
-          
-          const countsData = scanData.counts || {};
-          const body = [
-            ['Domains Discovered', countsData.domains?.toString() || '0'],
-            ['Unique IPs', countsData.ips?.toString() || '0'],
-            ['Active Services', countsData.services?.toString() || '0']
-          ];
-          
-          autoTable(doc, {
-            startY: startY + 5,
-            head: [['Discovery Category', 'Count']],
-            body: body,
-            theme: 'grid',
-            headStyles: { fillColor: [229, 160, 62] },
-          });
-        }
-        else if (reportType === 'inventory') {
-          doc.setFontSize(14);
-          doc.setTextColor(50, 50, 50);
-          doc.text("Network Inventory Details", 14, startY);
-          
-          const ports = (scanData.inventory?.ports) || [];
-          let body = ports.map(p => [p.port?.toString(), p.service?.toString()]);
-          if (body.length === 0) body = [['No ports found', '-']];
+        selectedReports.forEach((currentType) => {
+          doc.addPage();
 
-          autoTable(doc, {
-            startY: startY + 5,
-            head: [['Port', 'Service']],
-            body: body,
-            theme: 'striped',
-            headStyles: { fillColor: [229, 160, 62] },
-          });
-        }
-        else if (reportType === 'cbom') {
-          doc.setFontSize(14);
-          doc.setTextColor(50, 50, 50);
-          doc.text("Cryptographic Bill of Materials", 14, startY);
-          
-          let body = [];
-          
-          // Depending on CBOM structure from scanData
-          if (Array.isArray(scanData.cbom)) {
-            body = scanData.cbom.map(item => [
-              item.domain || item.name || 'Unknown', 
-              item.algorithm || item.cipher || 'Unknown', 
-              item.key_size?.toString() || item.size?.toString() || 'N/A', 
-              item.quantum_safe ? 'Yes' : 'No'
-            ]);
-          } else if (scanData.cbom && Array.isArray(scanData.cbom.components)) {
-             body = scanData.cbom.components.map(item => [
-                item.name || 'Unknown', 
-                item.crypto_algorithm || 'Unknown', 
-                item.key_length?.toString() || 'N/A', 
-                item.is_quantum_safe ? 'Yes' : 'No'
-             ]);
-          } else if (scanData.cbom && Array.isArray(scanData.cbom.items)) {
-             body = scanData.cbom.items.map(item => [
-                item.domain || item.name || 'Unknown', 
-                item.algorithm || item.cipher || 'Unknown', 
-                item.key_size?.toString() || item.size?.toString() || 'N/A', 
-                item.quantum_safe ? 'Yes' : 'No'
-             ]);
+          const title = reportTitleMap[currentType] || 'Security Report';
+
+          // Header
+          doc.setFontSize(22);
+          doc.setTextColor(250, 188, 10); // PNB Gold
+          doc.setFont('helvetica', 'bold');
+
+          const titleText = `REQUIEM - ${title}`;
+          const splitTitle = doc.splitTextToSize(titleText, pageWidth - 28);
+          doc.text(splitTitle, 14, 22);
+
+          const titleLinesHeight = splitTitle.length * 8;
+          doc.setFontSize(10);
+          doc.setTextColor(100, 100, 100);
+          doc.setFont('helvetica', 'normal');
+          doc.text(`Generated on: ${new Date().toLocaleString()}`, 14, 18 + titleLinesHeight);
+
+          doc.setLineDashPattern([], 0);
+          doc.setDrawColor(200, 200, 200);
+          doc.line(14, 23 + titleLinesHeight, pageWidth - 14, 23 + titleLinesHeight);
+
+          let startY = 32 + titleLinesHeight;
+
+          if (currentType === 'exec') {
+            doc.setFontSize(14);
+            doc.setTextColor(50, 50, 50);
+            doc.setFont('helvetica', 'bold');
+            doc.text("Executive Summary & Overview Stats", 14, startY);
+
+            const summaryData = scanData.summary || {};
+            const activeAssets = summaryData.total_assets || 0;
+            const httpOnlyCount = summaryData.http_only || 0;
+            const quantumSafe = summaryData.quantum_safe || 0;
+            const highRisk = summaryData.high_risk_assets || 0;
+
+            // Draw KPI boxes
+            doc.setDrawColor(230, 230, 230);
+            doc.setFillColor(252, 248, 242);
+            doc.roundedRect(14, startY + 5, 85, 25, 3, 3, 'FD');
+            doc.roundedRect(105, startY + 5, 85, 25, 3, 3, 'FD');
+            doc.roundedRect(14, startY + 35, 85, 25, 3, 3, 'FD');
+            doc.roundedRect(105, startY + 35, 85, 25, 3, 3, 'FD');
+
+            doc.setFontSize(10);
+            doc.setTextColor(120, 120, 120);
+            doc.text("TOTAL DISCOVERED ASSETS", 18, startY + 12);
+            doc.text("HTTP ONLY (INSECURE)", 109, startY + 12);
+            doc.text("QUANTUM SAFE ASSETS", 18, startY + 42);
+            doc.text("HIGH RISK ASSETS", 109, startY + 42);
+
+            doc.setFontSize(22);
+            doc.setTextColor(50, 50, 50);
+            doc.text(`${activeAssets}`, 18, startY + 24);
+            doc.text(`${httpOnlyCount}`, 109, startY + 24);
+            doc.setTextColor(40, 167, 69);
+            doc.text(`${quantumSafe}`, 18, startY + 54);
+            if (highRisk > 0) doc.setTextColor(220, 53, 69); // Red
+            doc.text(`${highRisk}`, 109, startY + 54);
+
+            let newY = startY + 75;
+            doc.setFontSize(14);
+            doc.setTextColor(50, 50, 50);
+            doc.text("Risk Distribution", 14, newY);
+
+            // Dummy bar chart
+            doc.setFillColor(229, 160, 62);
+            doc.rect(14, newY + 5, Math.max((highRisk / Math.max(activeAssets, 1)) * 150 + 5, 5), 12, 'F');
+            doc.setFontSize(11);
+            doc.text("High Risk", 170, newY + 14);
+
+            doc.setFillColor(40, 167, 69);
+            doc.rect(14, newY + 25, Math.max((quantumSafe / Math.max(activeAssets, 1)) * 150 + 5, 5), 12, 'F');
+            doc.text("Quantum Safe", 170, newY + 34);
+
+            doc.setFillColor(200, 200, 200);
+            doc.rect(14, newY + 45, 155, 12, 'F');
+            doc.text("Total Assets", 170, newY + 54);
           }
-          
-          if (body.length > 0) {
+          else if (currentType === 'discovery') {
+            doc.setFontSize(14);
+            doc.setTextColor(50, 50, 50);
+            doc.text("Resource & Discovery Counts", 14, startY);
+
+            const countsData = scanData.counts || {};
+            const dom = countsData.domains || 0;
+            const ips = countsData.ips || 0;
+            const svcs = countsData.services || 0;
+
+            // Draw horizontal bar graph for counts
+            let maxCount = Math.max(dom, ips, svcs, 1);
+            let barScale = 120 / maxCount;
+
+            doc.setFontSize(11);
+            doc.setTextColor(100, 100, 100);
+
+            // Domains
+            doc.text("Discovered Domains", 14, startY + 15);
+            doc.setFillColor(229, 160, 62);
+            doc.rect(60, startY + 10, dom * barScale + 5, 8, 'F');
+            doc.text(`${dom}`, 65 + dom * barScale + 5, startY + 15);
+
+            // IPs
+            doc.text("Unique IP Addresses", 14, startY + 30);
+            doc.setFillColor(181, 10, 46);
+            doc.rect(60, startY + 25, ips * barScale + 5, 8, 'F');
+            doc.text(`${ips}`, 65 + ips * barScale + 5, startY + 30);
+
+            // Services
+            doc.text("Active Services", 14, startY + 45);
+            doc.setFillColor(100, 100, 100);
+            doc.rect(60, startY + 40, svcs * barScale + 5, 8, 'F');
+            doc.text(`${svcs}`, 65 + svcs * barScale + 5, startY + 45);
+
+            const body = [
+              ['Domains Discovered', dom.toString()],
+              ['Unique IPs', ips.toString()],
+              ['Active Services', svcs.toString()]
+            ];
+
             autoTable(doc, {
-              startY: startY + 5,
-              head: [['Asset / Domain', 'Algorithm', 'Key Size', 'Quantum Safe']],
+              startY: startY + 60,
+              head: [['Discovery Category', 'Count']],
               body: body,
-              theme: 'striped',
+              theme: 'grid',
               headStyles: { fillColor: [229, 160, 62] },
             });
-          } else {
-             // fallback if cbom is just a nested object without an array
-             const str = JSON.stringify(scanData.cbom || {}, null, 2);
-             doc.setFontSize(10);
-             doc.setFont("courier", "normal");
-             const lines = doc.splitTextToSize(str, pageWidth - 28);
-             doc.text(lines, 14, startY + 10);
           }
-        }
-        else if (reportType === 'pqc') {
-          doc.setFontSize(14);
-          doc.setTextColor(50, 50, 50);
-          doc.text("PQC Risk Assessment", 14, startY);
-          
-          const body = [
-            ['Overall Risk Level', scanData.risk?.toString() || 'Unknown'],
-            ['Classical Security Standard', scanData.classical_security?.toString() || 'Unknown'],
-            ['Quantum Security Standard', scanData.quantum_security?.toString() || 'Unknown']
-          ];
-          
-          autoTable(doc, {
-            startY: startY + 5,
-            head: [['Assessment Factor', 'Evaluation']],
-            body: body,
-            theme: 'grid',
-            headStyles: { fillColor: [229, 160, 62] },
-          });
-        }
-        else if (reportType === 'cyber') {
-          doc.setFontSize(14);
-          doc.setTextColor(50, 50, 50);
-          doc.text("Cyber Rating Evaluation", 14, startY);
-          
-          const totalScore = scanData.score || 0;
-          const letterRating = scanData.rating || 'N/A';
-          doc.setFontSize(30);
-          
-          if (totalScore >= 80) doc.setTextColor(40, 167, 69);
-          else if (totalScore >= 50) doc.setTextColor(255, 193, 7);
-          else doc.setTextColor(220, 53, 69);
-          
-          doc.text(`${totalScore} / 100`, 14, startY + 15);
-          
-          doc.setFontSize(16);
-          doc.setTextColor(100, 100, 100);
-          doc.text(`Rating Tier: ${letterRating}`, 14, startY + 25);
-          
-          if (scanData.insights && scanData.insights.length > 0) {
-             doc.setFontSize(14);
-             doc.setTextColor(50, 50, 50);
-             doc.text("Key Findings:", 14, startY + 45);
-             
-             autoTable(doc, {
-                startY: startY + 50,
-                head: [['Insight / Finding']],
-                body: scanData.insights.map(i => [i]),
-                theme: 'plain',
-                headStyles: { fillColor: [240, 240, 240], textColor: [0, 0, 0] },
-             });
+          else if (currentType === 'inventory') {
+            doc.setFontSize(14);
+            doc.setTextColor(50, 50, 50);
+            doc.text("Detailed Open Ports & Services Allocation", 14, startY);
+
+            const ports = (scanData.inventory?.ports) || [];
+            let body = ports.map(p => [p.port?.toString(), p.service?.toString()]);
+            if (body.length === 0) body = [['No ports found', 'N/A']];
+
+            autoTable(doc, {
+              startY: startY + 10,
+              head: [['Open Port', 'Associated Service / Protocol']],
+              body: body,
+              theme: 'striped',
+              styles: { cellPadding: 4, fontSize: 10 },
+              headStyles: { fillColor: [181, 10, 46], textColor: [255, 255, 255], fontStyle: 'bold' },
+              alternateRowStyles: { fillColor: [252, 248, 242] },
+            });
           }
-        }
-        else {
-           doc.setFontSize(11);
-           doc.text(`Data dump for ${reportType}`, 14, startY);
-           const str = JSON.stringify(scanData, null, 2);
-           const lines = doc.splitTextToSize(str, pageWidth - 28);
-           let cursorY = startY + 10;
-           doc.setFont("courier", "normal");
-           for (let i = 0; i < lines.length; i++) {
-             if (cursorY > doc.internal.pageSize.getHeight() - 20) {
-               doc.addPage();
-               cursorY = 20;
-             }
-             doc.text(lines[i], 14, cursorY);
-             cursorY += 5;
-           }
-        }
+          else if (currentType === 'cbom') {
+            doc.setFontSize(14);
+            doc.setTextColor(50, 50, 50);
+            doc.text("Cryptographic Bill of Materials (CBOM)", 14, startY);
+
+            let body = [];
+            let qSafeCount = 0;
+            let qVulnCount = 0;
+
+            let sourceList = [];
+            if (Array.isArray(scanData.cbom)) sourceList = scanData.cbom;
+            else if (scanData.cbom && Array.isArray(scanData.cbom.components)) sourceList = scanData.cbom.components;
+            else if (scanData.cbom && Array.isArray(scanData.cbom.items)) sourceList = scanData.cbom.items;
+
+            sourceList.forEach(item => {
+              const isSafe = item.quantum_safe || item.is_quantum_safe;
+              if (isSafe) qSafeCount++; else qVulnCount++;
+              body.push([
+                item.domain || item.name || 'Unknown',
+                item.algorithm || item.cipher || item.crypto_algorithm || 'Unknown',
+                item.key_size?.toString() || item.key_length?.toString() || item.size?.toString() || 'N/A',
+                isSafe ? 'Secure' : 'Vulnerable'
+              ]);
+            });
+
+            // Draw ratio bar
+            doc.setFontSize(11);
+            doc.text("Quantum Preparedness Ratio", 14, startY + 15);
+            doc.setDrawColor(200, 200, 200);
+            doc.rect(14, startY + 20, 150, 10);
+
+            let totalCryptos = Math.max(qSafeCount + qVulnCount, 1);
+            if ((qSafeCount + qVulnCount) > 0) {
+              let safeRatio = qSafeCount / totalCryptos;
+              doc.setFillColor(40, 167, 69); // Green
+              doc.rect(14, startY + 20, 150 * safeRatio, 10, 'F');
+              doc.setFillColor(220, 53, 69); // Red
+              doc.rect(14 + (150 * safeRatio), startY + 20, 150 * (1 - safeRatio), 10, 'F');
+            } else {
+              doc.setFillColor(220, 220, 220);
+              doc.rect(14, startY + 20, 150, 10, 'F');
+            }
+
+            doc.setFontSize(10);
+            doc.setTextColor(40, 167, 69);
+            doc.text(`Quantum Safe: ${qSafeCount}`, 14, startY + 38);
+            doc.setTextColor(220, 53, 69);
+            doc.text(`Vulnerable: ${qVulnCount}`, 80, startY + 38);
+
+            if (body.length > 0) {
+              autoTable(doc, {
+                startY: startY + 45,
+                head: [['Asset / Domain', 'Algorithm', 'Key Size', 'PQC Status']],
+                body: body,
+                theme: 'grid',
+                styles: { cellPadding: 3, fontSize: 9 },
+                headStyles: { fillColor: [229, 160, 62], fontStyle: 'bold' },
+                didParseCell: function (data) {
+                  if (data.section === 'body' && data.column.index === 3) {
+                    if (data.cell.raw === 'Secure') data.cell.styles.textColor = [40, 167, 69];
+                    else data.cell.styles.textColor = [220, 53, 69];
+                  }
+                }
+              });
+            } else {
+              const str = JSON.stringify(scanData.cbom || {}, null, 2);
+              doc.setFontSize(9);
+              doc.setFont("courier", "normal");
+              const lines = doc.splitTextToSize(str, pageWidth - 28);
+              doc.text(lines, 14, startY + 45);
+            }
+          }
+          else if (currentType === 'pqc') {
+            doc.setFontSize(14);
+            doc.setTextColor(50, 50, 50);
+            doc.text("Post-Quantum Cryptography Assessment", 14, startY);
+
+            // Health Status Dashboard Module
+            doc.setFillColor(245, 245, 245);
+            doc.roundedRect(14, startY + 5, pageWidth - 28, 40, 3, 3, 'F');
+
+            doc.setFontSize(12);
+            doc.setTextColor(80, 80, 80);
+            doc.text("System Encryption Modules (PQC)", 25, startY + 15);
+
+            const pRisk = scanData.risk?.toString() || 'Unknown';
+            doc.setFontSize(16);
+            if (pRisk === 'High Risk' || pRisk === 'High') doc.setTextColor(220, 53, 69);
+            else if (pRisk === 'Vulnerable' || pRisk === 'Medium') doc.setTextColor(229, 160, 62);
+            else doc.setTextColor(40, 167, 69);
+            doc.text(`${pRisk} Profile`, 25, startY + 25);
+
+            const body = [
+              ['Classical Security Standard', scanData.classical_security?.toString() || 'Unknown'],
+              ['Quantum Security Standard', scanData.quantum_security?.toString() || 'Unknown']
+            ];
+
+            autoTable(doc, {
+              startY: startY + 50,
+              head: [['Encryption Standard', 'Evaluation Status']],
+              body: body,
+              theme: 'striped',
+              headStyles: { fillColor: [181, 10, 46] },
+              styles: { cellPadding: 5 }
+            });
+          }
+          else if (currentType === 'cyber') {
+            doc.setFontSize(14);
+            doc.setTextColor(50, 50, 50);
+            doc.text("Overall Security & Cyber Rating", 14, startY);
+
+            const totalScore = scanData.score || 0;
+            const letterRating = scanData.rating || 'N/A';
+
+            // Progress Bar simulation
+            doc.setFillColor(230, 230, 230);
+            doc.roundedRect(14, startY + 15, pageWidth - 28, 8, 4, 4, 'F');
+
+            let barColor = [220, 53, 69]; // red
+            if (totalScore >= 800) barColor = [40, 167, 69]; // green
+            else if (totalScore >= 500) barColor = [229, 160, 62]; // gold
+
+            doc.setFillColor(...barColor);
+            doc.roundedRect(14, startY + 15, Math.max((totalScore / 1000) * (pageWidth - 28), 10), 8, 4, 4, 'F');
+
+            doc.setFontSize(40);
+            doc.setTextColor(...barColor);
+            doc.text(`${totalScore}`, 14, startY + 40);
+
+            doc.setFontSize(20);
+            doc.setTextColor(150, 150, 150);
+            doc.text("/ 1000", 14 + doc.getTextWidth(`${totalScore}`) + 2, startY + 40);
+
+            doc.setFontSize(16);
+            doc.setTextColor(100, 100, 100);
+            doc.text(`Rating Segment: ${letterRating}`, 14, startY + 55);
+
+            if (scanData.insights && scanData.insights.length > 0) {
+              doc.setFontSize(14);
+              doc.setTextColor(50, 50, 50);
+              doc.text("Key Vulnerability Insights:", 14, startY + 75);
+
+              let cursorY = startY + 85;
+              scanData.insights.forEach(insight => {
+                // Format insight as bullet with left border
+                doc.setFillColor(229, 160, 62);
+                doc.rect(14, cursorY, 2, 8, 'F'); // left accent border
+                doc.setFontSize(10);
+                doc.setTextColor(80, 80, 80);
+                const lines = doc.splitTextToSize(insight, pageWidth - 35);
+                doc.text(lines, 20, cursorY + 4);
+                cursorY += (lines.length * 5) + 6;
+              });
+            }
+          }
+          else {
+            doc.setFontSize(11);
+            doc.text(`Data dump for ${currentType}`, 14, startY);
+            const str = JSON.stringify(scanData, null, 2);
+            const lines = doc.splitTextToSize(str, pageWidth - 28);
+            let cursorY = startY + 10;
+            doc.setFont("courier", "normal");
+            for (let i = 0; i < lines.length; i++) {
+              if (cursorY > doc.internal.pageSize.getHeight() - 20) {
+                doc.addPage();
+                cursorY = 20;
+              }
+              doc.text(lines[i], 14, cursorY);
+              cursorY += 5;
+            }
+          }
+        });
+      }
+
+      // Add footers to all pages EXCEPT the title page
+      const pageCount = doc.internal.getNumberOfPages();
+      for (let i = 2; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setDrawColor(250, 188, 10); // PNB Gold
+        doc.setLineWidth(0.5);
+        doc.line(14, pageHeight - 15, pageWidth - 14, pageHeight - 15);
+
+        doc.setFontSize(8);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(100, 100, 100);
+        doc.text("REQUIEM | PNB", 14, pageHeight - 10);
+
+        doc.text(`Page ${i - 1}`, pageWidth - 14, pageHeight - 10, { align: 'right' });
       }
 
       doc.save(reportName);
@@ -261,41 +482,41 @@ export default function OnDemandReporting({ scanData }) {
       const pdfBlob = doc.output('blob');
       const formData = new FormData();
       formData.append('file', pdfBlob, reportName);
-      formData.append('reportType', reportType);
+      formData.append('reportTypes', selectedReports.join(','));
       if (sendViaEmail && emailAddresses) {
-         formData.append('send_email', 'true');
-         formData.append('email_addresses', emailAddresses);
+        formData.append('send_email', 'true');
+        formData.append('email_addresses', emailAddresses);
       }
       if (saveToLocation && saveLocationPath) {
-         formData.append('save_location', 'true');
-         formData.append('location_path', saveLocationPath);
+        formData.append('save_location', 'true');
+        formData.append('location_path', saveLocationPath);
       }
       if (slackNotification) {
-         formData.append('send_slack', 'true');
+        formData.append('send_slack', 'true');
       }
 
       // Send to backend
       fetch('http://localhost:8000/api/reports/deliver', {
-         method: 'POST',
-         body: formData,
+        method: 'POST',
+        body: formData,
       })
-      .then(res => res.json())
-      .then(data => {
-         console.log("Delivery response:", data);
-         let alerts = [];
-         if (slackNotification) alerts.push("Alert pushed to Slack!");
-         if (sendViaEmail && emailAddresses) alerts.push("Report scheduled for email delivery.");
-         if (saveToLocation && saveLocationPath) alerts.push("Report saved to: " + saveLocationPath);
-         
-         if (alerts.length > 0) alert(alerts.join("\n"));
-      })
-      .catch(err => {
-         console.error("Error delivering report:", err);
-         alert("Warning: PDF was generated locally, but there was an error communicating with the backend for delivery.");
-      })
-      .finally(() => {
-         setIsGenerating(false);
-      });
+        .then(res => res.json())
+        .then(data => {
+          console.log("Delivery response:", data);
+          let alerts = [];
+          if (slackNotification) alerts.push("Alert pushed to Slack!");
+          if (sendViaEmail && emailAddresses) alerts.push("Report scheduled for email delivery.");
+          if (saveToLocation && saveLocationPath) alerts.push("Report saved to: " + saveLocationPath);
+
+          if (alerts.length > 0) alert(alerts.join("\n"));
+        })
+        .catch(err => {
+          console.error("Error delivering report:", err);
+          alert("Warning: PDF was generated locally, but there was an error communicating with the backend for delivery.");
+        })
+        .finally(() => {
+          setIsGenerating(false);
+        });
     }, 1500);
   };
 
@@ -319,36 +540,60 @@ export default function OnDemandReporting({ scanData }) {
       <div className="bg-[#fefaf6] rounded-2xl shadow-sm border border-[#f3ecd8] p-8 relative overflow-hidden">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-20">
-          
+
           {/* Report Type */}
           <div className="space-y-4 relative z-50">
-            <h3 className="text-[#59534f] font-bold text-base px-2">Report Type</h3>
+            <h3 className="text-[#59534f] font-bold text-base px-2">Select Report Contents</h3>
             <div className="relative">
-              <button 
+              <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="w-full bg-white border border-[#f1e6b8] rounded-xl px-4 py-3 flex items-center justify-between text-[#8c8581] shadow-sm hover:border-[#e5a03e] transition-colors"
               >
-                <span className={reportType ? "text-[#59534f] font-medium" : ""}>
-                  {reportType ? reportTypes.find(r => r.id === reportType)?.label : 'Select Report'}
+                <span className={selectedReports.length > 0 ? "text-[#59534f] font-medium" : ""}>
+                  {selectedReports.length > 0 ? `${selectedReports.length} report${selectedReports.length > 1 ? 's' : ''} selected` : 'Select Reports'}
                 </span>
                 <span className="material-symbols-outlined text-[#e5a03e]">{isDropdownOpen ? 'expand_less' : 'expand_more'}</span>
               </button>
 
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-[#f1e6b8] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50">
-                  {reportTypes.map((type) => (
-                    <button
-                      key={type.id}
-                      onClick={() => handleSelectReport(type.id)}
-                      className="w-full px-4 py-2.5 flex items-center gap-3 hover:bg-[#fff9f0] text-left transition-colors"
-                    >
-                      <span className="material-symbols-outlined text-[#e5a03e] text-xl">{type.icon}</span>
-                      <span className="text-[#59534f] font-medium text-sm">{type.label}</span>
-                    </button>
-                  ))}
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-[#f1e6b8] rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 z-50 max-h-60 overflow-y-auto">
+                  {reportTypes.map((type) => {
+                    const isSelected = selectedReports.includes(type.id);
+                    return (
+                      <button
+                        key={type.id}
+                        onClick={() => handleSelectReport(type.id)}
+                        className={`w-full px-4 py-2.5 flex items-center gap-3 transition-colors ${isSelected ? 'bg-[#fff9f0]' : 'hover:bg-[#fff9f0]'} text-left`}
+                      >
+                        <div className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${isSelected ? 'bg-[#e5a03e] border-[#e5a03e]' : 'border-outline-variant outline-none'}`}>
+                          {isSelected && <span className="material-symbols-outlined text-white text-[14px]">check</span>}
+                        </div>
+                        <span className={`${isSelected ? 'text-[#e5a03e]' : 'text-[#8c8581]'} material-symbols-outlined text-xl`}>{type.icon}</span>
+                        <span className="text-[#59534f] font-medium text-sm">{type.label}</span>
+                      </button>
+                    );
+                  })}
                 </div>
               )}
             </div>
+
+            {/* Selected Pills */}
+            {selectedReports.length > 0 && (
+              <div className="flex flex-wrap gap-2 px-1 pt-2">
+                {selectedReports.map((id) => {
+                  const r = reportTypes.find(type => type.id === id);
+                  return (
+                    <div key={id} className="flex items-center gap-1.5 bg-[#fff9f0] border border-[#e5a03e]/30 text-[#59534f] px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm">
+                      <span className="material-symbols-outlined text-[#e5a03e] text-[16px]">{r?.icon}</span>
+                      {r?.label}
+                      <button onClick={() => removeReport(id)} className="ml-1 text-[#c4bbb6] hover:text-red-500 transition-colors flex items-center">
+                        <span className="material-symbols-outlined text-[16px]">close</span>
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Yellow Divider Arrow */}
@@ -374,7 +619,7 @@ export default function OnDemandReporting({ scanData }) {
                     <span className="text-[#59534f] font-medium text-sm">Send via Email</span>
                   </label>
                   {/* Toggle */}
-                  <button 
+                  <button
                     onClick={() => setSendViaEmail(!sendViaEmail)}
                     className={`w-11 h-6 rounded-full p-1 transition-colors flex items-center ${sendViaEmail ? 'bg-[#e5a03e] justify-end' : 'bg-[#e8e4db] justify-start'}`}
                   >
@@ -383,9 +628,9 @@ export default function OnDemandReporting({ scanData }) {
                 </div>
                 {sendViaEmail && (
                   <div className="relative pl-8">
-                    <input 
-                      type="text" 
-                      placeholder="Enter Email Addresses" 
+                    <input
+                      type="text"
+                      placeholder="Enter Email Addresses"
                       value={emailAddresses}
                       onChange={(e) => setEmailAddresses(e.target.value)}
                       className="w-full bg-[#fbf8f1] border border-[#f1e6b8] rounded-xl pl-4 pr-10 py-2.5 text-sm text-[#59534f] placeholder-[#c4bbb6] focus:outline-none focus:border-[#e5a03e]"
@@ -407,7 +652,7 @@ export default function OnDemandReporting({ scanData }) {
                     <span className="text-[#59534f] font-medium text-sm">Save to Location</span>
                   </label>
                   {/* Toggle */}
-                  <button 
+                  <button
                     onClick={() => setSaveToLocation(!saveToLocation)}
                     className={`w-11 h-6 rounded-full p-1 transition-colors flex items-center ${saveToLocation ? 'bg-[#e5a03e] justify-end' : 'bg-[#e8e4db] justify-start'}`}
                   >
@@ -416,8 +661,8 @@ export default function OnDemandReporting({ scanData }) {
                 </div>
                 {saveToLocation && (
                   <div className="relative pl-8">
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       value={saveLocationPath}
                       onChange={(e) => setSaveLocationPath(e.target.value)}
                       className="w-full bg-[#fbf8f1] border border-[#f1e6b8] rounded-xl pl-4 pr-10 py-2.5 text-sm text-[#59534f] focus:outline-none focus:border-[#e5a03e]"
@@ -431,7 +676,7 @@ export default function OnDemandReporting({ scanData }) {
 
               {/* Download Link */}
               <div className="flex items-center gap-3 pt-1">
-                <button 
+                <button
                   onClick={() => setDownloadLink(!downloadLink)}
                   className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${downloadLink ? 'bg-[#e5a03e] border-[#e5a03e]' : 'border-[#d8d1ca] outline-none'}`}
                 >
@@ -442,7 +687,7 @@ export default function OnDemandReporting({ scanData }) {
 
               {/* Slack Notification */}
               <div className="flex items-center gap-3">
-                <button 
+                <button
                   onClick={() => setSlackNotification(!slackNotification)}
                   className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${slackNotification ? 'bg-[#e5a03e] border-[#e5a03e]' : 'border-[#d8d1ca] outline-none'}`}
                 >
@@ -464,9 +709,9 @@ export default function OnDemandReporting({ scanData }) {
               <span className="material-symbols-outlined text-[#e5a03e]">settings</span>
               <h3 className="text-[#59534f] font-bold text-sm">Advanced Settings</h3>
             </div>
-            
+
             <div className="flex flex-wrap items-center gap-8 w-full lg:w-auto">
-              
+
               <div className="flex items-center gap-3">
                 <span className="text-[#8c8581] text-xs font-medium uppercase tracking-wider">File Format:</span>
                 <button className="flex items-center gap-2 bg-white border border-[#f1e6b8] rounded-lg px-3 py-1.5 text-sm font-medium text-[#59534f] hover:border-[#e5a03e] transition-colors">
@@ -475,34 +720,34 @@ export default function OnDemandReporting({ scanData }) {
               </div>
 
               <div className="flex items-center gap-3">
-                 <span className="text-[#8c8581] text-xs font-medium uppercase tracking-wider">Include Charts</span>
-                 <button 
-                    onClick={() => setIncludeCharts(!includeCharts)}
-                    className={`w-10 h-5 rounded-full p-1 transition-colors flex items-center ${includeCharts ? 'bg-[#e5a03e] justify-end' : 'bg-[#e8e4db] justify-start'}`}
-                  >
-                    <div className="w-3.5 h-3.5 rounded-full bg-white shadow-sm"></div>
-                  </button>
+                <span className="text-[#8c8581] text-xs font-medium uppercase tracking-wider">Include Charts</span>
+                <button
+                  onClick={() => setIncludeCharts(!includeCharts)}
+                  className={`w-10 h-5 rounded-full p-1 transition-colors flex items-center ${includeCharts ? 'bg-[#e5a03e] justify-end' : 'bg-[#e8e4db] justify-start'}`}
+                >
+                  <div className="w-3.5 h-3.5 rounded-full bg-white shadow-sm"></div>
+                </button>
               </div>
 
               <div className="flex items-center gap-3">
-                 <span className="text-[#8c8581] text-xs font-medium uppercase tracking-wider">Password Protect</span>
-                 <button 
-                    onClick={() => setPasswordProtect(!passwordProtect)}
-                    className={`w-10 h-5 rounded-full p-1 transition-colors flex items-center ${passwordProtect ? 'bg-[#e5a03e] justify-end' : 'bg-[#e8e4db] justify-start'}`}
-                  >
-                    <div className="w-3.5 h-3.5 rounded-full bg-white shadow-sm"></div>
-                  </button>
+                <span className="text-[#8c8581] text-xs font-medium uppercase tracking-wider">Password Protect</span>
+                <button
+                  onClick={() => setPasswordProtect(!passwordProtect)}
+                  className={`w-10 h-5 rounded-full p-1 transition-colors flex items-center ${passwordProtect ? 'bg-[#e5a03e] justify-end' : 'bg-[#e8e4db] justify-start'}`}
+                >
+                  <div className="w-3.5 h-3.5 rounded-full bg-white shadow-sm"></div>
+                </button>
               </div>
 
-              <button 
+              <button
                 onClick={handleGenerateReport}
                 disabled={isGenerating}
                 className={`flex items-center gap-2 text-white px-6 py-2.5 rounded-xl font-bold transition-colors ml-auto lg:ml-0 shadow-md ${isGenerating ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#e5a03e] hover:bg-[#d4902b] shadow-[#e5a03e]/20'}`}
               >
                 {isGenerating ? (
-                   <span className="material-symbols-outlined text-xl animate-spin">sync</span>
+                  <span className="material-symbols-outlined text-xl animate-spin">sync</span>
                 ) : (
-                   <span className="material-symbols-outlined text-xl">post_add</span>
+                  <span className="material-symbols-outlined text-xl">post_add</span>
                 )}
                 {isGenerating ? 'Generating...' : 'Generate Report'}
               </button>
