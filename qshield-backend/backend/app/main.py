@@ -1,3 +1,4 @@
+import asyncio
 import http.client
 import json
 import logging
@@ -43,6 +44,7 @@ from backend.app.services.storage import save_scan, get_latest_scans, save_nucle
 from backend.app.services.cert_analysis import get_certificate_expiry
 from backend.app.services.security_headers import check_security_headers
 from backend.app.services.schedule_store import add_schedule, load_schedules, update_schedule_status
+from backend.app.services.threat_surface import scan_threat_surface
 
 # Initialize DB tables on startup
 Base.metadata.create_all(bind=engine)
@@ -260,6 +262,11 @@ class ScanRequest(BaseModel):
     use_crtsh: bool = False
 
 
+class ThreatSurfaceRequest(BaseModel):
+    domain: str
+    phishing_detection: bool = True
+
+
 # ---------------------------------------------------------------------------
 # Scheduled email job
 # ---------------------------------------------------------------------------
@@ -384,6 +391,40 @@ def create_schedule(req: ScheduleRequest):
         "id": schedule_id,
         "run_at": run_at_dt.isoformat(),
         "email": req.email,
+    }
+
+
+@app.post("/threat-surface")
+async def threat_surface(req: ThreatSurfaceRequest):
+    domain = clean_domain(req.domain)
+    if not domain:
+        raise HTTPException(status_code=422, detail="Invalid domain")
+
+    try:
+        findings = await asyncio.to_thread(
+            scan_threat_surface,
+            domain,
+            req.phishing_detection,
+        )
+    except Exception as exc:
+        logger.exception("Threat-surface scan failed for %s", domain)
+        raise HTTPException(status_code=500, detail=f"Threat surface scan failed: {exc}")
+
+    critical = sum(1 for row in findings if row.get("risk") == "CRITICAL")
+    high = sum(1 for row in findings if row.get("risk") == "HIGH")
+    medium = sum(1 for row in findings if row.get("risk") == "MEDIUM")
+    low = sum(1 for row in findings if row.get("risk") == "LOW")
+
+    return {
+        "domain": domain,
+        "count": len(findings),
+        "summary": {
+            "critical": critical,
+            "high": high,
+            "medium": medium,
+            "low": low,
+        },
+        "results": findings,
     }
 
 
