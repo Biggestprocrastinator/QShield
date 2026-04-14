@@ -41,18 +41,14 @@ export default function Dashboard({ scanData, isLoading, error }) {
   }
 
   const { score, risk, quantum_status, summary, rating, insights, cbom, inventory, counts } = scanData;
-  const activeAssets = summary?.total_assets || 0;
-  const httpOnlyCount = summary?.http_only || 0;
-  const pqcRiskLevel = scanData?.risk || 'Low';
+  const sourceAssets = Array.isArray(scanData.cbom) && scanData.cbom.length ? scanData.cbom : (scanData.assets || []);
 
-  const totalAssets = summary?.total_assets || 0;
-  const highRisk = summary?.high_risk_assets || 0;
+  const totalAssets = sourceAssets.length;
+  const highRisk = sourceAssets.filter((a) => ['high', 'critical'].includes((a.risk_level || '').toLowerCase())).length || summary?.high_risk_assets || 0;
   const expiringSoon = summary?.expiring_soon || 0;
-  const assetsList = scanData.assets || [];
-  const domainNames = assetsList.map((asset) => asset.domain).filter(Boolean);
-  const uniqueIPs = Array.from(new Set(assetsList.map((asset) => asset.ip).filter(Boolean)));
-  const apis = assetsList.filter((asset) => (asset.type || '').toLowerCase() === 'api').length;
-  const servers = uniqueIPs.length;
+  
+  const apis = sourceAssets.filter((asset) => (asset.type || '').toLowerCase() === 'api').length;
+  const servers = sourceAssets.filter((asset) => (asset.type || '').toLowerCase() === 'server').length;
 
   const kpiCards = [
     { title: 'Total Assets', value: totalAssets, accentClass: 'border-l-4 border-blue-500', filter: '', delay: '0ms' },
@@ -116,7 +112,7 @@ export default function Dashboard({ scanData, isLoading, error }) {
           </div>
           <div className="space-y-1">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-on-surface-variant/70">Total Assets</span>
-            <div className="text-2xl font-bold text-on-surface leading-tight">{summary?.total_assets || 0}</div>
+            <div className="text-2xl font-bold text-on-surface leading-tight">{totalAssets}</div>
             <div className="flex items-center gap-1 text-[11px] text-on-surface-variant font-semibold mt-1 leading-tight tracking-wide">
               <span className="material-symbols-outlined text-[12px]">hub</span> Discovered endpoints
             </div>
