@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import aiBot from '../assets/aibot.png';
 import { sendAssistantQuery } from '../services/assistantApi';
 
@@ -362,13 +362,15 @@ export default function Assistant() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="fixed bottom-5 right-5 z-[1100] bg-transparent p-0 border-0 shadow-none transition-transform duration-200 hover:scale-105 focus-visible:outline-none"
+          className="fixed bottom-5 right-5 z-[1100] group bg-transparent p-0 border-0 shadow-none focus-visible:outline-none"
           aria-label="Open AI assistant"
         >
+          {/* Ambient theme glow behind mascot */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60px] h-[60px] bg-[#FABC0A]/15 blur-[20px] rounded-full pointer-events-none opacity-60 group-hover:w-[120px] group-hover:h-[120px] group-hover:opacity-100 group-hover:bg-[#FABC0A]/40 group-hover:blur-[35px] transition-all duration-300 ease-out" />
           <img
             src={aiBot}
             alt="Open assistant"
-            className="block h-[170px] w-auto select-none object-contain drop-shadow-[0_12px_26px_rgba(0,0,0,0.3)] pointer-events-none"
+            className="block h-[70px] w-auto select-none object-contain drop-shadow-[0_4px_8px_rgba(120,4,16,0.25)] group-hover:h-[170px] group-hover:-translate-y-2 group-hover:drop-shadow-[0_0_25px_rgba(250,188,10,0.5)] pointer-events-none relative z-10 transition-all duration-300 ease-out origin-bottom"
             draggable="false"
           />
         </button>

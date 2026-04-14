@@ -11,29 +11,29 @@ const TopoBg = () => (
   >
     <defs>
       <pattern id="topo" x="0" y="0" width="600" height="400" patternUnits="userSpaceOnUse">
-        <path d="M-50 30C50 10,150 50,250 30C350 10,450 50,650 30" fill="none" stroke="rgba(181,10,46,.06)" strokeWidth="1.2"/>
-        <path d="M-50 67C30 47,130 82,230 62C330 42,430 77,650 67" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1"/>
-        <path d="M-50 104C70 79,170 114,270 94C370 74,470 109,650 104" fill="none" stroke="rgba(250,188,10,.07)" strokeWidth="1"/>
-        <path d="M-50 142C40 117,140 152,240 132C340 112,440 147,650 142" fill="none" stroke="rgba(181,10,46,.05)" strokeWidth="1"/>
-        <path d="M-50 180C60 155,160 190,260 170C360 150,460 185,650 180" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1.2"/>
-        <path d="M-50 218C50 193,150 228,250 208C350 188,450 223,650 218" fill="none" stroke="rgba(250,188,10,.06)" strokeWidth="1"/>
-        <path d="M-50 256C70 231,170 266,270 246C370 226,470 261,650 256" fill="none" stroke="rgba(181,10,46,.05)" strokeWidth="1"/>
-        <path d="M-50 294C40 269,140 304,240 284C340 264,440 299,650 294" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1"/>
-        <path d="M-50 331C60 306,160 341,260 321C360 301,460 336,650 331" fill="none" stroke="rgba(250,188,10,.07)" strokeWidth="1.2"/>
-        <path d="M-50 368C50 343,150 378,250 358C350 338,450 373,650 368" fill="none" stroke="rgba(181,10,46,.05)" strokeWidth="1"/>
-        <ellipse cx="155" cy="195" rx="108" ry="68" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1"/>
-        <ellipse cx="155" cy="195" rx="72" ry="45" fill="none" stroke="rgba(181,10,46,.055)" strokeWidth="1"/>
-        <ellipse cx="155" cy="195" rx="40" ry="25" fill="none" stroke="rgba(250,188,10,.09)" strokeWidth="1.2"/>
-        <ellipse cx="155" cy="195" rx="18" ry="11" fill="none" stroke="rgba(250,188,10,.12)" strokeWidth="1"/>
-        <ellipse cx="462" cy="112" rx="90" ry="56" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1"/>
-        <ellipse cx="462" cy="112" rx="58" ry="36" fill="none" stroke="rgba(250,188,10,.07)" strokeWidth="1"/>
-        <ellipse cx="462" cy="112" rx="30" ry="19" fill="none" stroke="rgba(181,10,46,.07)" strokeWidth="1"/>
-        <ellipse cx="488" cy="322" rx="76" ry="48" fill="none" stroke="rgba(250,188,10,.06)" strokeWidth="1"/>
-        <ellipse cx="488" cy="322" rx="48" ry="30" fill="none" stroke="rgba(181,10,46,.055)" strokeWidth="1"/>
-        <ellipse cx="488" cy="322" rx="24" ry="15" fill="none" stroke="rgba(250,188,10,.09)" strokeWidth="1"/>
+        <path d="M-50 30C50 10,150 50,250 30C350 10,450 50,650 30" fill="none" stroke="rgba(181,10,46,.06)" strokeWidth="1.2" />
+        <path d="M-50 67C30 47,130 82,230 62C330 42,430 77,650 67" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1" />
+        <path d="M-50 104C70 79,170 114,270 94C370 74,470 109,650 104" fill="none" stroke="rgba(250,188,10,.07)" strokeWidth="1" />
+        <path d="M-50 142C40 117,140 152,240 132C340 112,440 147,650 142" fill="none" stroke="rgba(181,10,46,.05)" strokeWidth="1" />
+        <path d="M-50 180C60 155,160 190,260 170C360 150,460 185,650 180" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1.2" />
+        <path d="M-50 218C50 193,150 228,250 208C350 188,450 223,650 218" fill="none" stroke="rgba(250,188,10,.06)" strokeWidth="1" />
+        <path d="M-50 256C70 231,170 266,270 246C370 226,470 261,650 256" fill="none" stroke="rgba(181,10,46,.05)" strokeWidth="1" />
+        <path d="M-50 294C40 269,140 304,240 284C340 264,440 299,650 294" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1" />
+        <path d="M-50 331C60 306,160 341,260 321C360 301,460 336,650 331" fill="none" stroke="rgba(250,188,10,.07)" strokeWidth="1.2" />
+        <path d="M-50 368C50 343,150 378,250 358C350 338,450 373,650 368" fill="none" stroke="rgba(181,10,46,.05)" strokeWidth="1" />
+        <ellipse cx="155" cy="195" rx="108" ry="68" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1" />
+        <ellipse cx="155" cy="195" rx="72" ry="45" fill="none" stroke="rgba(181,10,46,.055)" strokeWidth="1" />
+        <ellipse cx="155" cy="195" rx="40" ry="25" fill="none" stroke="rgba(250,188,10,.09)" strokeWidth="1.2" />
+        <ellipse cx="155" cy="195" rx="18" ry="11" fill="none" stroke="rgba(250,188,10,.12)" strokeWidth="1" />
+        <ellipse cx="462" cy="112" rx="90" ry="56" fill="none" stroke="rgba(181,10,46,.04)" strokeWidth="1" />
+        <ellipse cx="462" cy="112" rx="58" ry="36" fill="none" stroke="rgba(250,188,10,.07)" strokeWidth="1" />
+        <ellipse cx="462" cy="112" rx="30" ry="19" fill="none" stroke="rgba(181,10,46,.07)" strokeWidth="1" />
+        <ellipse cx="488" cy="322" rx="76" ry="48" fill="none" stroke="rgba(250,188,10,.06)" strokeWidth="1" />
+        <ellipse cx="488" cy="322" rx="48" ry="30" fill="none" stroke="rgba(181,10,46,.055)" strokeWidth="1" />
+        <ellipse cx="488" cy="322" rx="24" ry="15" fill="none" stroke="rgba(250,188,10,.09)" strokeWidth="1" />
       </pattern>
     </defs>
-    <rect width="100%" height="100%" fill="url(#topo)"/>
+    <rect width="100%" height="100%" fill="url(#topo)" />
   </svg>
 );
 
@@ -66,9 +66,8 @@ const OtpInput = ({ value, onChange }) => {
       {digits.map((d, i) => (
         <div
           key={i}
-          className={`w-11 h-13 flex items-center justify-center text-xl font-black rounded-lg border-2 transition-all ${
-            i < value.length ? 'border-[#B50A2E] bg-[#fdf0f0] text-[#B50A2E]' : 'border-[#e5dfd3] bg-white/60 text-transparent'
-          }`}
+          className={`w-11 h-13 flex items-center justify-center text-xl font-black rounded-lg border-2 transition-all ${i < value.length ? 'border-[#B50A2E] bg-[#fdf0f0] text-[#B50A2E]' : 'border-[#e5dfd3] bg-white/60 text-transparent'
+            }`}
         >
           {d.trim() || (i === value.length ? <span className="animate-pulse text-[#B50A2E]">|</span> : '')}
         </div>
@@ -83,6 +82,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [otpCode, setOtpCode] = useState('');
   const [pendingEmail, setPendingEmail] = useState('');
+  const [tempToken, setTempToken] = useState('');   // short-lived token from /login when 2FA required
   const [showPw, setShowPw] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -104,10 +104,15 @@ export default function Login() {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ username: email, password }),
       });
-      if (!response.ok) throw new Error('Invalid email or password');
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.detail || 'Invalid email or password');
+      }
       const data = await response.json();
-      if (data.require_2fa) {
+      if (data.requires_2fa) {
+        // Backend returned a short-lived temp_token — store it for the 2FA step
         setPendingEmail(email);
+        setTempToken(data.temp_token);
         setStep('2fa');
       } else {
         login(data.access_token, data.refresh_token);
@@ -127,7 +132,8 @@ export default function Login() {
       const response = await fetch('http://localhost:8000/auth/2fa/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: pendingEmail, code: otpCode }),
+        // Backend expects { temp_token, code } — NOT email
+        body: JSON.stringify({ temp_token: tempToken, code: otpCode }),
       });
       if (!response.ok) {
         const d = await response.json();
@@ -135,7 +141,8 @@ export default function Login() {
       }
       const data = await response.json();
       login(data.access_token, data.refresh_token);
-      navigate('/');    } catch (err) {
+      navigate('/');
+    } catch (err) {
       setError(err.message);
       setOtpCode('');
     } finally {

@@ -75,6 +75,16 @@ export default function Signup() {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  // FastAPI Pydantic 422 errors return detail as an array of objects like:
+  // [{ loc: [...], msg: '...', type: '...' }]
+  // This helper extracts a clean human-readable string from either format.
+  const parseApiError = (detail) => {
+    if (!detail) return 'Something went wrong';
+    if (typeof detail === 'string') return detail;
+    if (Array.isArray(detail)) return detail.map(e => e.msg || String(e)).join('. ');
+    return JSON.stringify(detail);
+  };
+
   const handleSignup = async (e) => {
     e.preventDefault();
     setError(null);
@@ -89,7 +99,7 @@ export default function Signup() {
       });
       if (!res.ok) {
         const d = await res.json();
-        throw new Error(d.detail || 'Registration failed');
+        throw new Error(parseApiError(d.detail));
       }
       // If user wants 2FA, go to setup
       if (enable2FA) {
@@ -115,15 +125,28 @@ export default function Signup() {
   const initiate2FASetup = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/auth/2fa/setup', {
+      // 1. Login first — new user has no 2FA yet, returns token directly
+      const loginRes = await fetch('http://localhost:8000/auth/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, code: '' }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ username: email, password }),
       });
-      if (!res.ok) throw new Error('Failed to generate 2FA secret');
-      const data = await res.json();
-      setQrData(data.qr);
-      setTotpSecret(data.secret);
+      if (!loginRes.ok) throw new Error('Login after registration failed');
+      const { access_token } = await loginRes.json();
+
+      // 2. GET /auth/2fa/setup — generates TOTP secret + QR code (Bearer token required)
+      const setupRes = await fetch('http://localhost:8000/auth/2fa/setup', {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${access_token}` },
+      });
+      if (!setupRes.ok) throw new Error('Failed to generate 2FA secret');
+      const setupData = await setupRes.json();
+
+      // Save token temporarily for the /2fa/enable step
+      sessionStorage.setItem('_signup_token', access_token);
+
+      setQrData(setupData.qr_code);
+      setTotpSecret(setupData.secret);
       setStep('setup2fa');
     } catch (err) {
       setError(err.message);
@@ -136,29 +159,44 @@ export default function Signup() {
     setError(null);
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/auth/2fa/setup', {
+      const accessToken = sessionStorage.getItem('_signup_token');
+      if (!accessToken) throw new Error('Session expired. Please restart signup.');
+
+      // 3. POST /auth/2fa/enable — confirm code, activates 2FA on the account
+      const enableRes = await fetch('http://localhost:8000/auth/2fa/enable', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, code: otpCode }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({ code: otpCode }),
       });
-      if (!res.ok) {
-        const d = await res.json();
-        throw new Error(d.detail || 'Invalid code');
+      if (!enableRes.ok) {
+        const d = await enableRes.json();
+        throw new Error(d.detail || 'Invalid code — check your authenticator app');
       }
-      // 2FA confirmed — now login
+      sessionStorage.removeItem('_signup_token');
+
+      // 4. Re-login — now backend requires 2FA since it's enabled
       const loginRes = await fetch('http://localhost:8000/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ username: email, password }),
       });
       const loginData = await loginRes.json();
-      // Since 2FA just got enabled, login returns require_2fa=true — verify
-      if (loginData.require_2fa) {
+
+      if (loginData.requires_2fa && loginData.temp_token) {
+        // Same OTP code likely still valid within the 30s window
         const verRes = await fetch('http://localhost:8000/auth/2fa/verify', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, code: otpCode }),
+          body: JSON.stringify({ temp_token: loginData.temp_token, code: otpCode }),
         });
+        if (!verRes.ok) {
+          // Code expired — send user to login page to re-verify
+          navigate('/login');
+          return;
+        }
         const verData = await verRes.json();
         login(verData.access_token, verData.refresh_token);
       } else {
@@ -174,6 +212,7 @@ export default function Signup() {
   };
 
   const skip2FA = async () => {
+    sessionStorage.removeItem('_signup_token');
     setLoading(true);
     try {
       const loginRes = await fetch('http://localhost:8000/auth/login', {
@@ -286,6 +325,24 @@ export default function Signup() {
                       </button>
                     </div>
                   </div>
+                  {/* Password strength hints */}
+                  {password.length > 0 && (
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 px-1 mt-1">
+                      {[
+                        { ok: password.length >= 8,           label: '8+ chars' },
+                        { ok: /[A-Z]/.test(password),         label: 'Uppercase' },
+                        { ok: /[0-9]/.test(password),         label: 'Number' },
+                        { ok: /[^A-Za-z0-9]/.test(password),  label: 'Special (!@#…)' },
+                      ].map(({ ok, label }) => (
+                        <span key={label} className={`flex items-center gap-1 text-[10px] font-bold transition-colors ${
+                          ok ? 'text-[#16a34a]' : 'text-[#b89898]'
+                        }`}>
+                          <span className="material-symbols-outlined text-[13px]">{ok ? 'check_circle' : 'radio_button_unchecked'}</span>
+                          {label}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   <InputField label="Confirm Password" type={showPw ? 'text' : 'password'} value={confirmPw} onChange={e => setConfirmPw(e.target.value)} placeholder="Re-enter password" icon="lock_reset" required />
 
                   {/* 2FA toggle */}
