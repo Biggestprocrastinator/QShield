@@ -1,114 +1,279 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 
 const domainRegex = /^(?!-)(?:[a-z0-9-]{1,63}\.)+[a-z]{2,63}$/i;
-const ipRegex = /^(?:\d{1,3}\.){3}\d{1,3}$/;
+const ipRegex    = /^(?:\d{1,3}\.){3}\d{1,3}$/;
 
 const sanitizeDomain = (value) => {
   if (!value) return '';
-  let sanitized = value.trim().toLowerCase();
-  sanitized = sanitized.replace(/^https?:\/\//, '');
-  sanitized = sanitized.replace(/^www\./, '');
-  sanitized = sanitized.replace(/\/+$/, '');
-  return sanitized;
+  let s = value.trim().toLowerCase();
+  s = s.replace(/^https?:\/\//, '');
+  s = s.replace(/^www\./, '');
+  s = s.replace(/\/+$/, '');
+  return s;
 };
 
 const isValidDomain = (value) => domainRegex.test(value) || ipRegex.test(value);
 
 export default function TopBar({ onScan, onStopScan, isScanning = false }) {
-  const [domain, setDomain] = useState('');
+  const [domain, setDomain]         = useState('');
   const [inputError, setInputError] = useState('');
-  const [useCrtsh, setUseCrtsh] = useState(false);
+  const [useCrtsh, setUseCrtsh]     = useState(false);
+  const [focused, setFocused]       = useState(false);
 
   const handleSubmit = () => {
     setInputError('');
     const sanitized = sanitizeDomain(domain);
-    if (!sanitized) {
-      setInputError('Please enter a domain to scan.');
-      return;
-    }
-    if (!isValidDomain(sanitized)) {
-      setInputError('Enter a valid domain without protocol.');
-      return;
-    }
+    if (!sanitized) { setInputError('Please enter a domain to scan.'); return; }
+    if (!isValidDomain(sanitized)) { setInputError('Enter a valid domain without protocol.'); return; }
     setDomain(sanitized);
     onScan(sanitized, { use_crtsh: useCrtsh });
   };
 
-  const stopScan = async () => {
-    try {
-      await onStopScan?.();
-    } catch {
-      // no-op
-    }
-  };
+  const stopScan = async () => { try { await onStopScan?.(); } catch { /* no-op */ } };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      if (isScanning) {
-        stopScan();
-      } else {
-        handleSubmit();
-      }
-    }
+    if (e.key === 'Enter') { e.preventDefault(); isScanning ? stopScan() : handleSubmit(); }
   };
 
-  const helperText = useMemo(() => {
-    if (inputError) return inputError;
-    return 'Enter a fully qualified domain (no protocol).';
+  // Auto-dismiss helper text after 5 seconds
+  useEffect(() => {
+    if (inputError) {
+      const timer = setTimeout(() => {
+        setInputError('');
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
   }, [inputError]);
 
+  const helperText = useMemo(() => inputError || null, [inputError]);
+
   return (
-    <header className="liquid-glass fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-6 z-40">
-      <div className="flex items-center gap-3">
-        <h2 className="font-inter text-base font-bold text-on-surface tracking-wide">Security Command Center</h2>
-        <span className="h-4 w-[1px] bg-outline-variant/40"></span>
-        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary px-2 py-0.5 rounded" style={{ background: 'rgba(181,10,46,0.07)' }}>Operational Mode</span>
+    <header
+      className="fixed top-0 right-0 left-64 z-40 flex items-center px-6 gap-5"
+      style={{
+        height: '64px',
+        background: 'linear-gradient(90deg, #7A0518 0%, #9A0820 50%, #C0122F 100%)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+      }}
+    >
+      {/* Animated accent line at top */}
+      <span
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent 0%, #FABC0A 25%, #fff 50%, #FABC0A 75%, transparent 100%)',
+          backgroundSize: '200% 100%',
+          animation: 'shimmer 3s linear infinite',
+          opacity: 0.6,
+        }}
+      />
+
+      <style>{`
+        @keyframes shimmer {
+          0%   { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        @keyframes pulse-dot {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50%       { opacity: 0.6; transform: scale(1.3); }
+        }
+      `}</style>
+
+      {/* ── Left: scan status ────────────────────── */}
+      <div className="flex items-center gap-3 shrink-0">
+        {/* Scan status badge */}
+        {isScanning ? (
+          <div
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+            style={{
+              background: 'rgba(255, 255, 255, 0.15)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+            }}
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+            </span>
+            <span style={{ fontSize: '9px', fontWeight: 900, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#fff' }}>
+              Scanning…
+            </span>
+          </div>
+        ) : (
+          <div
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full"
+            style={{
+              background: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+            }}
+          >
+            <span
+              style={{
+                display: 'inline-block',
+                width: '6px',
+                height: '6px',
+                borderRadius: '50%',
+                background: '#4ade80',
+                boxShadow: '0 0 8px rgba(74, 222, 128, 0.6)',
+                animation: 'pulse-dot 2.5s ease-in-out infinite',
+              }}
+            />
+            <span style={{ fontSize: '9px', fontWeight: 900, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#86efac' }}>
+              Idle
+            </span>
+          </div>
+        )}
       </div>
-      <div className="flex items-center gap-4">
-        <div className="relative">
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant text-[18px] pointer-events-none">search</span>
+
+      {/* ── Center: Search bar ────────────────────────────── */}
+      <div className="flex-1 flex flex-col items-center relative">
+        <div
+          className={`relative flex items-center w-full max-w-2xl transition-all duration-300 ${helperText ? 'input-error-shake' : ''}`}
+          style={{
+            filter: focused ? 'drop-shadow(0 0 16px rgba(0, 0, 0, 0.3))' : 'none',
+          }}
+        >
+          {/* Search icon */}
+          <span
+            className="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-[18px] pointer-events-none transition-colors duration-200"
+            style={{ color: focused ? '#fff' : 'rgba(255, 255, 255, 0.4)', fontVariationSettings: "'FILL' 1" }}
+          >
+            travel_explore
+          </span>
+
           <input
-            className="bg-white/60 border border-[#e5dfd3] rounded-full pl-10 pr-4 py-1.5 text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary/15 focus:border-primary/30 w-64 shadow-inner transition-all duration-200 placeholder:text-on-surface-variant/40"
-            placeholder="Scan domain (e.g. example.com)..."
             type="text"
             value={domain}
             onChange={(e) => setDomain(e.target.value)}
             onKeyDown={handleKeyDown}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            placeholder="Scan a domain  e.g. pnb.co.in…"
             aria-invalid={Boolean(inputError)}
+            className="w-full pl-11 pr-40 py-2.5 text-sm font-medium outline-none transition-all duration-200"
+            style={{
+              background: focused ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.06)',
+              border: focused ? '1.5px solid rgba(255, 255, 255, 0.3)' : '1.5px solid rgba(255, 255, 255, 0.12)',
+              borderRadius: '12px',
+              color: '#fff',
+              caretColor: '#FABC0A',
+              boxShadow: focused
+                ? 'inset 0 1px 4px rgba(0, 0, 0, 0.2)'
+                : 'inset 0 1px 2px rgba(0, 0, 0, 0.1)',
+            }}
           />
-          <div className="absolute left-0 top-full mt-1 pl-3 text-xs text-red-500 w-full overflow-hidden text-ellipsis whitespace-nowrap">{helperText}</div>
-        </div>
-        <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-on-surface-variant select-none">
-          <input
-            type="checkbox"
-            checked={useCrtsh}
-            onChange={(e) => setUseCrtsh(e.target.checked)}
-            className="h-4 w-4 accent-primary"
-          />
-          crt.sh
-        </label>
-        {!isScanning ? (
-          <button
-            className="px-5 py-1.5 rounded-full bg-primary text-white font-black text-sm tracking-wide hover:bg-primary-variant transition-all duration-200 scan-pulse"
-            onClick={handleSubmit}
-          >
-            RUN
-          </button>
-        ) : (
-          <button
-            className="px-4 py-1.5 rounded-full bg-red-600 text-white font-bold text-sm hover:bg-red-700 hover:shadow-[0_4px_12px_rgba(220,38,38,0.25)] transition-all"
-            onClick={stopScan}
-          >
-            STOP
-          </button>
-        )}
-        <div className="flex items-center gap-3 text-on-surface-variant">
-          <button className="material-symbols-outlined text-[22px] text-on-surface-variant hover:text-primary hover:drop-shadow-[0_0_4px_rgba(181,10,46,0.4)] transition-all duration-200">notifications</button>
-          <button className="material-symbols-outlined text-[22px] text-on-surface-variant hover:text-primary hover:drop-shadow-[0_0_4px_rgba(181,10,46,0.4)] transition-all duration-200">help_outline</button>
-          <div className="h-8 w-8 rounded-full bg-primary-container overflow-hidden ring-2 ring-primary/20 shadow-md hover:ring-primary/40 transition-all duration-200 cursor-pointer">
-            <img alt="Admin User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI1xeVQb-lbsfGm_1pD2jJVu91VHZjIqoFxvsH_pf5-RAzdw3fUUV8kwk3o4FFp_U2tTxT9KWLX9w6ZjAnkwXk09adXdPhPaOghROJcPuFcxr42btjE9jBYBjNXp5Jnc_Y5RIbBfgWqCT7-_NiLeQuFNRq1-zaY-hk1hkvWyPbCsdhetULrPe9tW_ncKRhzLtuD1pmqKYy4N7xFXCjMi_r8DCDXMF853qh3z0UXnIw3SovrfHpL2LoP1c59PYT1l124X6gFrg5QG8" />
+
+          {/* Inline controls */}
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+            {/* crt.sh toggle */}
+            <label
+              className="flex items-center gap-1.5 cursor-pointer px-2 py-1 rounded-lg select-none"
+              title="Enumerate subdomains via crt.sh"
+              style={{ color: 'rgba(255, 255, 255, 0.5)' }}
+            >
+              <input
+                type="checkbox"
+                checked={useCrtsh}
+                onChange={(e) => setUseCrtsh(e.target.checked)}
+                className="h-3.5 w-3.5 accent-secondary rounded"
+              />
+              <span style={{ fontSize: '9px', fontWeight: 900, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+                crt.sh
+              </span>
+            </label>
+
+            <span style={{ width: '1px', height: '16px', background: 'rgba(255, 255, 255, 0.15)' }} />
+
+            {/* Run / Stop button */}
+            {!isScanning ? (
+              <button
+                onClick={handleSubmit}
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl font-black text-xs uppercase tracking-widest text-white transition-all duration-200 hover:brightness-115 active:scale-[0.97]"
+                style={{
+                  background: 'linear-gradient(135deg, #FABC0A 0%, #D49D00 100%)',
+                  boxShadow: '0 2px 10px rgba(250, 188, 10, 0.4)',
+                  letterSpacing: '0.15em',
+                  color: '#4B3600'
+                }}
+              >
+                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>radar</span>
+                Run
+              </button>
+            ) : (
+              <button
+                onClick={stopScan}
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl font-black text-xs uppercase tracking-widest text-white transition-all duration-200 hover:brightness-115 active:scale-[0.97]"
+                style={{
+                  background: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)',
+                  boxShadow: '0 2px 10px rgba(239, 68, 68, 0.4)',
+                  letterSpacing: '0.15em',
+                }}
+              >
+                <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>stop_circle</span>
+                Stop
+              </button>
+            )}
           </div>
+        </div>
+
+        {/* Error Popup (Toast style) */}
+        {helperText && (
+          <div
+            className="absolute -bottom-12 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 px-4 py-2 rounded-xl shadow-2xl animate-error-pop"
+            style={{
+              background: 'rgba(239, 68, 68, 0.95)',
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              color: 'white',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            <span className="material-symbols-outlined text-[16px]">error</span>
+            <span style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.02em' }}>{helperText}</span>
+          </div>
+        )}
+      </div>
+
+      <style>{`
+        @keyframes error-pop {
+          0% { transform: translate(-50%, 10px); opacity: 0; }
+          100% { transform: translate(-50%, 0); opacity: 1; }
+        }
+        .animate-error-pop {
+          animation: error-pop 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+        }
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-4px); }
+          75% { transform: translateX(4px); }
+        }
+        .input-error-shake {
+          animation: shake 0.2s ease-in-out 2;
+        }
+      `}</style>
+
+      {/* ── Right: Avatar only ────────────────────────────── */}
+      <div className="flex items-center gap-2.5 shrink-0">
+        {/* Avatar */}
+        <div
+          className="relative w-9 h-9 rounded-full overflow-hidden cursor-pointer transition-all duration-200"
+          style={{
+            boxShadow: '0 0 0 2px rgba(181,10,46,0.5), 0 2px 10px rgba(0,0,0,0.4)',
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 0 0 2.5px #ff4d6d, 0 4px 14px rgba(181,10,46,0.5)'}
+          onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(181,10,46,0.5), 0 2px 10px rgba(0,0,0,0.4)'}
+          title="Admin Profile"
+        >
+          <img
+            alt="Admin"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI1xeVQb-lbsfGm_1pD2jJVu91VHZjIqoFxvsH_pf5-RAzdw3fUUV8kwk3o4FFp_U2tTxT9KWLX9w6ZjAnkwXk09adXdPhPaOghROJcPuFcxr42btjE9jBYBjNXp5Jnc_Y5RIbBfgWqCT7-_NiLeQuFNRq1-zaY-hk1hkvWyPbCsdhetULrPe9tW_ncKRhzLtuD1pmqKYy4N7xFXCjMi_r8DCDXMF853qh3z0UXnIw3SovrfHpL2LoP1c59PYT1l124X6gFrg5QG8"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </header>

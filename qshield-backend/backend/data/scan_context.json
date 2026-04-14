@@ -1823,5 +1823,12 @@
       "risk": "LOW"
     }
   ],
-  "vulnerabilities": []
+  "vulnerabilities": [
+    {
+      "name": "WordPress WPS Hide Login <1.9.1 - Information Disclosure",
+      "severity": "high",
+      "template": "CVE-2021-24917",
+      "matched": "https://slbcpunjab.pnb.bank.in/wp-admin/options.php"
+    }
+  ]
 }
